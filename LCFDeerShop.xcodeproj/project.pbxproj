@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B78EF98C8575FCEF6F589DD /* libPods-LCFDeerShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8231C46E226DD73C2DB26F1B /* libPods-LCFDeerShop.a */; };
+		364ED6EE1E0BCC16003AF69C /* RefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 364ED6ED1E0BCC16003AF69C /* RefreshHeader.m */; };
 		B3011CF21E0A11DA008C8139 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3011CF11E0A11DA008C8139 /* WebViewController.m */; };
 		B3011CF61E0A1D53008C8139 /* MBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3011CF51E0A1D53008C8139 /* MBManager.m */; };
 		B315344E1DFF91B500A3FD07 /* ZZNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B315344D1DFF91B500A3FD07 /* ZZNetwork.framework */; };
@@ -110,6 +111,8 @@
 
 /* Begin PBXFileReference section */
 		1B62D56E6DB5DAE185CD677E /* Pods-LCFDeerShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCFDeerShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCFDeerShop/Pods-LCFDeerShop.release.xcconfig"; sourceTree = "<group>"; };
+		364ED6EC1E0BCC16003AF69C /* RefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshHeader.h; sourceTree = "<group>"; };
+		364ED6ED1E0BCC16003AF69C /* RefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshHeader.m; sourceTree = "<group>"; };
 		6EB562788F98EAD0ABA5D3A9 /* Pods-LCFDeerShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCFDeerShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LCFDeerShop/Pods-LCFDeerShop.debug.xcconfig"; sourceTree = "<group>"; };
 		8231C46E226DD73C2DB26F1B /* libPods-LCFDeerShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCFDeerShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3011CF01E0A11DA008C8139 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -721,6 +724,8 @@
 				B3FC569E1E092BB000AD8BD6 /* TGLGuillotineMenu.m */,
 				B3FC56A41E092E7200AD8BD6 /* GirlViewController.h */,
 				B3FC56A51E092E7200AD8BD6 /* GirlViewController.m */,
+				364ED6EC1E0BCC16003AF69C /* RefreshHeader.h */,
+				364ED6ED1E0BCC16003AF69C /* RefreshHeader.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1108,6 +1113,7 @@
 				B34AABF91DE563A30053244E /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				B3FC569C1E09291800AD8BD6 /* TGLTableViewController.m in Sources */,
 				B3011CF61E0A1D53008C8139 /* MBManager.m in Sources */,
+				364ED6EE1E0BCC16003AF69C /* RefreshHeader.m in Sources */,
 				B3E1B5871DDED1A400E55F5A /* LCFViewController.m in Sources */,
 				B3FC569F1E092BB000AD8BD6 /* TGLGuillotineMenu.m in Sources */,
 				B3E1B58A1DDED1C800E55F5A /* LCFHomeViewController.m in Sources */,
