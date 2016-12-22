@@ -45,13 +45,13 @@
 @implementation LCFMyViewController
 
 ////隐藏navigation
-//-(void)viewWillAppear:(BOOL)animated{
-//    
-//    [super viewWillAppear:animated];
-//    if (!self.navigationController.navigationBar.hidden) {
-//        self.navigationController.navigationBar.hidden = YES;
-//    }
-//}
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    if (!self.navigationController.navigationBar.hidden) {
+        self.navigationController.navigationBar.hidden = YES;
+    }
+}
 //滑动显示导航栏
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -66,10 +66,10 @@
     }else if (velocity > 5) {
         //向下拖动，隐藏导航栏
         
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
     }else if(velocity == 0){
         //停止拖拽
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
     }
 }
 
@@ -448,9 +448,7 @@
 //UICollectionView被选中时调用的方法
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    ShopCollectionViewCell * cell = [[ShopCollectionViewCell alloc]init];
-    
-    
+   
     
     
     if (indexPath.section == 4) {

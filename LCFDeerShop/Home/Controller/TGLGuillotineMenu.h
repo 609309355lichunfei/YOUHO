@@ -3,7 +3,7 @@
 //  GuillotineMenuSample
 //
 //  Created by Tigielle on 02/12/15.
-//  Copyright © 2015 Matteo Tagliafico. All rights reserved.
+//  Copyright © 2016 李春菲 Tagliafico. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

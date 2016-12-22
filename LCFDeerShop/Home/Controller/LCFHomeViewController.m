@@ -269,7 +269,7 @@
     TGLTableViewController  *vc01   = [[TGLTableViewController alloc] init];
     GirlViewController      * vc02  =  [[GirlViewController alloc] init];
     NSArray *vcArray        = [[NSArray alloc] initWithObjects:vc01,vc02, nil];
-    NSArray *titlesArray  = [[NSArray alloc] initWithObjects:@"男装", @"女装", @"童装", @"佩戴",@"其他",nil];
+    NSArray *titlesArray  = [[NSArray alloc] initWithObjects:@"男装", @"女装",nil];
     NSArray *imagesArray    = [[NSArray alloc] initWithObjects:@"ic_profile", @"ic_feed", @"ic_activity", @"ic_settings",@"ic_activity" ,nil];
     
     TGLGuillotineMenu *menuVC = [[TGLGuillotineMenu alloc] initWithViewControllers:vcArray MenuTitles:titlesArray andImagesTitles:imagesArray];

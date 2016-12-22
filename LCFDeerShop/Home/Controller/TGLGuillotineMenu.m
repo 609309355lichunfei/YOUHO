@@ -3,7 +3,7 @@
 //  GuillotineMenuSample
 //
 //  Created by Tigielle on 02/12/15.
-//  Copyright © 2015 Matteo Tagliafico. All rights reserved.
+//  Copyright © 2016 李春菲 Tagliafico. All rights reserved.
 //
 
 #import "TGLGuillotineMenu.h"
@@ -311,7 +311,7 @@
 
 //设置个数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 2;
 }
 
 
