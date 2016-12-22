@@ -1,0 +1,44 @@
+//
+//  PrefixHeader.pch
+//  LCFDeerShop
+//
+//  Created by 李春菲 on 16/11/18.
+//  Copyright © 2016年 lichunfei. All rights reserved.
+//
+
+#ifndef PrefixHeader_h
+#define PrefixHeader_h
+
+#define WebURL @"http://huaban.com/pins/953214451/"
+
+#import "UIImageView+WebCache.h"
+#import "HMJUtil.h"
+#import "Masonry.h"
+#import "UIFont+Fonts.h"
+#import "UIView+SetRect.h"
+#import "UIColor+WLZ_HexRGB.h"
+#import "ReactiveCocoa.h"
+#import "MJExtension.h"
+#import "NetWorkParamMacros.h"
+#import "UIColor+MYColor.h"
+#import "MBManager.h"
+
+//公参封装
+#import <ZZNetwork/ZZNetwork.h>
+//当前屏幕宽高
+#define LCF_SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define LCF_SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+//设置颜色
+#define YM_RGBA(r,g,b,a)           [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:a]
+
+#define HexRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+//字号
+#define XNFont(font) [UIFont systemFontOfSize:(font)]
+//__weake
+#define WEAKSELF(weakSelf)          __weak __typeof(&*self)weakSelf = self;
+
+#define WEAKSELF(weakSelf)          __weak __typeof(&*self)weakSelf = self;
+
+#endif /* PrefixHeader_h */
