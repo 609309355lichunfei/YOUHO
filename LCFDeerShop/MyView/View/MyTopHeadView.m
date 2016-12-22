@@ -33,7 +33,7 @@
         make.centerY.mas_equalTo(self);
         make.centerX.mas_equalTo(self);
         make.width.mas_equalTo(LCF_SCREEN_WIDTH );
-        make.height.mas_equalTo(@(250));
+        make.height.mas_equalTo(self.bounds.size.height);
     }];
     
     
@@ -44,7 +44,7 @@
     if (!_topHead_image) {
         
         _topHead_image = [[UIImageView alloc]init];
-        [_topHead_image setImage:[UIImage imageNamed:@"patternNav"]];
+        [_topHead_image setImage:[UIImage imageNamed:@"head_image"]];
         
     }
     return _topHead_image;

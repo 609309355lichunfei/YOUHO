@@ -186,7 +186,7 @@
         _tophead = [[MyTopHeadView alloc]init];
       
         _tophead.userInteractionEnabled = YES;
-        _tophead.frame = CGRectMake(0, 0, LCF_SCREEN_WIDTH, 200);
+        _tophead.frame = CGRectMake(0, -20, LCF_SCREEN_WIDTH, 240);
     }
     
     return _tophead;
@@ -410,7 +410,7 @@
         return (CGSize){0,0};
     }
     //返回头像高度
-    return (CGSize){LCF_SCREEN_WIDTH,250};
+    return (CGSize){LCF_SCREEN_WIDTH,220};
 }
 //设置每个item大小
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
