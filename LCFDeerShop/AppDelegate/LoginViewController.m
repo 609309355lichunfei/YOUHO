@@ -57,7 +57,7 @@
     
     if (!_backgroundImage) {
         _backgroundImage = [[UIImageView alloc] init];
-        [_backgroundImage setImage:[UIImage imageNamed:@"WechatIMG576"]];
+        [_backgroundImage setImage:[UIImage imageNamed:@"01d70c585a579ca801219c775de526.jpg@900w_1l_2o_100sh"]];
     }
     _backgroundImage.frame = CGRectMake(0, 0, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT);
     return _backgroundImage;
@@ -108,7 +108,7 @@
     //欢迎 title
     UILabel * title = [[UILabel alloc] init];
     title.frame = CGRectMake(LCF_SCREEN_WIDTH / 2.5 , 150, 100, 25);
-    title.text = @"Welcome";
+    title.text = @"登陆";
     title.textAlignment = NSTextAlignmentCenter;
     title.textColor = [UIColor whiteColor];
      title.font = [UIFont AmericanTypewriterBoldFontSize:15.];
@@ -173,7 +173,7 @@
     UIButton * loginBt = [UIButton buttonWithType:UIButtonTypeCustom];
     loginBt.alpha = .45;
     loginBt.layer.cornerRadius = 30;
-    loginBt.backgroundColor = [UIColor whiteColor];
+    loginBt.backgroundColor = [UIColor blackColor];
     [loginBt addTarget:self action:@selector(actionClicedLoginBt:) forControlEvents:UIControlEventTouchUpInside];
     loginBt.titleLabel.textAlignment = NSTextAlignmentCenter;
 
@@ -190,9 +190,9 @@
     
     
     UILabel * label_Bt = [[UILabel alloc]init];
-    label_Bt.text = @"SING IN";
+    label_Bt.text = @"登  陆";
     label_Bt.textAlignment = NSTextAlignmentCenter;
-    label_Bt.textColor = [UIColor blackColor];
+    label_Bt.textColor = [UIColor whiteColor];
     [loginBt addSubview:label_Bt];
     [label_Bt mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(loginBt);

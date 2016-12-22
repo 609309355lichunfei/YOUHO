@@ -30,7 +30,7 @@
     
     if (!_backgroundImage) {
         _backgroundImage = [[UIImageView alloc] init];
-        [_backgroundImage setImage:[UIImage imageNamed:@"WechatIMG576"]];
+        [_backgroundImage setImage:[UIImage imageNamed:@"011e07585a579ea801219c77d12349.jpg@900w_1l_2o_100sh"]];
     }
     _backgroundImage.frame = CGRectMake(0, 0, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT);
     return _backgroundImage;

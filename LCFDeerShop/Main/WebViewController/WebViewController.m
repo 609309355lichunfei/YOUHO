@@ -61,7 +61,12 @@
 //    self.requestUrl = [NSURL URLWithString:WebURL];
 //    [self.webview loadRequest:[NSURLRequest requestWithURL:self.requestUrl]];
   
-    
+        UIButton * lefItemBt = [UIButton buttonWithType:UIButtonTypeCustom];
+        lefItemBt.frame = CGRectMake(0, 0, 20, 20);
+        [lefItemBt addTarget:self action:@selector(actionlefItemBt) forControlEvents:UIControlEventTouchUpInside];
+        [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateNormal];
+        [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateHighlighted];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:lefItemBt];
 
     // 进度条监视
     NSLog(@"%f", self.webView.estimatedProgress); // 防止苹果改变属性名时，项目不报错。故这里先打印。
@@ -78,6 +83,11 @@
     self.webView = webview;
 
 }
+-(void)actionlefItemBt {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     // 进度条

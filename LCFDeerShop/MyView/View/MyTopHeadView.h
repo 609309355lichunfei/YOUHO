@@ -10,8 +10,15 @@
 
 @interface MyTopHeadView : UIView
 @property       (retain,nonatomic)      UIImageView *   topHead_image;
+
 @property       (retain,nonatomic)      UIButton    *   heard_icon;
 
+@property       (retain,nonatomic)      UIView      *   headGuidance;
 
+@property       (retain,nonatomic)      UILabel     *   collect_shop;
+
+@property       (retain,nonatomic)      UILabel     *   collect_Brand;
+
+@property       (retain,nonatomic)      UILabel     *   collect_Records;
 
 @end

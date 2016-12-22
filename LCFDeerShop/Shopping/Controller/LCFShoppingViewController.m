@@ -48,6 +48,7 @@
 -(void)actionClickedShopCart:(UIButton *)sender{
     
     ShopDetailsViewController * DetailsVc = [[ShopDetailsViewController alloc] init];
+    DetailsVc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:DetailsVc animated:YES];
 }
 
