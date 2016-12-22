@@ -13,7 +13,7 @@
 #import "LCFMyViewController.h"
 #import "LCFNavigationController.h"
 #import "LCFTaBarViewController.h"
-
+//1
 
 @interface AppDelegate ()
 
@@ -26,6 +26,9 @@
     // Override point for customization after application launch.
     [self showMainController];
   
+    
+    
+    
     
     return YES;
 }
