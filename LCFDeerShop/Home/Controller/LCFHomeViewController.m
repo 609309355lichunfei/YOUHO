@@ -22,7 +22,9 @@
 #import "StrollCollectionViewCell.h"
 
 #import "RefreshHeader.h"
-@interface LCFHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,LCFBannerViewDelegate,TGLGuillotineMenuDelegate,UICollectionViewDelegateFlowLayout>{
+#import "LXDScanCodeController.h"
+#import <AVFoundation/AVFoundation.h>
+@interface LCFHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,LCFBannerViewDelegate,TGLGuillotineMenuDelegate,UICollectionViewDelegateFlowLayout,LXDScanCodeControllerDelegate>{
  NSMutableArray  *   dataSoureArray;
 }
 @property   (nonatomic,retain)  UIScrollView    *   scrollView;//背景滑动
@@ -34,6 +36,8 @@
 @property   (nonatomic,retain)  UICollectionView  *   collectionview;
 
 @property   (nonatomic ,retain) NSMutableArray    *   DataArray; //图片数据源
+
+
 
 @end
 
@@ -138,9 +142,25 @@
 //右边item点击
 -(void)actionrigt{
     
- 
-    
+//    [self.scanView removeFromSuperview];
+    LXDScanCodeController * scanCodeController = [LXDScanCodeController scanCodeController];
+    scanCodeController.scanDelegate = self;
+    [self.navigationController pushViewController: scanCodeController animated: YES];
 }
+#pragma mark - LXDScanCodeControllerDelegate
+- (void)scanCodeController:(LXDScanCodeController *)scanCodeController codeInfo:(NSString *)codeInfo
+{
+    NSLog(@"%@",codeInfo);
+    NSURL * url = [NSURL URLWithString: codeInfo];
+    if ([[UIApplication sharedApplication] canOpenURL: url]) {
+//        [[UIApplication sharedApplication] openURL: url];
+        
+    } else {
+     UIAlertView * alertView = [[UIAlertView alloc] initWithTitle: @"警告" message: [NSString stringWithFormat: @"%@:%@", @"无法解析的二维码", codeInfo] delegate: nil cancelButtonTitle: @"确定" otherButtonTitles: nil];
+        [alertView show];
+    }
+}
+
 //左边item 按钮
 -(void)actionlefItemBt{
    
@@ -410,7 +430,6 @@
 {
     return YES;
 }
-
 
 
 - (void)didReceiveMemoryWarning {
