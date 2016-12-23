@@ -87,7 +87,7 @@
     RefreshHeader *header = [RefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     
     // 隐藏时间
-    header.lastUpdatedTimeLabel.hidden = YES;
+    header.lastUpdatedTimeLabel.hidden = NO;
     
     // 隐藏状态
     header.stateLabel.hidden = YES;

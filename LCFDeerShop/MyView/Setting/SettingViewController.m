@@ -21,6 +21,8 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"设置";
     self.view.backgroundColor = YM_RGBA(240., 240., 240, 1.);
+    self.navigationController.navigationBar.hidden = NO;
+
     [self.view addSubview:self.tableview];
     
 }
