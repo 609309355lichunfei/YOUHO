@@ -23,6 +23,8 @@
     self.navigationItem.title = @"设置";
     self.navigationController.navigationBarHidden = NO;
     self.view.backgroundColor = YM_RGBA(240., 240., 240, 1.);
+    self.navigationController.navigationBar.hidden = NO;
+
     [self.view addSubview:self.tableview];
       
         UIButton * lefItemBt = [UIButton buttonWithType:UIButtonTypeCustom];
