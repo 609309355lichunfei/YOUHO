@@ -44,15 +44,16 @@
 @implementation LoginViewController
 
 
-//隐藏Navigation
--(void)viewWillAppear:(BOOL)animated{
-    
-    [super viewWillAppear:animated];
-    if (!self.navigationController.navigationBar.hidden) {
-        self.navigationController.navigationBar.hidden = YES;
-    }
-    
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
 -(UIImageView *)backgroundImage{
     
     if (!_backgroundImage) {
@@ -171,7 +172,7 @@
     }
     
     UIButton * loginBt = [UIButton buttonWithType:UIButtonTypeCustom];
-    loginBt.alpha = .45;
+    loginBt.alpha = .85;
     loginBt.layer.cornerRadius = 30;
     loginBt.backgroundColor = [UIColor blackColor];
     [loginBt addTarget:self action:@selector(actionClicedLoginBt:) forControlEvents:UIControlEventTouchUpInside];

@@ -129,11 +129,18 @@
         _heard_icon = [UIButton buttonWithType:UIButtonTypeCustom];
         _heard_icon.layer.cornerRadius = 50;
         _heard_icon.clipsToBounds = TRUE;
+        [_heard_icon addTarget:self action:@selector(Clickheard_icon:) forControlEvents:UIControlEventTouchUpInside];
         [_heard_icon setImage:[UIImage imageNamed:@"heard"] forState:UIControlStateNormal];
     }
      return  _heard_icon;
     
 }
 
+- (void)Clickheard_icon:(UIButton *)sender{
+    
+    if ([self.delegation  performSelector:@selector(setHeardShareManagerWithPush:) withObject:sender]) {
+        [self.delegation performSelector:@selector(setHeardShareManagerWithPush:) withObject:sender];
+    }
+}
 
 @end

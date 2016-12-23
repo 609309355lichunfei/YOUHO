@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MyTopHeadViewDelegation <NSObject>
+
+@optional
+
+- (void)setHeardShareManagerWithPush:(UIButton *)sender;
+
+@end
 @interface MyTopHeadView : UIView
 @property       (retain,nonatomic)      UIImageView *   topHead_image;
 
@@ -20,5 +27,7 @@
 @property       (retain,nonatomic)      UILabel     *   collect_Brand;
 
 @property       (retain,nonatomic)      UILabel     *   collect_Records;
+
+@property       (nonatomic ,weak)       id <MyTopHeadViewDelegation>delegation;
 
 @end

@@ -19,16 +19,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     self.navigationItem.title = @"设置";
+    self.navigationController.navigationBarHidden = NO;
     self.view.backgroundColor = YM_RGBA(240., 240., 240, 1.);
     [self.view addSubview:self.tableview];
+      
+        UIButton * lefItemBt = [UIButton buttonWithType:UIButtonTypeCustom];
+        lefItemBt.frame = CGRectMake(0, 0, 20, 20);
+        [lefItemBt addTarget:self action:@selector(actionlefItemBt) forControlEvents:UIControlEventTouchUpInside];
+        [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateNormal];
+        [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateHighlighted];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:lefItemBt];
+
     
 }
+-(void)actionlefItemBt {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 - (UITableView *)tableview {
     
     if (!_tableview) {
-        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(5, 0, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT - 44) style:UITableViewStyleGrouped];
+        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 5, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT - 44) style:UITableViewStyleGrouped];
         _tableview.delegate = self;
         _tableview.dataSource = self;
         _tableview.rowHeight = 44;
@@ -47,7 +62,7 @@
     if (section == 0) {
         return 3;
     }else if (section == 1){
-        return 3;
+        return 4;
     }
     return 1;
     
@@ -86,6 +101,8 @@
         }
         if (indexPath.row == 2) {
             cell.textLabel.text = @"推荐好友";
+        }if (indexPath.row == 3) {
+            cell.textLabel.text = @"交易进度";
         }
         
     }else if (indexPath.section == 2){

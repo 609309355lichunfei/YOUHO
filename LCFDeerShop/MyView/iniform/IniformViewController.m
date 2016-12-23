@@ -16,8 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIButton * lefItemBt = [UIButton buttonWithType:UIButtonTypeCustom];
+    lefItemBt.frame = CGRectMake(0, 0, 20, 20);
+    [lefItemBt addTarget:self action:@selector(actionlefItemBt) forControlEvents:UIControlEventTouchUpInside];
+    [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateNormal];
+    [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateHighlighted];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:lefItemBt];
     self.title = @"通知";
-    self.view.backgroundColor = YMBGCOLOR;
+    self.view.backgroundColor = [UIColor whiteColor];
     
     UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 84, LCF_SCREEN_HEIGHT, 140)];
     bgView.backgroundColor = [UIColor whiteColor];
@@ -55,11 +61,11 @@
     [bgView addSubview:label4];
     
     
-    UILabel *label5 = [[UILabel alloc]initWithFrame:CGRectMake(30, 110, LCF_SCREEN_HEIGHT - 60, 20)];
-    label5.font = XNFont(13.);
-    label5.textColor = YM_RGBA(16., 16., 16., 1.);
-    label5.text = @"去看看进度";
-    [bgView addSubview:label5];
+//    UILabel *label5 = [[UILabel alloc]initWithFrame:CGRectMake(30, 110, LCF_SCREEN_HEIGHT - 60, 20)];
+//    label5.font = XNFont(13.);
+//    label5.textColor = YM_RGBA(16., 16., 16., 1.);
+//    label5.text = @"去看看进度";
+//    [bgView addSubview:label5];
     
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -69,21 +75,15 @@
     [bgView addSubview:button];
 }
 
+-(void)actionlefItemBt {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

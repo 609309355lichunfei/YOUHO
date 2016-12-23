@@ -22,7 +22,7 @@
 #import "ShopCollectionViewCell.h"
 
 #import "ShopDetailsViewController.h"
-@interface LCFMyViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate>
+@interface LCFMyViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,MyTopHeadViewDelegation>
 
 /**
  标记跳转登陆页面
@@ -44,13 +44,14 @@
 
 @implementation LCFMyViewController
 
-////隐藏navigation
--(void)viewWillAppear:(BOOL)animated{
-    
-    [super viewWillAppear:animated];
-    if (!self.navigationController.navigationBar.hidden) {
-        self.navigationController.navigationBar.hidden = YES;
-    }
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+        [super viewWillAppear:animated];
+        [self.navigationController setNavigationBarHidden:YES];
 }
 //滑动显示导航栏
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -105,6 +106,11 @@
     return _collectionview;
 }
 
+
+- (void)setHeardShareManagerWithPush:(UIButton *)sender {
+    
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -184,7 +190,7 @@
     
     if (!_tophead) {
         _tophead = [[MyTopHeadView alloc]init];
-      
+        _tophead.delegation = self;
         _tophead.userInteractionEnabled = YES;
         _tophead.frame = CGRectMake(0, -20, LCF_SCREEN_WIDTH, 240);
     }

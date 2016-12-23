@@ -30,11 +30,11 @@
 //    }
 //    [super pushViewController:viewController animated:YES];
 //}
-
--(void)back{
-    
-    [self popViewControllerAnimated:YES];
-}
+//
+//-(void)back{
+//    
+//    [self popViewControllerAnimated:YES];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

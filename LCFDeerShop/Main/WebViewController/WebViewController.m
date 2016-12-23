@@ -74,7 +74,7 @@
     [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
 //    self.navigationItem.title = @"关于谨防诈骗";
 //    WKWebView * webview = [[WKWebView alloc] initWithFrame:self.view.bounds];
-      WKWebView * webview = [[WKWebView alloc] initWithFrame:CGRectMake(0, -60, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT)];
+      WKWebView * webview = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT)];
     webview.navigationDelegate = self;
     webview.scrollView.delegate = self;
     [self.view addSubview:webview];

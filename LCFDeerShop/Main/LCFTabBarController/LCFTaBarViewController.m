@@ -7,8 +7,7 @@
 //
 
 #import "LCFTaBarViewController.h"
-
-@interface LCFTaBarViewController ()
+@interface LCFTaBarViewController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -26,7 +25,7 @@ static LCFTaBarViewController * Tabar;
     return  Tabar;
     
 }
-#warning 比较不懂的方法
+
 -(void)setSelectedIndex:(NSUInteger)selectedIndex{
     
     //判断是否相等,不同才设置
@@ -44,14 +43,28 @@ static LCFTaBarViewController * Tabar;
     if (tabIndex != self.selectedIndex) {
         //设置最近一次变更
         _lastSelecteIndex = self.selectedIndex;
-       NSLog(@"2 OLD:%zi , NEW:%zi",self.lastSelecteIndex,tabIndex);
+//       NSLog(@"2 OLD:%zi , NEW:%zi",self.lastSelecteIndex,tabIndex);
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    
 }
+//- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+//{
+//    UINavigationController *navigationController = (UINavigationController *)viewController;
+//    
+//    if ([navigationController.topViewController isKindOfClass:[LCFMyViewController class]])
+//    {
+//        LCFMyViewController *mineVc = (LCFMyViewController *)navigationController.topViewController;
+//        // 点击TabBarItem进入"我的"控制器 会关闭导航栏消失的动画
+//        mineVc.closeAnimating = YES;
+//    }
+//    return YES;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
