@@ -14,5 +14,5 @@
 //签名秘钥
 #define kSecret @"4349e762344531a8be29b8af328799f6"
 
-
+#define serverUrl @"http://192.168.1.1:8080/jiekou"
 #endif /* NetWorkParamMacros_h */

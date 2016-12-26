@@ -12,4 +12,6 @@
 
 
 + (void)registerWithDic:(NSDictionary *)dic;
+//获取分类列表
++ (void)GetWithShareManagerCategoryTitleImage:(YMFetchResultCompletionHandler)completionHandler;
 @end

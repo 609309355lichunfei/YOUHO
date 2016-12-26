@@ -25,7 +25,7 @@
     self.title = @"通知";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 84, LCF_SCREEN_HEIGHT, 140)];
+    UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, LCF_SCREEN_HEIGHT, 100)];
     bgView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:bgView];
     

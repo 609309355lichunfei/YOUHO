@@ -22,7 +22,6 @@
 		B315345C1DFFD36500A3FD07 /* UIView+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B315345A1DFFD36500A3FD07 /* UIView+CCExtension.m */; };
 		B334335C1E02883900E48B66 /* MyCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B334335B1E02883900E48B66 /* MyCollectionCell.m */; };
 		B3375B911DF92E5D000050F4 /* YMHttpsEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = B3375B901DF92E5D000050F4 /* YMHttpsEngine.m */; };
-		B3375B941DF92E99000050F4 /* YYDeerShopRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B3375B931DF92E99000050F4 /* YYDeerShopRequest.m */; };
 		B33856A21DED177600C2860E /* MyTopHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = B33856A11DED177600C2860E /* MyTopHeadView.m */; };
 		B345077D1DF543B5008E3630 /* JSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B345077C1DF543B5008E3630 /* JSDropDownMenu.m */; };
 		B34507801DF5558A008E3630 /* UIColor+WLZ_HexRGB.m in Sources */ = {isa = PBXBuildFile; fileRef = B345077F1DF5558A008E3630 /* UIColor+WLZ_HexRGB.m */; };
@@ -83,11 +82,15 @@
 		B3B4C3321DDECB72002D43CF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B4C32F1DDECB72002D43CF /* ViewController.m */; };
 		B3B4C3361DDECC55002D43CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B4C3341DDECC55002D43CF /* LaunchScreen.storyboard */; };
 		B3B4C3371DDECC55002D43CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B4C3351DDECC55002D43CF /* Main.storyboard */; };
+		B3C1E73A1E11555800EB9D36 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1E7371E11555800EB9D36 /* CategoryCollectionViewCell.m */; };
+		B3C1E73B1E11555800EB9D36 /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1E7391E11555800EB9D36 /* CategoryTableViewCell.m */; };
+		B3C1E73E1E11558500EB9D36 /* CategoryMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1E73D1E11558500EB9D36 /* CategoryMenuViewController.m */; };
+		B3C1E7411E1155E800EB9D36 /* LCFCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1E7401E1155E800EB9D36 /* LCFCategoryViewController.m */; };
+		B3C1E7441E11564F00EB9D36 /* YYDeerShopRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1E7431E11564F00EB9D36 /* YYDeerShopRequest.m */; };
 		B3C713AF1DE8339700747345 /* ShopDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C713AE1DE8339700747345 /* ShopDetailsViewController.m */; };
 		B3C713B21DE8368500747345 /* shopDetailsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C713B11DE8368500747345 /* shopDetailsHeadView.m */; };
 		B3E1B5871DDED1A400E55F5A /* LCFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E1B5861DDED1A400E55F5A /* LCFViewController.m */; };
 		B3E1B58A1DDED1C800E55F5A /* LCFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E1B5891DDED1C800E55F5A /* LCFHomeViewController.m */; };
-		B3E1B58D1DDED1E400E55F5A /* LCFCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E1B58C1DDED1E400E55F5A /* LCFCategoryViewController.m */; };
 		B3E1B5901DDED1FA00E55F5A /* LCFShoppingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E1B58F1DDED1FA00E55F5A /* LCFShoppingViewController.m */; };
 		B3E1B5931DDED21300E55F5A /* LCFMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E1B5921DDED21300E55F5A /* LCFMyViewController.m */; };
 		B3E1B5971DDED42200E55F5A /* LCFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E1B5961DDED42200E55F5A /* LCFNavigationController.m */; };
@@ -158,8 +161,6 @@
 		B334335B1E02883900E48B66 /* MyCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionCell.m; sourceTree = "<group>"; };
 		B3375B8F1DF92E5D000050F4 /* YMHttpsEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHttpsEngine.h; sourceTree = "<group>"; };
 		B3375B901DF92E5D000050F4 /* YMHttpsEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHttpsEngine.m; sourceTree = "<group>"; };
-		B3375B921DF92E99000050F4 /* YYDeerShopRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDeerShopRequest.h; sourceTree = "<group>"; };
-		B3375B931DF92E99000050F4 /* YYDeerShopRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDeerShopRequest.m; sourceTree = "<group>"; };
 		B33856A01DED177600C2860E /* MyTopHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTopHeadView.h; sourceTree = "<group>"; };
 		B33856A11DED177600C2860E /* MyTopHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTopHeadView.m; sourceTree = "<group>"; };
 		B345077B1DF543B5008E3630 /* JSDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDropDownMenu.h; sourceTree = "<group>"; };
@@ -282,6 +283,16 @@
 		B3B4C32F1DDECB72002D43CF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B3B4C3341DDECC55002D43CF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3B4C3351DDECC55002D43CF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B3C1E7361E11555800EB9D36 /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewCell.h; sourceTree = "<group>"; };
+		B3C1E7371E11555800EB9D36 /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
+		B3C1E7381E11555800EB9D36 /* CategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewCell.h; sourceTree = "<group>"; };
+		B3C1E7391E11555800EB9D36 /* CategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewCell.m; sourceTree = "<group>"; };
+		B3C1E73C1E11558500EB9D36 /* CategoryMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryMenuViewController.h; sourceTree = "<group>"; };
+		B3C1E73D1E11558500EB9D36 /* CategoryMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryMenuViewController.m; sourceTree = "<group>"; };
+		B3C1E73F1E1155E800EB9D36 /* LCFCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCFCategoryViewController.h; sourceTree = "<group>"; };
+		B3C1E7401E1155E800EB9D36 /* LCFCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCFCategoryViewController.m; sourceTree = "<group>"; };
+		B3C1E7421E11564F00EB9D36 /* YYDeerShopRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDeerShopRequest.h; sourceTree = "<group>"; };
+		B3C1E7431E11564F00EB9D36 /* YYDeerShopRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDeerShopRequest.m; sourceTree = "<group>"; };
 		B3C713AD1DE8339700747345 /* ShopDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopDetailsViewController.h; sourceTree = "<group>"; };
 		B3C713AE1DE8339700747345 /* ShopDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopDetailsViewController.m; sourceTree = "<group>"; };
 		B3C713B01DE8368500747345 /* shopDetailsHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shopDetailsHeadView.h; sourceTree = "<group>"; };
@@ -290,8 +301,6 @@
 		B3E1B5861DDED1A400E55F5A /* LCFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCFViewController.m; sourceTree = "<group>"; };
 		B3E1B5881DDED1C800E55F5A /* LCFHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCFHomeViewController.h; sourceTree = "<group>"; };
 		B3E1B5891DDED1C800E55F5A /* LCFHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCFHomeViewController.m; sourceTree = "<group>"; };
-		B3E1B58B1DDED1E400E55F5A /* LCFCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCFCategoryViewController.h; sourceTree = "<group>"; };
-		B3E1B58C1DDED1E400E55F5A /* LCFCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCFCategoryViewController.m; sourceTree = "<group>"; };
 		B3E1B58E1DDED1FA00E55F5A /* LCFShoppingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCFShoppingViewController.h; sourceTree = "<group>"; };
 		B3E1B58F1DDED1FA00E55F5A /* LCFShoppingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCFShoppingViewController.m; sourceTree = "<group>"; };
 		B3E1B5911DDED21300E55F5A /* LCFMyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCFMyViewController.h; sourceTree = "<group>"; };
@@ -440,8 +449,8 @@
 		B346DD5C1DE324A400ACA6A8 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				B3375B921DF92E99000050F4 /* YYDeerShopRequest.h */,
-				B3375B931DF92E99000050F4 /* YYDeerShopRequest.m */,
+				B3C1E7421E11564F00EB9D36 /* YYDeerShopRequest.h */,
+				B3C1E7431E11564F00EB9D36 /* YYDeerShopRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -880,8 +889,10 @@
 		B3E1B5771DDED09300E55F5A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B3E1B58B1DDED1E400E55F5A /* LCFCategoryViewController.h */,
-				B3E1B58C1DDED1E400E55F5A /* LCFCategoryViewController.m */,
+				B3C1E73F1E1155E800EB9D36 /* LCFCategoryViewController.h */,
+				B3C1E7401E1155E800EB9D36 /* LCFCategoryViewController.m */,
+				B3C1E73C1E11558500EB9D36 /* CategoryMenuViewController.h */,
+				B3C1E73D1E11558500EB9D36 /* CategoryMenuViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -896,6 +907,10 @@
 		B3E1B5791DDED09300E55F5A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B3C1E7361E11555800EB9D36 /* CategoryCollectionViewCell.h */,
+				B3C1E7371E11555800EB9D36 /* CategoryCollectionViewCell.m */,
+				B3C1E7381E11555800EB9D36 /* CategoryTableViewCell.h */,
+				B3C1E7391E11555800EB9D36 /* CategoryTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1233,8 +1248,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3375B941DF92E99000050F4 /* YYDeerShopRequest.m in Sources */,
 				368303D91E0CF50F00AC1C9A /* LXDScanView.m in Sources */,
+				B3C1E7441E11564F00EB9D36 /* YYDeerShopRequest.m in Sources */,
 				B315345B1DFFD36500A3FD07 /* UIBarButtonItem+Extension.m in Sources */,
 				B334335C1E02883900E48B66 /* MyCollectionCell.m in Sources */,
 				B34AABF91DE563A30053244E /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -1246,6 +1261,7 @@
 				B3E1B58A1DDED1C800E55F5A /* LCFHomeViewController.m in Sources */,
 				B39409B41E0CD24B00208FF5 /* PersonnaViewController.m in Sources */,
 				B39409FC1E10AFD200208FF5 /* ActionSheetLocalePicker.m in Sources */,
+				B3C1E7411E1155E800EB9D36 /* LCFCategoryViewController.m in Sources */,
 				B3E1B5901DDED1FA00E55F5A /* LCFShoppingViewController.m in Sources */,
 				B3982DAD1E07CB3300EE1435 /* SettingViewController.m in Sources */,
 				B345077D1DF543B5008E3630 /* JSDropDownMenu.m in Sources */,
@@ -1269,7 +1285,6 @@
 				B34AABF31DE563A30053244E /* MASConstraint.m in Sources */,
 				369AE9151E10E9760045AF53 /* SearchHistoryCell.m in Sources */,
 				B373FBE81DF79A400028C24A /* JSCartBar.m in Sources */,
-				B3E1B58D1DDED1E400E55F5A /* LCFCategoryViewController.m in Sources */,
 				B39409FB1E10AFD200208FF5 /* ActionSheetDistancePicker.m in Sources */,
 				B39409F91E10AFD200208FF5 /* ActionSheetCustomPicker.m in Sources */,
 				B3982DBA1E08E52000EE1435 /* TopViewCell.m in Sources */,
@@ -1280,6 +1295,7 @@
 				B39409F81E10AFD200208FF5 /* AbstractActionSheetPicker.m in Sources */,
 				B34AABF81DE563A30053244E /* NSArray+MASAdditions.m in Sources */,
 				B3B4C3311DDECB72002D43CF /* main.m in Sources */,
+				B3C1E73E1E11558500EB9D36 /* CategoryMenuViewController.m in Sources */,
 				B3982DB01E07DBBC00EE1435 /* ShopCollectionViewCell.m in Sources */,
 				B3E1B5931DDED21300E55F5A /* LCFMyViewController.m in Sources */,
 				B346DD601DE324EF00ACA6A8 /* CWDataModel.m in Sources */,
@@ -1312,7 +1328,9 @@
 				B34AABF71DE563A30053244E /* MASViewConstraint.m in Sources */,
 				B3C713AF1DE8339700747345 /* ShopDetailsViewController.m in Sources */,
 				368303DC1E0CF5E100AC1C9A /* LXDScanCodeController.m in Sources */,
+				B3C1E73B1E11555800EB9D36 /* CategoryTableViewCell.m in Sources */,
 				B34AABF41DE563A30053244E /* MASConstraintMaker.m in Sources */,
+				B3C1E73A1E11555800EB9D36 /* CategoryCollectionViewCell.m in Sources */,
 				B34AABFB1DE563A30053244E /* ViewController+MASAdditions.m in Sources */,
 				B3940A011E10AFD200208FF5 /* README.md in Sources */,
 				B3B4C3321DDECB72002D43CF /* ViewController.m in Sources */,

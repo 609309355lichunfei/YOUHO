@@ -7,17 +7,21 @@
 //
 
 #import "LCFCategoryViewController.h"
-#import "JSDropDownMenu.h"
-@interface LCFCategoryViewController ()<JSDropDownMenuDelegate,JSDropDownMenuDataSource>{
-    
-    NSMutableArray * _dataone;
-    NSMutableArray * _datatwo;
-    NSMutableArray * _datathree;
-    
-    NSInteger _currentDataoneIndex;
-    NSInteger _currentDataTwoIndex;
-    NSInteger _currentDataThreeIndex;
+#import "YYDeerShopRequest.h"
+#import "CategoryCollectionViewCell.h"
+#import "CategoryTableViewCell.h"
+@interface LCFCategoryViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+
+{
+    NSArray * dataArr;
+    NSArray * myData;
 }
+
+@property (nonatomic, strong) UICollectionView *rightCollectionView;
+
+@property (nonatomic ,assign) NSInteger selectedIndex;
+
+@property (nonatomic ,retain) UITableView      *tableview;
 
 @end
 
@@ -25,149 +29,164 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self topClassMenu];
     
-}
-
-- (void)topClassMenu {
-    NSArray * food = @[@"潮流女装",@"时尚羽绒",@"轻薄羽绒",@"中长款羽绒",@"针织裙",@"毛呢大衣",@"温暖棉服",@"针织衫"];
-    NSArray * travel = @[@"品牌男装",@"时尚羽绒",@"保暖棉服",@"修身夹克",@"牛仔裤",@"休闲裤",@"西裤",@"精品衬衫",@"毛呢大衣"];
+   
+    [self RequestSetDataClassification];
     
-    _dataone = [NSMutableArray arrayWithObjects:@{@"title":@"潮流女装",@"data":food},@{@"title":@"精品男装",@"data":travel}, nil];
-    _datatwo = [NSMutableArray arrayWithObjects:@"只能排序",@"离我最近",@"评价最高",@"最新发布",@"人气最高",@"价格最低",@"价格最高", nil];
-    _datathree = [NSMutableArray arrayWithObjects:@"不限人数",@"单人餐",@"双人餐",@"3~4人餐", nil];
-    JSDropDownMenu * menu = [[JSDropDownMenu alloc] initWithOrigin:CGPointMake(0, 64) andHeight:45];
-    menu.indicatorColor = YM_RGBA(175., 175., 175., 1.);
-    menu.separatorColor = YM_RGBA(210., 210., 210., 1.);
-    menu.textColor = [UIColor blackColor];
+     [self CreatRightCollectionView];
+    dataArr = [NSArray array];
+    myData = [NSArray array];
+    dataArr = [[NSArray alloc]initWithObjects:@"推荐分类", @"潮流女装",@"品牌男装",@"酒水饮料",@"家用电器",@"手机数码",@"电脑办公",@"图书",@"居家生活",@"运动户外",@"玩具乐器",@"钟表珠宝",@"食品生鲜",@"奢侈礼品",@"汽车用品",@"生活旅行",nil];
+    myData = [[NSArray alloc]initWithObjects:@"笔记本",@"休闲裤",@"牛仔裤",@"手机",@"净化器",@"火锅",@"OPPO",@"面膜",@"漱口水",@"测试",@"测试1", nil];
     
-    menu.dataSource = self;
-    menu.delegate = self;
-    [self.view addSubview:menu];
+    
     
     
 }
-
--(NSInteger)numberOfColumnsInMenu:(JSDropDownMenu *)menu{
-    
-    return 3;
-}
-
--(BOOL)displayByCollectionViewInColumn:(NSInteger)column{
-    if (column == 2) {
-        return YES;
-    }
-    return NO;
-    
-}
-
--(BOOL)haveRightTableViewInColumn:(NSInteger)column{
-    
-    if (column == 0) {
-        return YES;
-    }
-    return NO;
-}
-
--(CGFloat)widthRatioOfLeftColumn:(NSInteger)column{
-    
-    if (column == 0) {
-        return 0.3;
-    }
-    return 1;
-}
-
--(NSInteger)currentLeftSelectedRow:(NSInteger)column{
-    
-    if (column ==0) {
-        return _currentDataoneIndex;
-    }
-    if (column == 1) {
-        return _currentDataTwoIndex;
-    }
-    return 0;
-}
-
--(NSInteger)menu:(JSDropDownMenu *)menu numberOfRowsInColumn:(NSInteger)column leftOrRight:(NSInteger)leftOrRight leftRow:(NSInteger)leftRow{
-    if (column == 0) {
-        if (leftOrRight == 0) {
-            return _dataone.count;
+- (void)RequestSetDataClassification {
+    [YYDeerShopRequest GetWithShareManagerCategoryTitleImage:^(BOOL success, NSError *error, id result) {
+        if (success) {
+            NSLog(@"%@",result);
         }else{
-            NSDictionary * menuDic = [_dataone objectAtIndex:leftRow];
-            return [[menuDic objectForKey:@"data"] count];
+            
         }
-    }else if (column == 1){
-        return _datatwo.count;
-        
-    }else if (column == 2){
-        
-        return _datathree.count;
-    }
-    return 0;
-}
--(NSString *)menu:(JSDropDownMenu *)menu titleForColumn:(NSInteger)column{
+    }];
     
-    switch (column) {
+}
+
+-(void)CreatRightCollectionView
+{
+    UICollectionViewFlowLayout *flowayout = [[UICollectionViewFlowLayout alloc]init];
+    
+    flowayout.minimumInteritemSpacing = 0.f;
+    flowayout.minimumLineSpacing = 0.5f;
+    
+    _rightCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(100, 0, self.view.frame.size.width-100, self.view.frame.size.height) collectionViewLayout:flowayout];
+    /* 自使用高度*/
+    _rightCollectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    
+    [_rightCollectionView registerClass:[CategoryCollectionViewCell class] forCellWithReuseIdentifier:@"RightCollectionViewCell"];
+    
+    [_rightCollectionView setBackgroundColor:[UIColor clearColor]];
+    
+    
+    _rightCollectionView.delegate = self;
+    _rightCollectionView.dataSource = self;
+    
+    [self.view addSubview:_rightCollectionView];
+    
+    
+    UITableView * tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 100, LCF_SCREEN_HEIGHT) style:UITableViewStylePlain];
+    tableview.delegate = self;
+    tableview.dataSource = self;
+    [self.view addSubview:tableview];
+    self.tableview = tableview;
+    
+    
+    
+}
+//实现TableView的代理方法;
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    return dataArr.count;
+    
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CategoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    if (!cell)
+    {
+        cell = [[CategoryTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    cell.title_label.text = dataArr[indexPath.row];
+    
+    cell.selectionStyle = 1;//设置Cell选中效果
+    
+    return cell;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return 44;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    
+    [_rightCollectionView scrollRectToVisible:CGRectMake(0, 0, self.rightCollectionView.frame.size.width, self.rightCollectionView.frame.size.height) animated:YES];
+    
+    
+    _selectedIndex = indexPath.row;
+    
+    [_rightCollectionView reloadData];
+    
+}
+
+#pragma mark------CollectionView的代理方法
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    
+    return myData.count;
+    
+}
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    CategoryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RightCollectionViewCell" forIndexPath:indexPath];
+    //根据左边点击的indepath更新右边内容;
+    switch (_selectedIndex)
+    {
         case 0:
-            return [[_dataone[0] objectForKey:@"data"] objectAtIndex:0];
+            cell.title_image.image = [UIImage imageNamed:@"detais_image"];
             break;
         case 1:
-            return _datatwo[0];
+            cell.title_image.image = [UIImage imageNamed:@"4.jpg"];
+            break;
         case 2:
-            return _datathree[0];
-            
+            cell.title_image.image = [UIImage imageNamed:@"3.jpg"];
+            break;
+        case 3:
+            cell.title_image.image = [UIImage imageNamed:@"4.jpg"];
+            break;
         default:
-            return  nil;
             break;
     }
-}
-
--(NSString *)menu:(JSDropDownMenu *)menu titleForRowAtIndexPath:(JSIndexPath *)indexPath{
     
-    if (indexPath.column == 0) {
-        
-        if (indexPath.leftOrRight == 0) {
-            NSDictionary *menuDic = [_dataone objectAtIndex:indexPath.row];
-            return [menuDic objectForKey:@"title"];
-        }else{
-            
-            NSInteger leftRow = indexPath.leftRow;
-            NSDictionary * menuDic = [_dataone objectAtIndex:leftRow];
-            return [[menuDic objectForKey:@"data"] objectAtIndex:indexPath.row];
-        }
-    }else if (indexPath.column == 1){
-        
-        return _datatwo[indexPath.row];
-    }else{
-        
-        return _datathree[indexPath.row];
-    }
+    cell.collection_label.text = myData[indexPath.row];
     
+    return cell;
     
     
 }
 
-- (void)menu:(JSDropDownMenu *)menu didSelectRowAtIndexPath:(JSIndexPath *)indexPath {
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
     
-    if (indexPath.column == 0) {
-        
-        if(indexPath.leftOrRight==0){
-            
-            _currentDataoneIndex = indexPath.row;
-            
-            return;
-        }
-        
-    } else if(indexPath.column == 1){
-        
-        _currentDataTwoIndex = indexPath.row;
-        
-    } else{
-        
-        _currentDataThreeIndex = indexPath.row;
-    }
+    return UIEdgeInsetsMake(0, 5, 0, 10);
+    
+}
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(100, 120);
+    
+    
 }
 
+//竖向间距
+-(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    
+    return 3.f;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
