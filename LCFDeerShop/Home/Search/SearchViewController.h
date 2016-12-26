@@ -9,5 +9,6 @@
 #import "LCFViewController.h"
 
 @interface SearchViewController : LCFViewController
+@property (nonatomic,strong) UISearchBar *searchBar;
 
 @end

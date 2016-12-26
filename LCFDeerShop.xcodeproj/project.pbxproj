@@ -11,6 +11,8 @@
 		364ED6EE1E0BCC16003AF69C /* RefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 364ED6ED1E0BCC16003AF69C /* RefreshHeader.m */; };
 		368303D91E0CF50F00AC1C9A /* LXDScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 368303D81E0CF50F00AC1C9A /* LXDScanView.m */; };
 		368303DC1E0CF5E100AC1C9A /* LXDScanCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368303DB1E0CF5E100AC1C9A /* LXDScanCodeController.m */; };
+		369AE9151E10E9760045AF53 /* SearchHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 369AE9141E10E9760045AF53 /* SearchHistoryCell.m */; };
+		369AE9191E10EB8F0045AF53 /* FMDBDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 369AE9181E10EB8F0045AF53 /* FMDBDataBase.m */; };
 		B3011CF21E0A11DA008C8139 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3011CF11E0A11DA008C8139 /* WebViewController.m */; };
 		B3011CF61E0A1D53008C8139 /* MBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3011CF51E0A1D53008C8139 /* MBManager.m */; };
 		B315344E1DFF91B500A3FD07 /* ZZNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B315344D1DFF91B500A3FD07 /* ZZNetwork.framework */; };
@@ -132,6 +134,10 @@
 		368303D81E0CF50F00AC1C9A /* LXDScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXDScanView.m; sourceTree = "<group>"; };
 		368303DA1E0CF5E100AC1C9A /* LXDScanCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXDScanCodeController.h; sourceTree = "<group>"; };
 		368303DB1E0CF5E100AC1C9A /* LXDScanCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXDScanCodeController.m; sourceTree = "<group>"; };
+		369AE9131E10E9760045AF53 /* SearchHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchHistoryCell.h; sourceTree = "<group>"; };
+		369AE9141E10E9760045AF53 /* SearchHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchHistoryCell.m; sourceTree = "<group>"; };
+		369AE9171E10EB8F0045AF53 /* FMDBDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBDataBase.h; sourceTree = "<group>"; };
+		369AE9181E10EB8F0045AF53 /* FMDBDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBDataBase.m; sourceTree = "<group>"; };
 		6EB562788F98EAD0ABA5D3A9 /* Pods-LCFDeerShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCFDeerShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LCFDeerShop/Pods-LCFDeerShop.debug.xcconfig"; sourceTree = "<group>"; };
 		8231C46E226DD73C2DB26F1B /* libPods-LCFDeerShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCFDeerShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3011CF01E0A11DA008C8139 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -357,6 +363,15 @@
 				368303D81E0CF50F00AC1C9A /* LXDScanView.m */,
 			);
 			path = ScanQRCode;
+			sourceTree = "<group>";
+		};
+		369AE9161E10EB810045AF53 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				369AE9171E10EB8F0045AF53 /* FMDBDataBase.h */,
+				369AE9181E10EB8F0045AF53 /* FMDBDataBase.m */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		3A42431D9E0BBCB7CA32D191 /* Pods */ = {
@@ -646,6 +661,7 @@
 		B3B4C3381DDECD4D002D43CF /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				369AE9161E10EB810045AF53 /* Database */,
 				B3011CEF1E0A11B3008C8139 /* WebViewController */,
 				B3E1B56C1DDECE4100E55F5A /* LCFTabBarController */,
 				B3E1B56B1DDECE0000E55F5A /* LCFNavigationController */,
@@ -1014,6 +1030,8 @@
 		B3FC56941E091ED000AD8BD6 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				369AE9131E10E9760045AF53 /* SearchHistoryCell.h */,
+				369AE9141E10E9760045AF53 /* SearchHistoryCell.m */,
 				B3FC56951E091ED000AD8BD6 /* TableViewCell.h */,
 				B3FC56961E091ED000AD8BD6 /* TableViewCell.m */,
 				B3FC56971E091ED000AD8BD6 /* TableViewCell.xib */,
@@ -1249,6 +1267,7 @@
 				B346DD471DE2A5DC00ACA6A8 /* LCFHomeCell.m in Sources */,
 				B346DD571DE31A4700ACA6A8 /* UIImage+SearchHeight.m in Sources */,
 				B34AABF31DE563A30053244E /* MASConstraint.m in Sources */,
+				369AE9151E10E9760045AF53 /* SearchHistoryCell.m in Sources */,
 				B373FBE81DF79A400028C24A /* JSCartBar.m in Sources */,
 				B3E1B58D1DDED1E400E55F5A /* LCFCategoryViewController.m in Sources */,
 				B39409FB1E10AFD200208FF5 /* ActionSheetDistancePicker.m in Sources */,
@@ -1297,6 +1316,7 @@
 				B34AABFB1DE563A30053244E /* ViewController+MASAdditions.m in Sources */,
 				B3940A011E10AFD200208FF5 /* README.md in Sources */,
 				B3B4C3321DDECB72002D43CF /* ViewController.m in Sources */,
+				369AE9191E10EB8F0045AF53 /* FMDBDataBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

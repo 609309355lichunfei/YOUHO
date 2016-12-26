@@ -22,13 +22,13 @@
 #import "NetWorkParamMacros.h"
 #import "UIColor+MYColor.h"
 #import "MBManager.h"
+#import "FMDBDataBase.h"
 
 //公参封装
 #import <ZZNetwork/ZZNetwork.h>
 //当前屏幕宽高
 #define LCF_SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define LCF_SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
-
 //设置颜色
 #define YM_RGBA(r,g,b,a)           [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:a]
 
@@ -37,8 +37,6 @@
 //字号
 #define XNFont(font) [UIFont systemFontOfSize:(font)]
 //__weake
-#define WEAKSELF(weakSelf)          __weak __typeof(&*self)weakSelf = self;
-
 #define WEAKSELF(weakSelf)          __weak __typeof(&*self)weakSelf = self;
 
 #endif /* PrefixHeader_h */

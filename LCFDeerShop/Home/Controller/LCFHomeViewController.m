@@ -24,7 +24,7 @@
 #import "RefreshHeader.h"
 #import "LXDScanCodeController.h"
 #import <AVFoundation/AVFoundation.h>
-@interface LCFHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,LCFBannerViewDelegate,TGLGuillotineMenuDelegate,UICollectionViewDelegateFlowLayout,LXDScanCodeControllerDelegate>{
+@interface LCFHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,LCFBannerViewDelegate,TGLGuillotineMenuDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,LXDScanCodeControllerDelegate>{
  NSMutableArray  *   dataSoureArray;
 }
 @property   (nonatomic,retain)  UIScrollView    *   scrollView;//背景滑动
@@ -63,7 +63,10 @@
     self.navigationItem.titleView = search;
     WEAKSELF(weakSelf);
     search.searchBarShouldBeginEditingBlock = ^{
+
         SearchViewController *searchCon = [[SearchViewController alloc] init];
+        [search resignFirstResponder];
+        searchCon.hidesBottomBarWhenPushed = YES;
         [weakSelf.navigationController pushViewController:searchCon animated:YES];
         
     };
@@ -74,6 +77,7 @@
     UIScrollView * scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT - 44)];
     scrollview.backgroundColor = [UIColor whiteColor];
     scrollview.showsVerticalScrollIndicator = NO;
+    scrollview.delegate = self;
     [self.view addSubview:scrollview];
     self.scrollView = scrollview;
     
@@ -150,7 +154,6 @@
 #pragma mark - LXDScanCodeControllerDelegate
 - (void)scanCodeController:(LXDScanCodeController *)scanCodeController codeInfo:(NSString *)codeInfo
 {
-    NSLog(@"%@",codeInfo);
     NSURL * url = [NSURL URLWithString: codeInfo];
     if ([[UIApplication sharedApplication] canOpenURL: url]) {
 //        [[UIApplication sharedApplication] openURL: url];
@@ -161,6 +164,12 @@
     }
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    CGFloat y = scrollView.contentOffset.y;
+    
+    
+}
 //左边item 按钮
 -(void)actionlefItemBt{
    

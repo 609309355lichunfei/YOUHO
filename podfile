@@ -6,6 +6,7 @@ pod 'MJExtension'
 pod 'MJRefresh'
 pod 'SDWebImage'
 pod 'MBProgressHUD'
+pod 'FMDBMigrationManager'
 pod 'FMDB'
 pod 'CocoaLumberjack'
 end
