@@ -186,15 +186,15 @@
     [self.scrollView addSubview:bannerview];
      /**** 活动入口******/
     
-        NSArray * image_icon = @[@"001",@"002",@"003",@"004",@"005"];
-        NSArray * label_icon = @[@"新品到这",@"潮流优选",@"冬著严选",@"明星原创",@"全部分类"];
-        NSArray * image_icon1 = @[@"006",@"007",@"008",@"001",@"002"];
-        NSArray * label_icon1 = @[@"人气搭配",@"领卷中心",@"全球购",@"限定发售",@"折扣全区"];
+    NSArray * image_icon = @[@"001",@"002",@"003",@"004",@"005"];
+    NSArray * label_icon = @[@"新品到这",@"潮流优选",@"冬著严选",@"明星原创",@"全部分类"];
+    NSArray * image_icon1 = @[@"006",@"007",@"008",@"009",@"010"];
+    NSArray * label_icon1 = @[@"人气搭配",@"领卷中心",@"全球购",@"限定发售",@"折扣全区"];
     for (int i = 0; i < 5; i++) {
         UIButton * oldUserBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        oldUserBtn.layer.cornerRadius = 20;
+        oldUserBtn.layer.cornerRadius = 15;
         oldUserBtn.clipsToBounds  = TRUE;
-        oldUserBtn.layer.borderWidth = 0.5;
+//        oldUserBtn.layer.borderWidth = 0.5;
         [oldUserBtn addTarget:self action:@selector(ClickOlduserbtone:) forControlEvents:UIControlEventTouchUpInside];
         [oldUserBtn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@", image_icon[i]]] forState:UIControlStateNormal];
         oldUserBtn.tag = 100 +i;
@@ -216,9 +216,9 @@
     }
     for (int i = 0; i < 5; i++) {
         UIButton * oldUserBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        oldUserBtn.layer.cornerRadius = 20;
+        oldUserBtn.layer.cornerRadius = 15;
         oldUserBtn.clipsToBounds  = TRUE;
-        oldUserBtn.layer.borderWidth = 0.5;
+//        oldUserBtn.layer.borderWidth = 0.5;
         [oldUserBtn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@", image_icon1[i]]] forState:UIControlStateNormal];
         oldUserBtn.tag = 100 +i;
         oldUserBtn.frame = CGRectMake( self.scrollView.bounds.origin.x +10 +  i * 80 ,bannerview.frame.size.height + 100, 40,40 );
