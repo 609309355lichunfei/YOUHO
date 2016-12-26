@@ -139,7 +139,7 @@
 - (void)Clickheard_icon:(UIButton *)sender{
     
     if ([self.delegation  performSelector:@selector(setHeardShareManagerWithPush:) withObject:sender]) {
-        [self.delegation performSelector:@selector(setHeardShareManagerWithPush:) withObject:sender];
+        [self.delegation  respondsToSelector:@selector(setHeardShareManagerWithPush:)];
     }
 }
 

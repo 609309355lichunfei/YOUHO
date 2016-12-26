@@ -22,6 +22,8 @@
 #import "ShopCollectionViewCell.h"
 
 #import "ShopDetailsViewController.h"
+
+#import "PersonnaViewController.h"
 @interface LCFMyViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,MyTopHeadViewDelegation>
 
 /**
@@ -44,73 +46,15 @@
 
 @implementation LCFMyViewController
 
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO];
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-        [super viewWillAppear:animated];
-        [self.navigationController setNavigationBarHidden:YES];
-}
-//滑动显示导航栏
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    //scrollView已经有拖拽手势，直接拿到scrollView的拖拽手势
-    UIPanGestureRecognizer *pan = scrollView.panGestureRecognizer;
-    //获取到拖拽的速度 >0 向下拖动 <0 向上拖动
-    CGFloat velocity = [pan velocityInView:scrollView].y;
-    
-    if (velocity <- 5) {
-        //向上拖动，显示导航栏
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
-    }else if (velocity > 5) {
-        //向下拖动，隐藏导航栏
-        
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
-    }else if(velocity == 0){
-        //停止拖拽
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
-    }
-}
-
-- (UICollectionView *)collectionview {
-    
-    if (!_collectionview) {
-        UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
-        UICollectionView * collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 20, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT) collectionViewLayout:layout];
-        collectionView.backgroundColor = YM_RGBA(240.,240.,240,1.) ;
-        collectionView.delegate = self;
-        collectionView.dataSource = self;
-        /* 自使用高度*/
-        collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-        
-        collectionView.showsVerticalScrollIndicator = NO;//不显示滑动条
-        collectionView.alwaysBounceVertical = YES;//内容不超过collectionView时也可以滑动
-        /* 注册头部   和 注册cell*/
-        [collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerID"];
-        
-        [collectionView registerClass:[MyCollectionCell class] forCellWithReuseIdentifier:@"mycell"];
-        [collectionView registerClass:[MyCollectionCell class] forCellWithReuseIdentifier:@"myassets"];
-        [collectionView registerClass:[FootCollectionViewCell class] forCellWithReuseIdentifier:@"Footcell"];
-        [collectionView registerClass:[FootCollectionViewCell class] forCellWithReuseIdentifier:@"cellfoot"];
-        [collectionView registerClass:[StrollCollectionViewCell class] forCellWithReuseIdentifier:@"Stroll"];
-        [collectionView registerClass:[SecendCollectionViewCell class] forCellWithReuseIdentifier:@"secendCell"];
-        [collectionView registerClass:[ShopCollectionViewCell class] forCellWithReuseIdentifier:@"shopcell"];
-        
-        
-        
-        
-        _collectionview = collectionView;
-    }
-    return _collectionview;
-}
-
-
-- (void)setHeardShareManagerWithPush:(UIButton *)sender {
-    
-    
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//    [self.navigationController setNavigationBarHidden:YES animated:animated];
+//    [super viewWillAppear:animated];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated {
+//    [self.navigationController setNavigationBarHidden:NO animated:animated];
+//    [super viewWillDisappear:animated];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -119,7 +63,7 @@
     self.navigationItem.title = @"My";
     self.view.backgroundColor = YM_RGBA(240.,242.,245,1.) ;
     [self.view addSubview:self.collectionview];
-  
+    
     
     /* 判断登陆时机*/
     if (![YMUtils loginParam]) {
@@ -157,7 +101,71 @@
     
 }
 
-#pragma mark -  数据源
+
+//滑动显示导航栏
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    //scrollView已经有拖拽手势，直接拿到scrollView的拖拽手势
+//    UIPanGestureRecognizer *pan = scrollView.panGestureRecognizer;
+//    //获取到拖拽的速度 >0 向下拖动 <0 向上拖动
+//    CGFloat velocity = [pan velocityInView:scrollView].y;
+//    
+//    if (velocity <- 5) {
+//        //向上拖动，显示导航栏
+//        [self.navigationController setNavigationBarHidden:NO animated:YES];
+//    }else if (velocity > 5) {
+//        //向下拖动，隐藏导航栏
+//        
+//       [self.navigationController setNavigationBarHidden:YES animated:YES];
+//    }else if(velocity == 0){
+//        //停止拖拽
+//       [self.navigationController setNavigationBarHidden:YES animated:YES];
+//    }
+//}
+
+#pragma mark ----------------      UICollectionView
+
+- (UICollectionView *)collectionview {
+    
+    if (!_collectionview) {
+        UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
+        UICollectionView * collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT) collectionViewLayout:layout];
+        collectionView.backgroundColor = YM_RGBA(240.,240.,240,1.) ;
+        collectionView.delegate = self;
+        collectionView.dataSource = self;
+        /* 自使用高度*/
+        collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        
+        collectionView.showsVerticalScrollIndicator = NO;//不显示滑动条
+        collectionView.alwaysBounceVertical = YES;//内容不超过collectionView时也可以滑动
+        /* 注册头部   和 注册cell*/
+        [collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerID"];
+        
+        [collectionView registerClass:[MyCollectionCell class] forCellWithReuseIdentifier:@"mycell"];
+        [collectionView registerClass:[MyCollectionCell class] forCellWithReuseIdentifier:@"myassets"];
+        [collectionView registerClass:[FootCollectionViewCell class] forCellWithReuseIdentifier:@"Footcell"];
+        [collectionView registerClass:[FootCollectionViewCell class] forCellWithReuseIdentifier:@"cellfoot"];
+        [collectionView registerClass:[StrollCollectionViewCell class] forCellWithReuseIdentifier:@"Stroll"];
+        [collectionView registerClass:[SecendCollectionViewCell class] forCellWithReuseIdentifier:@"secendCell"];
+        [collectionView registerClass:[ShopCollectionViewCell class] forCellWithReuseIdentifier:@"shopcell"];
+        
+        
+        
+        
+        _collectionview = collectionView;
+    }
+    return _collectionview;
+}
+
+/* 头像信息设置 */
+- (void)setHeardShareManagerWithPush:(UIButton *)sender {
+    
+    PersonnaViewController * person = [[PersonnaViewController alloc] init];
+    person.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:person animated:YES];
+}
+
+#pragma mark --------------------    数据源
 
 - (void)plistPathWithShareUrl {
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Resources" ofType:@"plist"];
@@ -165,6 +173,8 @@
     self.DataArray = [[NSMutableArray alloc] initWithContentsOfFile:plistPath];
     
 }
+
+#pragma mark ---------------- Navigationitem
 
 //nagigation 左边按钮
 - (void)ClickleftBarButtonItem:(UIButton *)sender{
@@ -181,23 +191,34 @@
     [self.navigationController pushViewController:setting animated:YES];
 }
 
-/**
- 头部背景view
-
- @return _tophead
- */
+#pragma mark       ----------------- 头部头像设置  
 -(MyTopHeadView *)tophead{
     
     if (!_tophead) {
         _tophead = [[MyTopHeadView alloc]init];
         _tophead.delegation = self;
         _tophead.userInteractionEnabled = YES;
-        _tophead.frame = CGRectMake(0, -20, LCF_SCREEN_WIDTH, 240);
+        _tophead.frame = CGRectMake(0, 0, LCF_SCREEN_WIDTH, 240);
     }
     
     return _tophead;
 }
-#pragma mark -- UICollectionViewDataSource
+
+-(UIButton *)heardGroud {
+    
+    if (!_heardGroud) {
+        _heardGroud = [UIButton buttonWithType:UIButtonTypeCustom];
+        _heardGroud.layer.cornerRadius = 50;
+        [_heardGroud setImage:[UIImage imageNamed:@"head_image"] forState:UIControlStateNormal];
+        _heardGroud.backgroundColor = [UIColor whiteColor];
+        _heardGroud.clipsToBounds = TRUE;//去除边界
+    }
+    
+    return _heardGroud;
+}
+
+
+#pragma mark -- ------------------------   UICollectionViewDataSource
 //定义展示的Section的个数
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     
@@ -351,38 +372,27 @@
    
     
 }
-#pragma mark --UICollectionViewDelegateFlowLayout
+
+
+#pragma mark    --------------------  UICollectionViewFlowLayout
+
+
 -( UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     UICollectionReusableView * headerView = nil;
     if (indexPath.section == 0) {
         if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-           headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headerID" forIndexPath:indexPath];//根据id取出注册的头部view
+            headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headerID" forIndexPath:indexPath];//根据id取出注册的头部view
             if (headerView == nil) {
                 headerView = [[UICollectionReusableView alloc] init];
             }
             [headerView addSubview:self.tophead];
-        
+            
             
         }
     }
     
     return headerView;
 }
-
-
--(UIButton *)heardGroud {
-    
-    if (!_heardGroud) {
-        _heardGroud = [UIButton buttonWithType:UIButtonTypeCustom];
-        _heardGroud.layer.cornerRadius = 50;
-        [_heardGroud setImage:[UIImage imageNamed:@"head_image"] forState:UIControlStateNormal];
-        _heardGroud.backgroundColor = [UIColor whiteColor];
-         _heardGroud.clipsToBounds = TRUE;//去除边界
-    }
-    
-    return _heardGroud;
-}
-
 
 //定义每个UICollectionView 的 margin
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section

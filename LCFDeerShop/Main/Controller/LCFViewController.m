@@ -19,7 +19,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     UINavigationBar* navBar = self.navigationController.navigationBar;
-    [navBar setTranslucent:YES];
+//    [navBar setTranslucent:YES];
     navBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor blackColor]};
     [navBar setBackgroundImage:[UIImage imageNamed:@"patternNav"] forBarMetrics:UIBarMetricsDefault];
     [navBar setShadowImage:[[UIImage alloc] init]];
@@ -31,10 +31,10 @@
 //    [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateHighlighted];
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:lefItemBt];
 }
--(void)actionlefItemBt {
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
+//-(void)actionlefItemBt {
+//    
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
