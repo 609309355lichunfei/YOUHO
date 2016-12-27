@@ -10,11 +10,13 @@
 #import "YYDeerShopRequest.h"
 #import "CategoryCollectionViewCell.h"
 #import "CategoryTableViewCell.h"
+#import "CategoryModel.h"
 @interface LCFCategoryViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 {
     NSArray * dataArr;
     NSArray * myData;
+    NSMutableArray * item;
 }
 
 @property (nonatomic, strong) UICollectionView *rightCollectionView;
@@ -34,25 +36,46 @@
     [self RequestSetDataClassification];
     
      [self CreatRightCollectionView];
-    dataArr = [NSArray array];
-    myData = [NSArray array];
-    dataArr = [[NSArray alloc]initWithObjects:@"推荐分类", @"潮流女装",@"品牌男装",@"酒水饮料",@"家用电器",@"手机数码",@"电脑办公",@"图书",@"居家生活",@"运动户外",@"玩具乐器",@"钟表珠宝",@"食品生鲜",@"奢侈礼品",@"汽车用品",@"生活旅行",nil];
-    myData = [[NSArray alloc]initWithObjects:@"笔记本",@"休闲裤",@"牛仔裤",@"手机",@"净化器",@"火锅",@"OPPO",@"面膜",@"漱口水",@"测试",@"测试1", nil];
+//    dataArr = [NSArray array];
+//    myData = [NSArray array];
+//    dataArr = [[NSArray alloc]initWithObjects:@"推荐分类", @"潮流女装",@"品牌男装",@"酒水饮料",@"家用电器",@"手机数码",@"电脑办公",@"图书",@"居家生活",@"运动户外",@"玩具乐器",@"钟表珠宝",@"食品生鲜",@"奢侈礼品",@"汽车用品",@"生活旅行",nil];
+//    myData = [[NSArray alloc]initWithObjects:@"笔记本",@"休闲裤",@"牛仔裤",@"手机",@"净化器",@"火锅",@"OPPO",@"面膜",@"漱口水",@"测试",@"测试1", nil];
+//    
     
-    
+    item = [NSMutableArray arrayWithCapacity:0];
     
     
 }
 - (void)RequestSetDataClassification {
+    
+    __weak typeof (self) weakSelf = self;
     [YYDeerShopRequest GetWithShareManagerCategoryTitleImage:^(BOOL success, NSError *error, id result) {
         if (success) {
-            NSLog(@"%@",result);
+//            NSLog(@"%@",result);
+                /* 解析JSON数据 */
+            [weakSelf setWithCategoryRequest:result[@"data"][@"categories"]];
         }else{
             
+            
         }
+        
+        //请求完成之后一定刷新列表.
+        [self.rightCollectionView reloadData];
+        [self.tableview reloadData];
     }];
     
 }
+
+- (void)setWithCategoryRequest:(NSArray *)categoryArr {
+    
+    [NSMutableArray clearAllWithMutableArray:item];
+    
+    for (NSDictionary * dic in categoryArr) {
+        CategoryModel * model = [CategoryModel mj_objectWithKeyValues:dic];
+        [item addObject:model];
+    }
+}
+
 
 -(void)CreatRightCollectionView
 {
@@ -77,32 +100,44 @@
     
     
     UITableView * tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 100, LCF_SCREEN_HEIGHT) style:UITableViewStylePlain];
+    [self.tableview sizeThatFits:CGSizeMake(CGRectGetWidth(self.tableview.bounds), CGFLOAT_MAX)];
     tableview.delegate = self;
     tableview.dataSource = self;
     [self.view addSubview:tableview];
     self.tableview = tableview;
-    
+    UIView * view = [[UIView alloc] init];
+    self.tableview.tableFooterView = view;
+//    self.tableview.tableFooterView = [self footerViewForSection:0];
     
     
 }
-//实现TableView的代理方法;
+
+//- (nullable UITableViewHeaderFooterView *)footerViewForSection:(NSInteger)section
+//{
+//    UITableViewHeaderFooterView *footerView  = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, self.view.superview.width, 80)];
+//    //    footerView.textLabel.text =@"没有了" ;
+////    [footerView setValue:footerLabel forKey:@"contentView"];
+//    return footerView;
+//}
+#pragma mark                  UITableDataSource  TableViewDegation 
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return dataArr.count;
+    return item.count;
     
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+     CategoryModel * model = item[indexPath.row];
     CategoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     if (!cell)
     {
         cell = [[CategoryTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    cell.title_label.text = dataArr[indexPath.row];
-    
-    cell.selectionStyle = 1;//设置Cell选中效果
+    cell.title_label.text = model.name;
+//    cell.selectionStyle = 1;//设置Cell选中效果
     
     return cell;
 }
@@ -126,42 +161,51 @@
     
 }
 
-#pragma mark------CollectionView的代理方法
+#pragma mark                CollectionView的代理方法
+
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     
-    return myData.count;
+    return item.count;
     
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    CategoryModel * model = item[indexPath.row];
+    
     
     CategoryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RightCollectionViewCell" forIndexPath:indexPath];
     //根据左边点击的indepath更新右边内容;
     switch (_selectedIndex)
     {
         case 0:
-            cell.title_image.image = [UIImage imageNamed:@"detais_image"];
+             [cell.title_image sd_setImageWithURL:[NSURL URLWithString:model.icon_url]];
             break;
         case 1:
-            cell.title_image.image = [UIImage imageNamed:@"4.jpg"];
+            [cell.title_image sd_setImageWithURL:[NSURL URLWithString:model.icon_url]];
             break;
         case 2:
-            cell.title_image.image = [UIImage imageNamed:@"3.jpg"];
+             [cell.title_image sd_setImageWithURL:[NSURL URLWithString:model.icon_url]];
             break;
         case 3:
-            cell.title_image.image = [UIImage imageNamed:@"4.jpg"];
+             [cell.title_image sd_setImageWithURL:[NSURL URLWithString:model.icon_url]];
             break;
         default:
             break;
     }
     
-    cell.collection_label.text = myData[indexPath.row];
+    
+    
+    
+    cell.collection_label.text = model.name;
+    [cell.title_image sd_setImageWithURL:[NSURL URLWithString:model.icon_url]];
     
     return cell;
     
     
 }
+
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {

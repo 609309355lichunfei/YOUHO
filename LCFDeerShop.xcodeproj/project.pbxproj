@@ -73,6 +73,8 @@
 		B3982DB01E07DBBC00EE1435 /* ShopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3982DAF1E07DBBC00EE1435 /* ShopCollectionViewCell.m */; };
 		B3982DB21E07E2DE00EE1435 /* FocusURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3982DB11E07E2DE00EE1435 /* FocusURL.plist */; };
 		B3982DBA1E08E52000EE1435 /* TopViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3982DB91E08E52000EE1435 /* TopViewCell.m */; };
+		B3A2484F1E11FBF800DFCD32 /* NSMutableArray+ZZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A2484E1E11FBF800DFCD32 /* NSMutableArray+ZZExtension.m */; };
+		B3A248551E1200A800DFCD32 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A248541E1200A800DFCD32 /* CategoryModel.m */; };
 		B3B4C3021DDEAE9C002D43CF /* LCFDeerShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3B4C3001DDEAE9C002D43CF /* LCFDeerShop.xcdatamodeld */; };
 		B3B4C3041DDEAE9C002D43CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B4C3031DDEAE9C002D43CF /* Assets.xcassets */; };
 		B3B4C3121DDEAE9D002D43CF /* LCFDeerShopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B4C3111DDEAE9D002D43CF /* LCFDeerShopTests.m */; };
@@ -266,6 +268,10 @@
 		B3982DB11E07E2DE00EE1435 /* FocusURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FocusURL.plist; sourceTree = SOURCE_ROOT; };
 		B3982DB81E08E52000EE1435 /* TopViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopViewCell.h; sourceTree = "<group>"; };
 		B3982DB91E08E52000EE1435 /* TopViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopViewCell.m; sourceTree = "<group>"; };
+		B3A2484D1E11FBF800DFCD32 /* NSMutableArray+ZZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ZZExtension.h"; sourceTree = "<group>"; };
+		B3A2484E1E11FBF800DFCD32 /* NSMutableArray+ZZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ZZExtension.m"; sourceTree = "<group>"; };
+		B3A248531E1200A800DFCD32 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
+		B3A248541E1200A800DFCD32 /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
 		B3B4C2F11DDEAE9C002D43CF /* LCFDeerShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCFDeerShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B4C3011DDEAE9C002D43CF /* LCFDeerShop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LCFDeerShop.xcdatamodel; sourceTree = "<group>"; };
 		B3B4C3031DDEAE9C002D43CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -707,6 +713,8 @@
 				B3982DA41E07BD7600EE1435 /* UIColor+MYColor.m */,
 				B39409DE1E10AF5B00208FF5 /* AbstractActionSheetPicker+Interface.h */,
 				B39409B61E0CE05200208FF5 /* AbstractActionSheetPicker+Interface.m */,
+				B3A2484D1E11FBF800DFCD32 /* NSMutableArray+ZZExtension.h */,
+				B3A2484E1E11FBF800DFCD32 /* NSMutableArray+ZZExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -900,6 +908,8 @@
 		B3E1B5781DDED09300E55F5A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B3A248531E1200A800DFCD32 /* CategoryModel.h */,
+				B3A248541E1200A800DFCD32 /* CategoryModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1287,6 +1297,7 @@
 				B373FBE81DF79A400028C24A /* JSCartBar.m in Sources */,
 				B39409FB1E10AFD200208FF5 /* ActionSheetDistancePicker.m in Sources */,
 				B39409F91E10AFD200208FF5 /* ActionSheetCustomPicker.m in Sources */,
+				B3A248551E1200A800DFCD32 /* CategoryModel.m in Sources */,
 				B3982DBA1E08E52000EE1435 /* TopViewCell.m in Sources */,
 				B3E1B5C31DDEF97400E55F5A /* LCFBannerView.m in Sources */,
 				B34507861DF662A4008E3630 /* JSCartViewModel.m in Sources */,
@@ -1333,6 +1344,7 @@
 				B3C1E73A1E11555800EB9D36 /* CategoryCollectionViewCell.m in Sources */,
 				B34AABFB1DE563A30053244E /* ViewController+MASAdditions.m in Sources */,
 				B3940A011E10AFD200208FF5 /* README.md in Sources */,
+				B3A2484F1E11FBF800DFCD32 /* NSMutableArray+ZZExtension.m in Sources */,
 				B3B4C3321DDECB72002D43CF /* ViewController.m in Sources */,
 				369AE9191E10EB8F0045AF53 /* FMDBDataBase.m in Sources */,
 			);
