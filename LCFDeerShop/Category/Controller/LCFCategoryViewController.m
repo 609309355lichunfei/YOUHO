@@ -11,6 +11,7 @@
 #import "CategoryCollectionViewCell.h"
 #import "CategoryTableViewCell.h"
 #import "CategoryModel.h"
+#import "CategoryListingController.h"
 @interface LCFCategoryViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 {
@@ -229,6 +230,9 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    CategoryListingController * categorylist = [[CategoryListingController alloc] init];
+    categorylist.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:categorylist animated:YES];
     
 }
 

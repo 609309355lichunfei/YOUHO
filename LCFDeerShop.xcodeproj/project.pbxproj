@@ -75,6 +75,14 @@
 		B3982DBA1E08E52000EE1435 /* TopViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3982DB91E08E52000EE1435 /* TopViewCell.m */; };
 		B3A2484F1E11FBF800DFCD32 /* NSMutableArray+ZZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A2484E1E11FBF800DFCD32 /* NSMutableArray+ZZExtension.m */; };
 		B3A248551E1200A800DFCD32 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A248541E1200A800DFCD32 /* CategoryModel.m */; };
+		B3A249241E123F2000DFCD32 /* CategoryListingController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A249231E123F2000DFCD32 /* CategoryListingController.m */; };
+		B3A249271E12461D00DFCD32 /* GridListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A249261E12461D00DFCD32 /* GridListCollectionViewCell.m */; };
+		B3A2492A1E12463E00DFCD32 /* GridListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A249291E12463E00DFCD32 /* GridListModel.m */; };
+		B3A2492D1E12487100DFCD32 /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A2492C1E12487100DFCD32 /* NSObject+Property.m */; };
+		B3A2492F1E1248A700DFCD32 /* product.json in Resources */ = {isa = PBXBuildFile; fileRef = B3A2492E1E1248A700DFCD32 /* product.json */; };
+		B3A249371E124CC400DFCD32 /* BuyCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A249321E124CC400DFCD32 /* BuyCountView.m */; };
+		B3A249381E124CC400DFCD32 /* ChoseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A249341E124CC400DFCD32 /* ChoseView.m */; };
+		B3A249391E124CC400DFCD32 /* TypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A249361E124CC400DFCD32 /* TypeView.m */; };
 		B3B4C3021DDEAE9C002D43CF /* LCFDeerShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3B4C3001DDEAE9C002D43CF /* LCFDeerShop.xcdatamodeld */; };
 		B3B4C3041DDEAE9C002D43CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B4C3031DDEAE9C002D43CF /* Assets.xcassets */; };
 		B3B4C3121DDEAE9D002D43CF /* LCFDeerShopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B4C3111DDEAE9D002D43CF /* LCFDeerShopTests.m */; };
@@ -272,6 +280,21 @@
 		B3A2484E1E11FBF800DFCD32 /* NSMutableArray+ZZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ZZExtension.m"; sourceTree = "<group>"; };
 		B3A248531E1200A800DFCD32 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
 		B3A248541E1200A800DFCD32 /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
+		B3A249221E123F2000DFCD32 /* CategoryListingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryListingController.h; sourceTree = "<group>"; };
+		B3A249231E123F2000DFCD32 /* CategoryListingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryListingController.m; sourceTree = "<group>"; };
+		B3A249251E12461D00DFCD32 /* GridListCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridListCollectionViewCell.h; sourceTree = "<group>"; };
+		B3A249261E12461D00DFCD32 /* GridListCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridListCollectionViewCell.m; sourceTree = "<group>"; };
+		B3A249281E12463E00DFCD32 /* GridListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridListModel.h; sourceTree = "<group>"; };
+		B3A249291E12463E00DFCD32 /* GridListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridListModel.m; sourceTree = "<group>"; };
+		B3A2492B1E12487100DFCD32 /* NSObject+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Property.h"; sourceTree = "<group>"; };
+		B3A2492C1E12487100DFCD32 /* NSObject+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Property.m"; sourceTree = "<group>"; };
+		B3A2492E1E1248A700DFCD32 /* product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = product.json; sourceTree = "<group>"; };
+		B3A249311E124CC400DFCD32 /* BuyCountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyCountView.h; sourceTree = "<group>"; };
+		B3A249321E124CC400DFCD32 /* BuyCountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyCountView.m; sourceTree = "<group>"; };
+		B3A249331E124CC400DFCD32 /* ChoseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoseView.h; sourceTree = "<group>"; };
+		B3A249341E124CC400DFCD32 /* ChoseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoseView.m; sourceTree = "<group>"; };
+		B3A249351E124CC400DFCD32 /* TypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeView.h; sourceTree = "<group>"; };
+		B3A249361E124CC400DFCD32 /* TypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeView.m; sourceTree = "<group>"; };
 		B3B4C2F11DDEAE9C002D43CF /* LCFDeerShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCFDeerShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B4C3011DDEAE9C002D43CF /* LCFDeerShop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LCFDeerShop.xcdatamodel; sourceTree = "<group>"; };
 		B3B4C3031DDEAE9C002D43CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -578,6 +601,34 @@
 			path = iniform;
 			sourceTree = "<group>";
 		};
+		B3A249211E123F0000DFCD32 /* Listings */ = {
+			isa = PBXGroup;
+			children = (
+				B3A2492B1E12487100DFCD32 /* NSObject+Property.h */,
+				B3A2492C1E12487100DFCD32 /* NSObject+Property.m */,
+				B3A249221E123F2000DFCD32 /* CategoryListingController.h */,
+				B3A249231E123F2000DFCD32 /* CategoryListingController.m */,
+				B3A249251E12461D00DFCD32 /* GridListCollectionViewCell.h */,
+				B3A249261E12461D00DFCD32 /* GridListCollectionViewCell.m */,
+				B3A249281E12463E00DFCD32 /* GridListModel.h */,
+				B3A249291E12463E00DFCD32 /* GridListModel.m */,
+			);
+			path = Listings;
+			sourceTree = "<group>";
+		};
+		B3A249301E124C9800DFCD32 /* shoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				B3A249311E124CC400DFCD32 /* BuyCountView.h */,
+				B3A249321E124CC400DFCD32 /* BuyCountView.m */,
+				B3A249331E124CC400DFCD32 /* ChoseView.h */,
+				B3A249341E124CC400DFCD32 /* ChoseView.m */,
+				B3A249351E124CC400DFCD32 /* TypeView.h */,
+				B3A249361E124CC400DFCD32 /* TypeView.m */,
+			);
+			path = shoppingCart;
+			sourceTree = "<group>";
+		};
 		B3B4C2E81DDEAE9C002D43CF = {
 			isa = PBXGroup;
 			children = (
@@ -787,6 +838,7 @@
 		B3E1B56E1DDECEEC00E55F5A /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				B3A249211E123F0000DFCD32 /* Listings */,
 				B3E1B5771DDED09300E55F5A /* Controller */,
 				B3E1B5781DDED09300E55F5A /* Model */,
 				B3E1B5791DDED09300E55F5A /* View */,
@@ -797,6 +849,7 @@
 		B3E1B56F1DDECEFC00E55F5A /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				B3A249301E124C9800DFCD32 /* shoppingCart */,
 				B3C713AC1DE8337B00747345 /* ShopDetails */,
 				B3E1B57A1DDED0AC00E55F5A /* Controller */,
 				B3E1B57B1DDED0AC00E55F5A /* Model */,
@@ -1046,6 +1099,7 @@
 		B3E1B5B61DDEECB200E55F5A /* InfoPlist */ = {
 			isa = PBXGroup;
 			children = (
+				B3A2492E1E1248A700DFCD32 /* product.json */,
 				B3982DB11E07E2DE00EE1435 /* FocusURL.plist */,
 				B3E1B5B71DDEECC500E55F5A /* Resources.plist */,
 			);
@@ -1176,6 +1230,7 @@
 			files = (
 				B3FC56A31E092DBB00AD8BD6 /* menuButton@2x.png in Resources */,
 				B34AABF11DE563A30053244E /* LICENSE in Resources */,
+				B3A2492F1E1248A700DFCD32 /* product.json in Resources */,
 				B3982DB21E07E2DE00EE1435 /* FocusURL.plist in Resources */,
 				B3FC56991E091ED000AD8BD6 /* TableViewCell.xib in Resources */,
 				B3E1B5B81DDEECC500E55F5A /* Resources.plist in Resources */,
@@ -1259,9 +1314,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				368303D91E0CF50F00AC1C9A /* LXDScanView.m in Sources */,
+				B3A249271E12461D00DFCD32 /* GridListCollectionViewCell.m in Sources */,
 				B3C1E7441E11564F00EB9D36 /* YYDeerShopRequest.m in Sources */,
 				B315345B1DFFD36500A3FD07 /* UIBarButtonItem+Extension.m in Sources */,
 				B334335C1E02883900E48B66 /* MyCollectionCell.m in Sources */,
+				B3A249371E124CC400DFCD32 /* BuyCountView.m in Sources */,
 				B34AABF91DE563A30053244E /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				B3FC569C1E09291800AD8BD6 /* TGLTableViewController.m in Sources */,
 				B3011CF61E0A1D53008C8139 /* MBManager.m in Sources */,
@@ -1273,6 +1330,7 @@
 				B39409FC1E10AFD200208FF5 /* ActionSheetLocalePicker.m in Sources */,
 				B3C1E7411E1155E800EB9D36 /* LCFCategoryViewController.m in Sources */,
 				B3E1B5901DDED1FA00E55F5A /* LCFShoppingViewController.m in Sources */,
+				B3A2492D1E12487100DFCD32 /* NSObject+Property.m in Sources */,
 				B3982DAD1E07CB3300EE1435 /* SettingViewController.m in Sources */,
 				B345077D1DF543B5008E3630 /* JSDropDownMenu.m in Sources */,
 				B3FC56A61E092E7200AD8BD6 /* GirlViewController.m in Sources */,
@@ -1289,6 +1347,7 @@
 				B34AABFC1DE563A30053244E /* README.md in Sources */,
 				B34507831DF66261008E3630 /* JSCartUIService.m in Sources */,
 				B34507801DF5558A008E3630 /* UIColor+WLZ_HexRGB.m in Sources */,
+				B3A249391E124CC400DFCD32 /* TypeView.m in Sources */,
 				B3C713B21DE8368500747345 /* shopDetailsHeadView.m in Sources */,
 				B346DD471DE2A5DC00ACA6A8 /* LCFHomeCell.m in Sources */,
 				B346DD571DE31A4700ACA6A8 /* UIImage+SearchHeight.m in Sources */,
@@ -1302,6 +1361,7 @@
 				B3E1B5C31DDEF97400E55F5A /* LCFBannerView.m in Sources */,
 				B34507861DF662A4008E3630 /* JSCartViewModel.m in Sources */,
 				B39409FD1E10AFD200208FF5 /* ActionSheetMultipleStringPicker.m in Sources */,
+				B3A2492A1E12463E00DFCD32 /* GridListModel.m in Sources */,
 				B3B4C3021DDEAE9C002D43CF /* LCFDeerShop.xcdatamodeld in Sources */,
 				B39409F81E10AFD200208FF5 /* AbstractActionSheetPicker.m in Sources */,
 				B34AABF81DE563A30053244E /* NSArray+MASAdditions.m in Sources */,
@@ -1318,6 +1378,7 @@
 				B34AAC021DE583960053244E /* UIView+SetRect.m in Sources */,
 				B346DD5A1DE322BD00ACA6A8 /* YMUtils.m in Sources */,
 				B39409FE1E10AFD200208FF5 /* ActionSheetStringPicker.m in Sources */,
+				B3A249381E124CC400DFCD32 /* ChoseView.m in Sources */,
 				B39409FA1E10AFD200208FF5 /* ActionSheetDatePicker.m in Sources */,
 				B3F294391E03E243000626BC /* MYSearchBar.m in Sources */,
 				B39409B91E0CE05200208FF5 /* AbstractActionSheetPicker+Interface.m in Sources */,
@@ -1328,6 +1389,7 @@
 				B34AABFA1DE563A30053244E /* View+MASAdditions.m in Sources */,
 				B36EF7A51E0385E800DC24DF /* FootCollectionViewCell.m in Sources */,
 				B346DD661DE326D700ACA6A8 /* LCFUserResponse.m in Sources */,
+				B3A249241E123F2000DFCD32 /* CategoryListingController.m in Sources */,
 				B34AABFF1DE583660053244E /* UIFont+Fonts.m in Sources */,
 				B3E1B5971DDED42200E55F5A /* LCFNavigationController.m in Sources */,
 				B33856A21DED177600C2860E /* MyTopHeadView.m in Sources */,
