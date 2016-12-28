@@ -20,6 +20,7 @@
 		B31534561DFFA8E900A3FD07 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31534551DFFA8E900A3FD07 /* RegisterViewController.m */; };
 		B315345B1DFFD36500A3FD07 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B31534581DFFD36500A3FD07 /* UIBarButtonItem+Extension.m */; };
 		B315345C1DFFD36500A3FD07 /* UIView+CCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B315345A1DFFD36500A3FD07 /* UIView+CCExtension.m */; };
+		B3189F8C1E13AD9A00A6098C /* stock.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3189F8B1E13AD9A00A6098C /* stock.plist */; };
 		B334335C1E02883900E48B66 /* MyCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B334335B1E02883900E48B66 /* MyCollectionCell.m */; };
 		B3375B911DF92E5D000050F4 /* YMHttpsEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = B3375B901DF92E5D000050F4 /* YMHttpsEngine.m */; };
 		B33856A21DED177600C2860E /* MyTopHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = B33856A11DED177600C2860E /* MyTopHeadView.m */; };
@@ -167,6 +168,7 @@
 		B31534581DFFD36500A3FD07 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		B31534591DFFD36500A3FD07 /* UIView+CCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CCExtension.h"; sourceTree = "<group>"; };
 		B315345A1DFFD36500A3FD07 /* UIView+CCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CCExtension.m"; sourceTree = "<group>"; };
+		B3189F8B1E13AD9A00A6098C /* stock.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stock.plist; sourceTree = "<group>"; };
 		B334335A1E02883900E48B66 /* MyCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionCell.h; sourceTree = "<group>"; };
 		B334335B1E02883900E48B66 /* MyCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionCell.m; sourceTree = "<group>"; };
 		B3375B8F1DF92E5D000050F4 /* YMHttpsEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHttpsEngine.h; sourceTree = "<group>"; };
@@ -1099,6 +1101,7 @@
 		B3E1B5B61DDEECB200E55F5A /* InfoPlist */ = {
 			isa = PBXGroup;
 			children = (
+				B3189F8B1E13AD9A00A6098C /* stock.plist */,
 				B3A2492E1E1248A700DFCD32 /* product.json */,
 				B3982DB11E07E2DE00EE1435 /* FocusURL.plist */,
 				B3E1B5B71DDEECC500E55F5A /* Resources.plist */,
@@ -1241,6 +1244,7 @@
 				B3B4C3361DDECC55002D43CF /* LaunchScreen.storyboard in Resources */,
 				B3B4C3041DDEAE9C002D43CF /* Assets.xcassets in Resources */,
 				B3FC56AA1E0930B500AD8BD6 /* content_2@3x.png in Resources */,
+				B3189F8C1E13AD9A00A6098C /* stock.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

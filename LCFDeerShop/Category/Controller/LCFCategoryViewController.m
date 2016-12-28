@@ -52,14 +52,12 @@
     __weak typeof (self) weakSelf = self;
     [YYDeerShopRequest GetWithShareManagerCategoryTitleImage:^(BOOL success, NSError *error, id result) {
         if (success) {
-//            NSLog(@"%@",result);
+            NSLog(@"%@",result);
                 /* 解析JSON数据 */
             [weakSelf setWithCategoryRequest:result[@"data"][@"categories"]];
         }else{
             
-            
         }
-        
         //请求完成之后一定刷新列表.
         [self.rightCollectionView reloadData];
         [self.tableview reloadData];
