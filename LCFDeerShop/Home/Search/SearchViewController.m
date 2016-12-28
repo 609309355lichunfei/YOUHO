@@ -404,6 +404,8 @@
         [self.searchHistoryNameArr addObject:button.titleLabel.text];
         [self.myTableView reloadData];
         [self.db close];
+        _lastIndexPath = nil;
+
     }
 //    MultipleSetsOfDataVC *busimessVC = [MultipleSetsOfDataVC new];
 //    busimessVC.navigationItem.title = button.titleLabel.text;
@@ -498,7 +500,7 @@
     self.lastIndexPath = indexPath;
 }
 -(void)deleteBtAction:(UIButton *)button {
-    SearchHistoryCell *cell = button.superview;
+    SearchHistoryCell *cell = (SearchHistoryCell *)button.superview;
     [self.db open];
     [self.db executeUpdateWithFormat:@"delete from SearchHistory where searchName = %@;",cell.textLabel.text];
     [self.searchHistoryNameArr removeObject:cell.textLabel.text];

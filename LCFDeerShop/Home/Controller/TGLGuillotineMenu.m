@@ -46,7 +46,7 @@
 //    self.view.backgroundColor = [UIColor whiteColor];
     
     UINavigationBar* navBar = self.navigationController.navigationBar;
-    [navBar setTranslucent:YES];
+//    [navBar setTranslucent:YES];
     navBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor blackColor]};
     [navBar setBackgroundImage:[UIImage imageNamed:@"patternNav"] forBarMetrics:UIBarMetricsDefault];
     
@@ -64,7 +64,7 @@
 
 -(void)setupMenu{
     
-    navBarH     = 64.0;
+    navBarH     = 0.0;
     statusBarH  = 20.0;
     
     puntoAncoraggio = CGPointMake((navBarH/2.0),(navBarH/2.0));
