@@ -118,25 +118,42 @@
 }
 
 -(void)layoutSearchBar{
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, LCF_SCREEN_WIDTH - 80, 30)];//allocate titleView
-    UIColor *color =  self.navigationController.navigationBar.barTintColor;
-    [titleView setBackgroundColor:color];
+//    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, LCF_SCREEN_WIDTH - 80, 30)];//allocate titleView
+//    UIColor *color =  self.navigationController.navigationBar.barTintColor;
+//    [titleView setBackgroundColor:color];
     _searchBar = [[UISearchBar alloc] init];
-    _searchBar.placeholder = @"  |搜索";
-    
+    _searchBar.frame = CGRectMake(0, 0, LCF_SCREEN_WIDTH - 80, 30);
+    _searchBar.placeholder = @"  搜索";
     _searchBar.delegate = self;
-    _searchBar.frame = titleView.frame;
-    _searchBar.backgroundColor = color;
-    _searchBar.layer.cornerRadius = 5;
-    _searchBar.layer.masksToBounds = YES;
-    [_searchBar.layer setBorderWidth:8];
+//    _searchBar.frame = titleView.frame;
+//    _searchBar.backgroundColor = color;
+//    _searchBar.layer.cornerRadius = 5;
+//    _searchBar.layer.masksToBounds = YES;
+//    [_searchBar.layer setBorderWidth:8];
+//    
+//    [_searchBar.layer setBorderColor:[UIColor whiteColor].CGColor];  //设置边框为白色
+
+    _searchBar.tintColor = [UIColor whiteColor];
+    [_searchBar setImage:[UIImage imageNamed:@"searchIcon"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
     
-    [_searchBar.layer setBorderColor:[UIColor whiteColor].CGColor];  //设置边框为白色
-    [titleView addSubview:_searchBar];
+    UIView *searchBarSub = _searchBar.subviews[0];
+    // 去除UISearchbar视图里的UISearchBarBackground之后，UISearchbar的背景也就透明了，同时也可以自定义颜色等 遍历所有searchbar中的view ios 7.1以上  和7.0一下是连个方法 需要判断一下版本方法
+    
+    for (UIView * subview in searchBarSub.subviews) {
+        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarTextField")]) {
+            [subview setBackgroundColor:YM_RGBA(247., 247., 270, 1.)];
+            
+        }
+        
+        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
+            [subview removeFromSuperview];
+        }
+    }
+//       [titleView addSubview:_searchBar];
     //Set to titleView
     [self.navigationItem.titleView sizeToFit];
-    self.navigationItem.titleView = titleView;
-    [_searchBar setImage:[UIImage imageNamed:@"searchBar"] forSearchBarIcon:(UISearchBarIconSearch) state:(UIControlStateNormal)];
+    self.navigationItem.titleView = _searchBar;
+//    [_searchBar setImage:[UIImage imageNamed:@"searchBar"] forSearchBarIcon:(UISearchBarIconSearch) state:(UIControlStateNormal)];
     //    添加右按钮
     self.rightBarItem = [[UIBarButtonItem alloc]
                          initWithTitle:@"取消"
@@ -148,8 +165,21 @@
     
     [_rightBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName : @"Helvetica" size : 12.0], NSFontAttributeName,[UIColor blackColor], NSForegroundColorAttributeName , nil ] forState : UIControlStateNormal ];
     [self.navigationItem setRightBarButtonItem:_rightBarItem];
+    //设置假的左item 别让搜索框太大
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]
+                         initWithTitle:@"  "
+                         style:UIBarButtonItemStylePlain
+                         target:self
+                         action:@selector(nothing)];
+    //      RightButton.tintColor = [UIColor blackColor];
+    //    RightButton.title= [UIFont fontWithName:@"Marion-Italic" size:12];
+    
+    [leftItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName : @"Helvetica" size : 12.0], NSFontAttributeName,[UIColor blackColor], NSForegroundColorAttributeName , nil ] forState : UIControlStateNormal ];
+    [self.navigationItem setLeftBarButtonItem:leftItem];
 }
-
+-(void)nothing{
+    
+}
 #pragma mark - searchBarDelegate
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
@@ -197,6 +227,7 @@
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
+//    [searchBar resignFirstResponder];
      [self.navigationController popViewControllerAnimated:YES];
 //    self.tabBarController.tabBar.hidden = NO;
 //    self.navigationItem.rightBarButtonItem = nil;

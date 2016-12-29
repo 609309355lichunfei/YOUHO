@@ -21,7 +21,6 @@
     Searchbar.placeholder = placeholder;
     Searchbar.tintColor = [UIColor whiteColor];
     [Searchbar setImage:[UIImage imageNamed:@"searchIcon"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
-    [Searchbar resignFirstResponder];
 
     UIView *searchBarSub = Searchbar.subviews[0];
    // 去除UISearchbar视图里的UISearchBarBackground之后，UISearchbar的背景也就透明了，同时也可以自定义颜色等 遍历所有searchbar中的view ios 7.1以上  和7.0一下是连个方法 需要判断一下版本方法
@@ -42,11 +41,9 @@
 
 
 -(BOOL) searchBarShouldBeginEditing:(UISearchBar *)searchBar{
-    [searchBar resignFirstResponder];
     !self.searchBarShouldBeginEditingBlock ? : self.searchBarShouldBeginEditingBlock ();
-    [searchBar resignFirstResponder];
 
-    return   YES;
+    return   NO;
     
 }
 

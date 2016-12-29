@@ -24,7 +24,7 @@
 #import "RefreshHeader.h"
 #import "LXDScanCodeController.h"
 #import <AVFoundation/AVFoundation.h>
-@interface LCFHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,LCFBannerViewDelegate,TGLGuillotineMenuDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,LXDScanCodeControllerDelegate>{
+@interface LCFHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,LCFBannerViewDelegate,TGLGuillotineMenuDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,LXDScanCodeControllerDelegate,UISearchBarDelegate>{
  NSMutableArray  *   dataSoureArray;
 }
 @property   (nonatomic,retain)  UIScrollView    *   scrollView;//背景滑动
@@ -58,18 +58,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    MYSearchBar * search = [MYSearchBar searchBarWithPlaceholder:@"  搜索 "];
-    self.navigationItem.titleView = search;
-    WEAKSELF(weakSelf);
-    search.searchBarShouldBeginEditingBlock = ^{
-
-        SearchViewController *searchCon = [[SearchViewController alloc] init];
-        [search resignFirstResponder];
-        searchCon.hidesBottomBarWhenPushed = YES;
-        [weakSelf.navigationController pushViewController:searchCon animated:YES];
-        
-    };
+    [self customsearchBar];
     
     self.navigationController.
     self.navigationItem.title = @"Marl";
@@ -84,12 +73,43 @@
     [self setupUI];
     [self addnavigaItem];
     [self plistPathWithShareUrl];
-    //上拉加载
+    //下拉刷新
     [self upRefresh];
 
     
 }
+-(void)customsearchBar{
+    UISearchBar *_searchBar = [[UISearchBar alloc] init];
+    _searchBar.placeholder = @"  搜索";
+    _searchBar.delegate = self;
+     _searchBar.tintColor = [UIColor whiteColor];
+    [_searchBar setImage:[UIImage imageNamed:@"searchIcon"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+    
+    UIView *searchBarSub = _searchBar.subviews[0];
+    // 去除UISearchbar视图里的UISearchBarBackground之后，UISearchbar的背景也就透明了，同时也可以自定义颜色等 遍历所有searchbar中的view ios 7.1以上  和7.0一下是连个方法 需要判断一下版本方法
+    
+    for (UIView * subview in searchBarSub.subviews) {
+        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarTextField")]) {
+            [subview setBackgroundColor:YM_RGBA(247., 247., 270, 1.)];
+            
+        }
+        
+        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
+            [subview removeFromSuperview];
+        }
+    }
+    //       [titleView addSubview:_searchBar];
+    //Set to titleView
+    [self.navigationItem.titleView sizeToFit];
+    self.navigationItem.titleView = _searchBar;
 
+}
+#pragma mark - searchBarDelegate
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+    SearchViewController *searchVC = [[SearchViewController alloc] init];
+    [self.navigationController pushViewController:searchVC animated:YES];
+    return NO;
+}
 -(void)upRefresh{
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     RefreshHeader *header = [RefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
@@ -110,15 +130,15 @@
 - (void)loadNewData
 {
     // 1.添加假数据
+    WEAKSELF(ws);
     
-    
-    // 2.模拟2秒后刷新表格UI（真实开发中，可以移除这段gcd代码）
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    // 2.模拟1秒后刷新表格UI（真实开发中，可以移除这段gcd代码）
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 刷新表格
 //        [self.tableView reloadData];
         
         // 拿到当前的下拉刷新控件，结束刷新状态
-        [self.scrollView.mj_header endRefreshing];
+        [ws.scrollView.mj_header endRefreshing];
     });
 }
 
