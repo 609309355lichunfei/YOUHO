@@ -156,36 +156,6 @@
     self.navigationItem.titleView = _searchBar;
 //    [_searchBar setImage:[UIImage imageNamed:@"searchBar"] forSearchBarIcon:(UISearchBarIconSearch) state:(UIControlStateNormal)];
     //    添加右按钮
-//    self.rightBarItem = [[UIBarButtonItem alloc]
-//                         initWithTitle:@"取消"
-//                         style:UIBarButtonItemStylePlain
-//                         target:self
-//                         action:@selector(searchBarCancelButtonClicked:)];
-//    //      RightButton.tintColor = [UIColor blackColor];
-//    //    RightButton.title= [UIFont fontWithName:@"Marion-Italic" size:12];
-//    
-//    [_rightBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName : @"Helvetica" size : 12.0], NSFontAttributeName,[UIColor blackColor], NSForegroundColorAttributeName , nil ] forState : UIControlStateNormal ];
-//    [self.navigationItem setRightBarButtonItem:_rightBarItem];
-    //设置假的左item 别让搜索框太大
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]
-                         initWithTitle:@"返回"
-                         style:UIBarButtonItemStylePlain
-                         target:self
-                         action:@selector(nothing)];
-    //      RightButton.tintColor = [UIColor blackColor];
-    //    RightButton.title= [UIFont fontWithName:@"Marion-Italic" size:12];
-    
-    [leftItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName : @"Helvetica" size : 12.0], NSFontAttributeName,[UIColor blackColor], NSForegroundColorAttributeName , nil ] forState : UIControlStateNormal ];
-    [self.navigationItem setLeftBarButtonItem:leftItem];
-}
--(void)nothing{
-    [self.navigationController popViewControllerAnimated:YES];
-
-}
-#pragma mark - searchBarDelegate
--(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-{
-   // 添加左按钮
     self.rightBarItem = [[UIBarButtonItem alloc]
                          initWithTitle:@"取消"
                          style:UIBarButtonItemStylePlain
@@ -196,8 +166,26 @@
     
     [_rightBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName : @"Helvetica" size : 12.0], NSFontAttributeName,[UIColor blackColor], NSForegroundColorAttributeName , nil ] forState : UIControlStateNormal ];
     [self.navigationItem setRightBarButtonItem:_rightBarItem];
-
-    if( self.isBlackView ){
+    //设置假的左item 别让搜索框太大
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]
+                         initWithTitle:@""
+                         style:UIBarButtonItemStylePlain
+                         target:self
+                         action:@selector(nothing)];
+          leftItem.tintColor = [UIColor blackColor];
+//     NSDictionary *dic1 = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,[UIFont fontWithName:@"Marion-Italic" size:12],NSFontAttributeName,nil];
+//    [leftItem.title drawAtPoint:CGPointMake(0, 0) withAttributes:dic1];
+    
+    [leftItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName : @"Helvetica" size : 12.0], NSFontAttributeName,[UIColor blackColor], NSForegroundColorAttributeName , nil ] forState : UIControlStateNormal ];
+    [self.navigationItem setLeftBarButtonItem:leftItem];
+}
+-(void)nothing{
+   
+}
+#pragma mark - searchBarDelegate
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+     if( self.isBlackView ){
         [self.view bringSubviewToFront:self.blackView];
         
     }else {
@@ -219,8 +207,6 @@
 }
 - (void)tapblackView:(UITapGestureRecognizer *)sender{
     if(self.isFirstBlackView){
-//            self.navigationItem.rightBarButtonItem = nil;
-            //    searchBar.showsCancelButton = NO;
             self.searchBar.text = nil;
             //    [self.searchHistoryNameArr removeAllObjects];
             [self.searchBar resignFirstResponder];
@@ -232,7 +218,6 @@
             self.isFirstBlackView = YES;
             self.isFirstSearchTableView = NO;
         self.tabBarController.tabBar.hidden = NO;
-        self.navigationItem.rightBarButtonItem = nil;
     }
     if (self.isFirstSearchTableView) {
         [self.view bringSubviewToFront:self.searchTableView];
@@ -242,25 +227,8 @@
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
-    [self tapblackView: self.tap];
-    self.tabBarController.tabBar.hidden = NO;
-    self.navigationItem.rightBarButtonItem = nil;
-    //    searchBar.showsCancelButton = NO;
-    self.searchBar.text = nil;
-    //    [self.searchHistoryNameArr removeAllObjects];
-    [self.searchBar resignFirstResponder];
-//    self.isSearchView = NO;
-//    [self.searchTableView removeFromSuperview];
-//    [self.blackView removeFromSuperview];
-//    self.isSearchTableView = NO;
-//    self.isBlackView = NO;
-//    self.isFirstBlackView = YES;
-//    self.isFirstSearchTableView = NO;
-//        [self.searchView removeFromSuperview];
-   
-        [self.view bringSubviewToFront:_searchView];
-        [self.searchBar resignFirstResponder];
-    
+    [self.searchBar resignFirstResponder];    
+    [self.navigationController popViewControllerAnimated:YES];
 
 }
 -(void)layoySearchView{
