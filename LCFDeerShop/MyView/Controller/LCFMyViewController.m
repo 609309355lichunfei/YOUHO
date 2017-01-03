@@ -12,6 +12,7 @@
 #import "YMUtils.h"
 #import "MyTitleImageTag.h"
 #import "MyTopHeadView.h"
+#import "UIView+PS.h"
 
 #import "MyCollectionCell.h"
 #import "FootCollectionViewCell.h"
@@ -58,6 +59,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     //设置nagation  颜色
     self.navigationController.navigationBar.barTintColor = YM_RGBA(34., 31., 35.,1.);
     self.navigationItem.title = @"My";
@@ -198,11 +201,41 @@
         _tophead = [[MyTopHeadView alloc]init];
         _tophead.delegation = self;
         _tophead.userInteractionEnabled = YES;
-        _tophead.frame = CGRectMake(0, 0, LCF_SCREEN_WIDTH, 240);
+        _tophead.frame = CGRectMake(0, 0, LCF_SCREEN_WIDTH, 220);
     }
     
     return _tophead;
 }
+
+
+#pragma  mark- 设置偏移量Frame
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    
+//    CGFloat offset_Y = scrollView.contentOffset.y;
+//    
+//    //    NSLog(@"上下偏移量 OffsetY:%f ->",offset_Y);
+//    
+//    //1.处理图片放大
+//    CGFloat imageH = self.tophead.headGuidance.size.height;
+//    CGFloat imageW = LCF_SCREEN_WIDTH;
+//    
+//    //下拉
+//    if (offset_Y < 0)
+//    {
+//        CGFloat totalOffset = imageH + ABS(offset_Y);
+//        CGFloat f = totalOffset / imageH;
+//        
+//        //如果想下拉固定头部视图不动，y和h 是要等比都设置。如不需要则y可为0
+//        self.tophead.topHead_image.frame = CGRectMake(-(imageW * f - imageW) * 0.5, offset_Y, imageW * f, totalOffset);
+//    }
+//    else
+//    {
+//        self.tophead.topHead_image.frame = self.tophead.bounds;
+//    }
+//    
+//}
+
 
 -(UIButton *)heardGroud {
     
@@ -409,7 +442,7 @@
 -(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
     
-    return 3.f;
+    return 5.f;
 }
 //横向间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section

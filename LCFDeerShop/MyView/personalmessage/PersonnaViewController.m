@@ -9,7 +9,11 @@
 #import "PersonnaViewController.h"
 #import "ActionSheetPicker.h"
 #import "AbstractActionSheetPicker+Interface.h"
-@interface PersonnaViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
+#import "AJImageheadData.h"
+#import "AddressViewController.h"
+@interface PersonnaViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate,ABPeoplePickerNavigationControllerDelegate>
 @property   (nonatomic ,retain) UITableView     * tableview;
 @end
 
@@ -61,7 +65,7 @@
     if (section == 0) {
         return 1;
     }else if (section == 1){
-        return 4;
+        return 6;
     }
     return 2;
     
@@ -100,6 +104,8 @@
             cell.textLabel.text = @"生日";
         }if (indexPath.row == 4) {
             cell.textLabel.text = @"二维码";
+        }if (indexPath.row == 5) {
+            cell.textLabel.text = @"通讯录";
         }
         
     }else if (indexPath.section == 2){
@@ -127,12 +133,34 @@
     UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
     
     if (indexPath.section == 0) {
-        if (indexPath.row == 3) {
-            
+        //头像
+        if (indexPath.row == 0) {
+            [[AJImageheadData  shareInstance] showActionSheetInView:self.view fromController:self completion:^(UIImage *image, NSData *iamgeData) {
+//                cell.headimage.image  = image;
+                
+            } cancelBlock:^{
+                
+            }];
         }
+
+        
     }else if (indexPath.section == 1){
-        if (indexPath.row == 2) {
-           
+        if (indexPath.row == 5) {
+            WEAKSELF(weakSelf)
+            [YMUtils CheckAddressBookAuthorization:^(bool isAuthorized) {
+                if (isAuthorized) {
+                    ABPeoplePickerNavigationController * abpeoplePick = [[ABPeoplePickerNavigationController alloc]init];
+                    abpeoplePick.peoplePickerDelegate = weakSelf;
+                    
+                    //    [self.navigationController presentModalViewController:abpeoplePick animated:YES];
+                    [weakSelf.navigationController presentViewController:abpeoplePick animated:YES completion:^{
+                        
+                    }];
+                }else{
+                    [MBManager showBriefAlert:@"请到设置>隐私>通讯录打开本应用的权限设置"];
+                }
+            }];
+            
         }
         
     }else if (indexPath.section == 2){
@@ -153,8 +181,46 @@
             [actionPicker showActionSheetPicker];
         }
         
+    }else if (indexPath.section == 3){
+        
+        if (indexPath.row == 0) {
+            AddressViewController * address = [AddressViewController new];
+            [self.navigationController pushViewController:address animated:YES];
+        }
     }
 }
+
+#pragma mark - ABPeoplePickerNavigationControllerDelegate
+- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person{
+    
+    
+    
+    ABMultiValueRef phone = ABRecordCopyValue(person, kABPersonPhoneProperty);
+    
+    for (int k = 0; k<ABMultiValueGetCount(phone); k++)
+    {
+        //获取电话Label
+        NSString * personPhoneLabel = (__bridge NSString*)ABAddressBookCopyLocalizedLabel(ABMultiValueCopyLabelAtIndex(phone, k));
+        //获取該Label下的电话值
+        NSString * personPhone = (__bridge NSString*)ABMultiValueCopyValueAtIndex(phone, k);
+        
+        //通过数据model赋值给自己的电话.
+        
+//        self.addressModel.phoneNumber = personPhone;
+        
+//        NewAddressTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+//        cell.textField.text = personPhone;
+        
+        NSLog(@"%@~~~~~~%@",personPhoneLabel,personPhone);
+    }
+    NSLog(@"%@",person);
+    [self.navigationController dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

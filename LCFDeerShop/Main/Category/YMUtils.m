@@ -7,7 +7,8 @@
 //
 
 #import "YMUtils.h"
-
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 static YMUtils * shareUtils;
 #define  kFike [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"loginParam.data"]
 
@@ -33,6 +34,40 @@ static YMUtils * shareUtils;
     id loginParam = [NSKeyedUnarchiver unarchiveObjectWithFile:kFike];
     return loginParam;
 }
+
++(void)CheckAddressBookAuthorization:(void (^)(bool isAuthorized))block
+{
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
+    ABAuthorizationStatus authStatus = ABAddressBookGetAuthorizationStatus();
+    
+    if (authStatus != kABAuthorizationStatusAuthorized)
+    {
+        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error)
+                                                 {
+                                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                                         if (error)
+                                                         {
+                                                             NSLog(@"Error: %@", (__bridge NSError *)error);
+                                                         }
+                                                         else if (!granted)
+                                                         {
+                                                             
+                                                             block(NO);
+                                                         }
+                                                         else
+                                                         {
+                                                             block(YES);
+                                                         }
+                                                     });
+                                                 });
+    }
+    else
+    {
+        block(YES);
+    }
+    
+}
+
 
 
 @end

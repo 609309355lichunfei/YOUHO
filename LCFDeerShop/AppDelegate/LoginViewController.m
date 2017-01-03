@@ -14,6 +14,7 @@
 #import "RequestLoginParam.h"
 #import "RegisterViewController.h"
 
+
 /*
  UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
  
@@ -38,6 +39,9 @@
 @property (nonatomic,retain)    UIView      * BG_view;
 @property (nonatomic,retain)    UILabel     * title_label;
 @property (nonatomic,retain)    UIButton    * login_bt;
+@property (nonatomic,retain)   UITextField  * Account;
+@property (nonatomic,retain)    UITextField * password;
+
 
 @end
 
@@ -63,6 +67,7 @@
     _backgroundImage.frame = CGRectMake(0, 0, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT);
     return _backgroundImage;
 }
+
 -(UIView *)BG_view{
     
     if (!_BG_view) {
@@ -132,6 +137,7 @@
         make.width.equalTo(@(LCF_SCREEN_WIDTH / 1.5));
         make.height.equalTo(@(35));
     }];
+    self.Account = Account;
     
     UITextField * password = [[UITextField alloc]init];
     password.placeholder = @" 密码";
@@ -252,16 +258,28 @@
 //登陆按钮
 -(void)actionClicedLoginBt:(UIButton *)sender{
     
-     WEAKSELF(weakSelf)
-    double delayInSeconds = 1.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        //显示导航栏状态
-        weakSelf.navigationController.navigationBar.hidden = NO;
+    
+    /* 判断如果电话号码不正确提示一下错误不让跳转界面 否则是对的就直接跳转下一个界面*/
+    
+    if (![self.Account.text  isValidPhoneNum]) {
+        [MBManager showBriefAlert:@"请输入正确电话号码"];
+        return;
+    }else if (! [self.password.text  isEqualToString:@""]  && !(self.password.text.length < 6)){
         
-        [weakSelf.navigationController popViewControllerAnimated:YES];
-    });
-
+        [MBManager showBriefAlert:@"请输入密码"];
+        
+    }else{
+        WEAKSELF(weakSelf)
+        double delayInSeconds = 1.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            //显示导航栏状态
+            weakSelf.navigationController.navigationBar.hidden = NO;
+            
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        });
+        
+    }
 }
 //第三方登陆
 -(void)actionClicedLogin:(UIButton *)sender{
@@ -283,9 +301,10 @@
     [self.view endEditing:YES];
 }
 
-/* 注册 */
+/* 快速注册 */
 - (void)ClickRegister:(UIButton *)sender {
-  
+ 
+    
    
 }
 

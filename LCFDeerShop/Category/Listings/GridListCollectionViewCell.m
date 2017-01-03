@@ -67,6 +67,7 @@
     _model = model;
     
     [_imageV sd_setImageWithURL:[NSURL URLWithString:model.imageurl]];
+    
     _titleLabel.text = model.wname;
     _priceLabel.text = [NSString stringWithFormat:@"￥%.2f",model.jdPrice];
 }

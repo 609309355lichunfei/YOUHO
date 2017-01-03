@@ -36,6 +36,12 @@
 //    [self.navigationController popViewControllerAnimated:YES];
 //}
 
+-(void)WebViewBackgroud {
+    
+ 
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

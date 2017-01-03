@@ -16,5 +16,7 @@
 +(void)saveLoginParam:(LCFUserResponse *)loginParam;
 //取模具
 +(LCFUserResponse *)loginParam;
+//本地通讯录
++(void)CheckAddressBookAuthorization:(void (^)(bool isAuthorized))block;
 
 @end

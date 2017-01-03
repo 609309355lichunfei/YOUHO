@@ -55,6 +55,10 @@
 		B36EF7A51E0385E800DC24DF /* FootCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B36EF7A41E0385E800DC24DF /* FootCollectionViewCell.m */; };
 		B373FBE51DF68CAA0028C24A /* JSCartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B373FBE41DF68CAA0028C24A /* JSCartModel.m */; };
 		B373FBE81DF79A400028C24A /* JSCartBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B373FBE71DF79A400028C24A /* JSCartBar.m */; };
+		B390E37D1E1B471300A52F69 /* NSString+STRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = B390E37C1E1B471300A52F69 /* NSString+STRegex.m */; };
+		B390E3801E1B4F8F00A52F69 /* UIView+PS.m in Sources */ = {isa = PBXBuildFile; fileRef = B390E37F1E1B4F8F00A52F69 /* UIView+PS.m */; };
+		B390E3831E1B542C00A52F69 /* AJImageheadData.m in Sources */ = {isa = PBXBuildFile; fileRef = B390E3821E1B542C00A52F69 /* AJImageheadData.m */; };
+		B390E3871E1B55D200A52F69 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B390E3861E1B55D200A52F69 /* AddressViewController.m */; };
 		B39409B41E0CD24B00208FF5 /* PersonnaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B39409B31E0CD24B00208FF5 /* PersonnaViewController.m */; };
 		B39409B91E0CE05200208FF5 /* AbstractActionSheetPicker+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = B39409B61E0CE05200208FF5 /* AbstractActionSheetPicker+Interface.m */; };
 		B39409F71E10AFD200208FF5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B39409E01E10AFD200208FF5 /* LICENSE */; };
@@ -241,6 +245,14 @@
 		B373FBE41DF68CAA0028C24A /* JSCartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCartModel.m; sourceTree = "<group>"; };
 		B373FBE61DF79A400028C24A /* JSCartBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCartBar.h; sourceTree = "<group>"; };
 		B373FBE71DF79A400028C24A /* JSCartBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCartBar.m; sourceTree = "<group>"; };
+		B390E37B1E1B471300A52F69 /* NSString+STRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+STRegex.h"; sourceTree = "<group>"; };
+		B390E37C1E1B471300A52F69 /* NSString+STRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+STRegex.m"; sourceTree = "<group>"; };
+		B390E37E1E1B4F8F00A52F69 /* UIView+PS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PS.h"; sourceTree = "<group>"; };
+		B390E37F1E1B4F8F00A52F69 /* UIView+PS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PS.m"; sourceTree = "<group>"; };
+		B390E3811E1B542C00A52F69 /* AJImageheadData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJImageheadData.h; sourceTree = "<group>"; };
+		B390E3821E1B542C00A52F69 /* AJImageheadData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJImageheadData.m; sourceTree = "<group>"; };
+		B390E3851E1B55D200A52F69 /* AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressViewController.h; sourceTree = "<group>"; };
+		B390E3861E1B55D200A52F69 /* AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressViewController.m; sourceTree = "<group>"; };
 		B39409B21E0CD24B00208FF5 /* PersonnaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonnaViewController.h; sourceTree = "<group>"; };
 		B39409B31E0CD24B00208FF5 /* PersonnaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonnaViewController.m; sourceTree = "<group>"; };
 		B39409B61E0CE05200208FF5 /* AbstractActionSheetPicker+Interface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AbstractActionSheetPicker+Interface.m"; sourceTree = "<group>"; };
@@ -539,6 +551,29 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		B390E3841E1B55C200A52F69 /* address */ = {
+			isa = PBXGroup;
+			children = (
+				B390E3851E1B55D200A52F69 /* AddressViewController.h */,
+				B390E3861E1B55D200A52F69 /* AddressViewController.m */,
+			);
+			path = address;
+			sourceTree = "<group>";
+		};
+		B390E38E1E1B722A00A52F69 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		B390E3B91E1B795200A52F69 /* Quick */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Quick;
+			sourceTree = "<group>";
+		};
 		B39409B11E0CD23300208FF5 /* personalmessage */ = {
 			isa = PBXGroup;
 			children = (
@@ -729,6 +764,7 @@
 		B3B4C3381DDECD4D002D43CF /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B390E38E1E1B722A00A52F69 /* LaunchScreen */,
 				369AE9161E10EB810045AF53 /* Database */,
 				B3011CEF1E0A11B3008C8139 /* WebViewController */,
 				B3E1B56C1DDECE4100E55F5A /* LCFTabBarController */,
@@ -768,6 +804,12 @@
 				B39409B61E0CE05200208FF5 /* AbstractActionSheetPicker+Interface.m */,
 				B3A2484D1E11FBF800DFCD32 /* NSMutableArray+ZZExtension.h */,
 				B3A2484E1E11FBF800DFCD32 /* NSMutableArray+ZZExtension.m */,
+				B390E37B1E1B471300A52F69 /* NSString+STRegex.h */,
+				B390E37C1E1B471300A52F69 /* NSString+STRegex.m */,
+				B390E37E1E1B4F8F00A52F69 /* UIView+PS.h */,
+				B390E37F1E1B4F8F00A52F69 /* UIView+PS.m */,
+				B390E3811E1B542C00A52F69 /* AJImageheadData.h */,
+				B390E3821E1B542C00A52F69 /* AJImageheadData.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -863,6 +905,8 @@
 		B3E1B5701DDECF0D00E55F5A /* MyView */ = {
 			isa = PBXGroup;
 			children = (
+				B390E3B91E1B795200A52F69 /* Quick */,
+				B390E3841E1B55C200A52F69 /* address */,
 				B39409B11E0CD23300208FF5 /* personalmessage */,
 				B3982DA71E07C3DC00EE1435 /* iniform */,
 				B3982DA61E07BF8D00EE1435 /* Setting */,
@@ -1345,6 +1389,7 @@
 				B31534561DFFA8E900A3FD07 /* RegisterViewController.m in Sources */,
 				B3E1B59A1DDED6B300E55F5A /* LCFTaBarViewController.m in Sources */,
 				B3940A001E10AFD200208FF5 /* SWActionSheet.m in Sources */,
+				B390E3831E1B542C00A52F69 /* AJImageheadData.m in Sources */,
 				B34AABF21DE563A30053244E /* MASCompositeConstraint.m in Sources */,
 				B34AABF61DE563A30053244E /* MASViewAttribute.m in Sources */,
 				B346DD6A1DE32A6B00ACA6A8 /* LoginViewController.m in Sources */,
@@ -1402,6 +1447,8 @@
 				B34AAC051DE583DC0053244E /* PressAnimationButton.m in Sources */,
 				B346DD4B1DE313E100ACA6A8 /* SearchViewController.m in Sources */,
 				B3F294361E03CBDF000626BC /* SecendCollectionViewCell.m in Sources */,
+				B390E3801E1B4F8F00A52F69 /* UIView+PS.m in Sources */,
+				B390E3871E1B55D200A52F69 /* AddressViewController.m in Sources */,
 				B34AABF71DE563A30053244E /* MASViewConstraint.m in Sources */,
 				B3C713AF1DE8339700747345 /* ShopDetailsViewController.m in Sources */,
 				368303DC1E0CF5E100AC1C9A /* LXDScanCodeController.m in Sources */,
@@ -1409,6 +1456,7 @@
 				B34AABF41DE563A30053244E /* MASConstraintMaker.m in Sources */,
 				B3C1E73A1E11555800EB9D36 /* CategoryCollectionViewCell.m in Sources */,
 				B34AABFB1DE563A30053244E /* ViewController+MASAdditions.m in Sources */,
+				B390E37D1E1B471300A52F69 /* NSString+STRegex.m in Sources */,
 				B3940A011E10AFD200208FF5 /* README.md in Sources */,
 				B3A2484F1E11FBF800DFCD32 /* NSMutableArray+ZZExtension.m in Sources */,
 				B3B4C3321DDECB72002D43CF /* ViewController.m in Sources */,
