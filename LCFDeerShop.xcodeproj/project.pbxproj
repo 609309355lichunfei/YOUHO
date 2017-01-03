@@ -1191,7 +1191,7 @@
 				TargetAttributes = {
 					B3B4C2F01DDEAE9C002D43CF = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = K74MNZ94PX;
+						DevelopmentTeam = 6FQUJ4NGKQ;
 						ProvisioningStyle = Automatic;
 					};
 					B3B4C30C1DDEAE9D002D43CF = {
@@ -1542,7 +1542,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = K74MNZ94PX;
+				DEVELOPMENT_TEAM = 6FQUJ4NGKQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LCFDeerShop/Vender",
@@ -1563,7 +1563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = K74MNZ94PX;
+				DEVELOPMENT_TEAM = 6FQUJ4NGKQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LCFDeerShop/Vender",

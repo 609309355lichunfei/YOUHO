@@ -16,19 +16,26 @@
 
 @implementation ShopDetailsViewController
 
-//-(void)viewWillAppear:(BOOL)animated{
-//    
-//    [super viewWillAppear:animated];
-//    if (!self.navigationController.navigationBar.hidden) {
-//       
-//    }
-//}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+        [super viewWillAppear:animated];
+        [self.navigationController setNavigationBarHidden:YES];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-     self.navigationController.navigationBar.hidden = YES;
+    
+    
+//     self.navigationController.navigationBar.hidden = NO;
+    
+    
     
     [self setUpWithHeadView];
     
