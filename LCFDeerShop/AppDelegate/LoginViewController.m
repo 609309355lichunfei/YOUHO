@@ -13,7 +13,9 @@
 #import "YYDeerShopRequest.h"
 #import "RequestLoginParam.h"
 #import "RegisterViewController.h"
-
+#import "QuickViewController.h"
+#import "OLImage.h"
+#import "OLImageView.h"
 
 /*
  UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
@@ -82,8 +84,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view addSubview:self.backgroundImage];
-    [self.backgroundImage addSubview:self.BG_view];
+//    [self.view addSubview:self.backgroundImage];
+    /*GIF背景动画设置*/
+    OLImageView * animationImage = [[OLImageView alloc] initWithImage:[OLImage imageNamed:@"chalet_d.gif"]];
+    [animationImage setFrame:CGRectMake(0, 0, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT)];
+    
+    [self.view addSubview:animationImage];
+    
+    [animationImage addSubview:self.BG_view];
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.leftBarButtonItem = nil;
     
@@ -112,15 +120,20 @@
 
 -(void)setUpDataLayoutSubView{
     //欢迎 title
-    UILabel * title = [[UILabel alloc] init];
-    title.frame = CGRectMake(LCF_SCREEN_WIDTH / 2.5 , 150, 100, 25);
-    title.text = @"登陆";
-    title.textAlignment = NSTextAlignmentCenter;
-    title.textColor = [UIColor whiteColor];
-     title.font = [UIFont AmericanTypewriterBoldFontSize:15.];
-    title.font = XNFont(24);
+//    UILabel * title = [[UILabel alloc] init];
+//    title.frame = CGRectMake(LCF_SCREEN_WIDTH / 2.5 , 150, 100, 25);
+//    title.text = @"登陆";
+//    title.textAlignment = NSTextAlignmentCenter;
+//    title.textColor = [UIColor whiteColor];
+//     title.font = [UIFont AmericanTypewriterBoldFontSize:15.];
+//    title.font = XNFont(24);
+//    [self.BG_view addSubview:title];
+//    self.title_label = title;
+    
+    OLImageView * title = [[OLImageView alloc] initWithImage:[OLImage imageNamed:@"type-warp-animation.gif"]];
+    [title setFrame:CGRectMake(LCF_SCREEN_WIDTH / 2.5 , 150, LCF_SCREEN_WIDTH / 3.75, 80)];
+    
     [self.BG_view addSubview:title];
-    self.title_label = title;
     
     
     UITextField * Account = [[UITextField alloc]init];
@@ -304,7 +317,8 @@
 /* 快速注册 */
 - (void)ClickRegister:(UIButton *)sender {
  
-    
+    QuickViewController  * quick = [QuickViewController new];
+    [self.navigationController pushViewController:quick animated:YES];
    
 }
 

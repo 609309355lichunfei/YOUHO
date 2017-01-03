@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '682B558AE9A9D05EDC4BFC0A098BEF81'
-               BlueprintName = 'FMDBMigrationManager'
+               BlueprintIdentifier = 'EB77108A59FDE63AA863A2DF3D9F8DCF'
+               BlueprintName = 'OLImageView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libFMDBMigrationManager.a'>
+               BuildableName = 'libOLImageView.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

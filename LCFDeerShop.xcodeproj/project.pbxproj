@@ -59,6 +59,9 @@
 		B390E3801E1B4F8F00A52F69 /* UIView+PS.m in Sources */ = {isa = PBXBuildFile; fileRef = B390E37F1E1B4F8F00A52F69 /* UIView+PS.m */; };
 		B390E3831E1B542C00A52F69 /* AJImageheadData.m in Sources */ = {isa = PBXBuildFile; fileRef = B390E3821E1B542C00A52F69 /* AJImageheadData.m */; };
 		B390E3871E1B55D200A52F69 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B390E3861E1B55D200A52F69 /* AddressViewController.m */; };
+		B390E3BF1E1B849600A52F69 /* QuickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B390E3BE1E1B849600A52F69 /* QuickViewController.m */; };
+		B390E3C31E1B8A0500A52F69 /* chalet_d.gif in Resources */ = {isa = PBXBuildFile; fileRef = B390E3C21E1B8A0500A52F69 /* chalet_d.gif */; };
+		B390E3C51E1B8E3F00A52F69 /* type-warp-animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = B390E3C41E1B8E3F00A52F69 /* type-warp-animation.gif */; };
 		B39409B41E0CD24B00208FF5 /* PersonnaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B39409B31E0CD24B00208FF5 /* PersonnaViewController.m */; };
 		B39409B91E0CE05200208FF5 /* AbstractActionSheetPicker+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = B39409B61E0CE05200208FF5 /* AbstractActionSheetPicker+Interface.m */; };
 		B39409F71E10AFD200208FF5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B39409E01E10AFD200208FF5 /* LICENSE */; };
@@ -253,6 +256,10 @@
 		B390E3821E1B542C00A52F69 /* AJImageheadData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJImageheadData.m; sourceTree = "<group>"; };
 		B390E3851E1B55D200A52F69 /* AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressViewController.h; sourceTree = "<group>"; };
 		B390E3861E1B55D200A52F69 /* AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressViewController.m; sourceTree = "<group>"; };
+		B390E3BD1E1B849600A52F69 /* QuickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickViewController.h; sourceTree = "<group>"; };
+		B390E3BE1E1B849600A52F69 /* QuickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickViewController.m; sourceTree = "<group>"; };
+		B390E3C21E1B8A0500A52F69 /* chalet_d.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = chalet_d.gif; path = ../../chalet_d.gif; sourceTree = "<group>"; };
+		B390E3C41E1B8E3F00A52F69 /* type-warp-animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "type-warp-animation.gif"; path = "../../type-warp-animation.gif"; sourceTree = "<group>"; };
 		B39409B21E0CD24B00208FF5 /* PersonnaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonnaViewController.h; sourceTree = "<group>"; };
 		B39409B31E0CD24B00208FF5 /* PersonnaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonnaViewController.m; sourceTree = "<group>"; };
 		B39409B61E0CE05200208FF5 /* AbstractActionSheetPicker+Interface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AbstractActionSheetPicker+Interface.m"; sourceTree = "<group>"; };
@@ -570,6 +577,8 @@
 		B390E3B91E1B795200A52F69 /* Quick */ = {
 			isa = PBXGroup;
 			children = (
+				B390E3BD1E1B849600A52F69 /* QuickViewController.h */,
+				B390E3BE1E1B849600A52F69 /* QuickViewController.m */,
 			);
 			path = Quick;
 			sourceTree = "<group>";
@@ -692,6 +701,8 @@
 		B3B4C2F31DDEAE9C002D43CF /* LCFDeerShop */ = {
 			isa = PBXGroup;
 			children = (
+				B390E3C21E1B8A0500A52F69 /* chalet_d.gif */,
+				B390E3C41E1B8E3F00A52F69 /* type-warp-animation.gif */,
 				B3B4C32A1DDECB72002D43CF /* AppDelegate */,
 				B3B4C3381DDECD4D002D43CF /* Main */,
 				B3E1B56D1DDECEE200E55F5A /* Home */,
@@ -1276,6 +1287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FC56A31E092DBB00AD8BD6 /* menuButton@2x.png in Resources */,
+				B390E3C51E1B8E3F00A52F69 /* type-warp-animation.gif in Resources */,
 				B34AABF11DE563A30053244E /* LICENSE in Resources */,
 				B3A2492F1E1248A700DFCD32 /* product.json in Resources */,
 				B3982DB21E07E2DE00EE1435 /* FocusURL.plist in Resources */,
@@ -1289,6 +1301,7 @@
 				B3B4C3041DDEAE9C002D43CF /* Assets.xcassets in Resources */,
 				B3FC56AA1E0930B500AD8BD6 /* content_2@3x.png in Resources */,
 				B3189F8C1E13AD9A00A6098C /* stock.plist in Resources */,
+				B390E3C31E1B8A0500A52F69 /* chalet_d.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1400,6 +1413,7 @@
 				B3C713B21DE8368500747345 /* shopDetailsHeadView.m in Sources */,
 				B346DD471DE2A5DC00ACA6A8 /* LCFHomeCell.m in Sources */,
 				B346DD571DE31A4700ACA6A8 /* UIImage+SearchHeight.m in Sources */,
+				B390E3BF1E1B849600A52F69 /* QuickViewController.m in Sources */,
 				B34AABF31DE563A30053244E /* MASConstraint.m in Sources */,
 				369AE9151E10E9760045AF53 /* SearchHistoryCell.m in Sources */,
 				B373FBE81DF79A400028C24A /* JSCartBar.m in Sources */,

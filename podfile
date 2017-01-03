@@ -9,4 +9,5 @@ pod 'MBProgressHUD'
 pod 'FMDBMigrationManager'
 pod 'FMDB'
 pod 'CocoaLumberjack'
+pod 'OLImageView', '~> 1.5.1'
 end

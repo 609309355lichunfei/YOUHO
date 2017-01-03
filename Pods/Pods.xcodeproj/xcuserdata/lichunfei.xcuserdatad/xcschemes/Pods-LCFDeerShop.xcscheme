@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '7A0F1DB18BD3DD8C8D03962C08E94931'
+               BlueprintIdentifier = 'EA302AE5DA6496D00168197711883859'
                BlueprintName = 'Pods-LCFDeerShop'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-LCFDeerShop.a'>
