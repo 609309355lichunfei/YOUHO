@@ -25,7 +25,7 @@
 #import "ShopDetailsViewController.h"
 
 #import "PersonnaViewController.h"
-@interface LCFMyViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,MyTopHeadViewDelegation>
+@interface LCFMyViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,MyTopHeadViewDelegation,PersonnaViewControllerDelegate>
 
 /**
  标记跳转登陆页面
@@ -164,8 +164,17 @@
 - (void)setHeardShareManagerWithPush:(UIButton *)sender {
     
     PersonnaViewController * person = [[PersonnaViewController alloc] init];
+    person.delegate = self;
+    
     person.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:person animated:YES];
+}
+
+- (void) heardWithSharMagerImage:(UIImageView *)image {
+    
+//    _tophead.heard_icon.image = image.image;
+    
+    [_tophead.heard_icon setImage:image.image forState:UIControlStateNormal];
 }
 
 #pragma mark --------------------    数据源

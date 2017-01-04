@@ -232,7 +232,6 @@
     }];
     
     UIButton * WPassword = [UIButton buttonWithType:UIButtonTypeCustom];
-    
     [WPassword setTitle:@"忘记密码" forState:UIControlStateNormal];
     [WPassword setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     WPassword.titleLabel.font = XNFont(12);
@@ -294,6 +293,7 @@
         
     }
 }
+
 //第三方登陆
 -(void)actionClicedLogin:(UIButton *)sender{
     

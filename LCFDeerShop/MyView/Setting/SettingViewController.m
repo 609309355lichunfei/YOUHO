@@ -7,7 +7,7 @@
 //
 
 #import "SettingViewController.h"
-
+#import "SettingFooterView.h"
 @interface SettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property   (nonatomic ,retain) UITableView     * tableview;
@@ -34,6 +34,8 @@
         [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateHighlighted];
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:lefItemBt];
 
+
+    
     
 }
 -(void)actionlefItemBt {
@@ -55,17 +57,17 @@
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3 ;
     
+    return 3;
+
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (section == 0) {
-        return 3;
-    }else if (section == 1){
-        return 4;
-    }
+    
+    if(section == 0)   return 3;
+    if(section == 1)   return 4;
+    
     return 1;
     
 }
@@ -130,6 +132,7 @@
    
     }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

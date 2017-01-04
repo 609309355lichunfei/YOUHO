@@ -18,12 +18,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.title = @"快速注册";
+    UIButton * lefItemBt = [UIButton buttonWithType:UIButtonTypeCustom];
+    lefItemBt.frame = CGRectMake(0, 0, 20, 20);
+    [lefItemBt addTarget:self action:@selector(ClickPop:) forControlEvents:UIControlEventTouchUpInside];
+    [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateNormal];
+    [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateHighlighted];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:lefItemBt];
     
-//    OLImageView * animationImage = [[OLImageView alloc] initWithImage:[OLImage imageNamed:@"1.gif"]];
-//    [animationImage setFrame:CGRectMake(0, 0, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT)];
+//    OLImageView * animationImage = [[OLImageView alloc] initWithImage:[OLImage imageNamed:@"01-black-cat_800x600_v1.gif"]];
+//    [animationImage setFrame:CGRectMake(0, 0, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT / 2)];
 //    
 //    [self.view addSubview:animationImage];
     
+    
+    
+    
+}
+
+//pop
+
+-(void)ClickPop:(UIButton *)sender{
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

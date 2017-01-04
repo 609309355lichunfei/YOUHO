@@ -14,6 +14,9 @@
 @property (nonatomic,retain)    UIImageView * backgroundImage; //背景图片
 @property (nonatomic,retain)    UIView      * BG_view;  //背景view
 @property (nonatomic,retain)    UIButton    * leftnaviga; //返回按钮
+@property (nonatomic,retain)    UITextField * AccountTextield;//账号
+@property (nonatomic,retain)    UITextField * PasswordTextield;//密码
+
 @end
 
 @implementation RegisterViewController
@@ -46,19 +49,31 @@
     /*创建GIF动画背景图片*/
     OLImageView * animationImage = [[OLImageView alloc] initWithImage:[OLImage imageNamed:@"chalet_d.gif"]];
     [animationImage setFrame:CGRectMake(0, 0, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT)];
-    
     [self.view addSubview:animationImage];
-    
     [animationImage addSubview:self.BG_view];
     
-    
-        UIButton * lefItemBt = [UIButton buttonWithType:UIButtonTypeCustom];
-        lefItemBt.frame = CGRectMake(0, 0, 20, 20);
+    UIButton * lefItemBt = [UIButton buttonWithType:UIButtonTypeCustom];
+    lefItemBt.frame = CGRectMake(0, 0, 20, 20);
     [lefItemBt addTarget:self action:@selector(ClickPop:) forControlEvents:UIControlEventTouchUpInside];
-        [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateNormal];
-        [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateHighlighted];
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:lefItemBt];
+    [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateNormal];
+    [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateHighlighted];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:lefItemBt];
     
+    UILabel * accountTextield = [[UILabel alloc] init];
+    accountTextield.text = @"账号";
+    [self.view addSubview:accountTextield];
+    [accountTextield mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+    }];
+    
+    UITextField * AccountTextield = [[UITextField alloc]init];
+    [self.view addSubview:AccountTextield];
+    [AccountTextield mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view);
+        
+    }];
+    self.AccountTextield = AccountTextield;
 
 }
 

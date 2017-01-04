@@ -8,6 +8,15 @@
 
 #import "LCFViewController.h"
 
-@interface PersonnaViewController : LCFViewController
+@protocol PersonnaViewControllerDelegate <NSObject>
 
+@optional
+
+- (void)heardWithSharMagerImage:(UIImageView *)image;
+
+
+@end
+
+@interface PersonnaViewController : LCFViewController
+@property   (nonatomic ,weak )  id          <PersonnaViewControllerDelegate>delegate;
 @end

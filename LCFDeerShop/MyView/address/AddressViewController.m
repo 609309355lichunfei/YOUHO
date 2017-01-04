@@ -2,7 +2,7 @@
 //  AddressViewController.m
 //  LCFDeerShop
 //
-//  Created by 李春菲 on 17/1/3.
+//  Created by 李春菲 on 17/1/4.
 //  Copyright © 2017年 lichunfei. All rights reserved.
 //
 
@@ -16,13 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.\
-    
-    self.navigationItem.title = @"地址管理";
-    
+    // Do any additional setup after loading the view.
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

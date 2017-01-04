@@ -58,10 +58,12 @@
 		B390E37D1E1B471300A52F69 /* NSString+STRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = B390E37C1E1B471300A52F69 /* NSString+STRegex.m */; };
 		B390E3801E1B4F8F00A52F69 /* UIView+PS.m in Sources */ = {isa = PBXBuildFile; fileRef = B390E37F1E1B4F8F00A52F69 /* UIView+PS.m */; };
 		B390E3831E1B542C00A52F69 /* AJImageheadData.m in Sources */ = {isa = PBXBuildFile; fileRef = B390E3821E1B542C00A52F69 /* AJImageheadData.m */; };
-		B390E3871E1B55D200A52F69 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B390E3861E1B55D200A52F69 /* AddressViewController.m */; };
 		B390E3BF1E1B849600A52F69 /* QuickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B390E3BE1E1B849600A52F69 /* QuickViewController.m */; };
-		B390E3C31E1B8A0500A52F69 /* chalet_d.gif in Resources */ = {isa = PBXBuildFile; fileRef = B390E3C21E1B8A0500A52F69 /* chalet_d.gif */; };
-		B390E3C51E1B8E3F00A52F69 /* type-warp-animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = B390E3C41E1B8E3F00A52F69 /* type-warp-animation.gif */; };
+		B390E3CA1E1C8C0000A52F69 /* SettingFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B390E3C91E1C8C0000A52F69 /* SettingFooterView.m */; };
+		B390E3D61E1C9FFE00A52F69 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B390E3D51E1C9FFE00A52F69 /* AddressViewController.m */; };
+		B390E3DA1E1CA05400A52F69 /* 01-black-cat_800x600_v1.gif in Resources */ = {isa = PBXBuildFile; fileRef = B390E3D71E1CA05400A52F69 /* 01-black-cat_800x600_v1.gif */; };
+		B390E3DB1E1CA05400A52F69 /* chalet_d.gif in Resources */ = {isa = PBXBuildFile; fileRef = B390E3D81E1CA05400A52F69 /* chalet_d.gif */; };
+		B390E3DC1E1CA05400A52F69 /* type-warp-animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = B390E3D91E1CA05400A52F69 /* type-warp-animation.gif */; };
 		B39409B41E0CD24B00208FF5 /* PersonnaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B39409B31E0CD24B00208FF5 /* PersonnaViewController.m */; };
 		B39409B91E0CE05200208FF5 /* AbstractActionSheetPicker+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = B39409B61E0CE05200208FF5 /* AbstractActionSheetPicker+Interface.m */; };
 		B39409F71E10AFD200208FF5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B39409E01E10AFD200208FF5 /* LICENSE */; };
@@ -254,12 +256,15 @@
 		B390E37F1E1B4F8F00A52F69 /* UIView+PS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PS.m"; sourceTree = "<group>"; };
 		B390E3811E1B542C00A52F69 /* AJImageheadData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJImageheadData.h; sourceTree = "<group>"; };
 		B390E3821E1B542C00A52F69 /* AJImageheadData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJImageheadData.m; sourceTree = "<group>"; };
-		B390E3851E1B55D200A52F69 /* AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressViewController.h; sourceTree = "<group>"; };
-		B390E3861E1B55D200A52F69 /* AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressViewController.m; sourceTree = "<group>"; };
 		B390E3BD1E1B849600A52F69 /* QuickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickViewController.h; sourceTree = "<group>"; };
 		B390E3BE1E1B849600A52F69 /* QuickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickViewController.m; sourceTree = "<group>"; };
-		B390E3C21E1B8A0500A52F69 /* chalet_d.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = chalet_d.gif; path = ../../chalet_d.gif; sourceTree = "<group>"; };
-		B390E3C41E1B8E3F00A52F69 /* type-warp-animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "type-warp-animation.gif"; path = "../../type-warp-animation.gif"; sourceTree = "<group>"; };
+		B390E3C81E1C8C0000A52F69 /* SettingFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingFooterView.h; sourceTree = "<group>"; };
+		B390E3C91E1C8C0000A52F69 /* SettingFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingFooterView.m; sourceTree = "<group>"; };
+		B390E3D41E1C9FFE00A52F69 /* AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressViewController.h; sourceTree = "<group>"; };
+		B390E3D51E1C9FFE00A52F69 /* AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressViewController.m; sourceTree = "<group>"; };
+		B390E3D71E1CA05400A52F69 /* 01-black-cat_800x600_v1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "01-black-cat_800x600_v1.gif"; sourceTree = "<group>"; };
+		B390E3D81E1CA05400A52F69 /* chalet_d.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = chalet_d.gif; sourceTree = "<group>"; };
+		B390E3D91E1CA05400A52F69 /* type-warp-animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "type-warp-animation.gif"; sourceTree = "<group>"; };
 		B39409B21E0CD24B00208FF5 /* PersonnaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonnaViewController.h; sourceTree = "<group>"; };
 		B39409B31E0CD24B00208FF5 /* PersonnaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonnaViewController.m; sourceTree = "<group>"; };
 		B39409B61E0CE05200208FF5 /* AbstractActionSheetPicker+Interface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AbstractActionSheetPicker+Interface.m"; sourceTree = "<group>"; };
@@ -561,8 +566,8 @@
 		B390E3841E1B55C200A52F69 /* address */ = {
 			isa = PBXGroup;
 			children = (
-				B390E3851E1B55D200A52F69 /* AddressViewController.h */,
-				B390E3861E1B55D200A52F69 /* AddressViewController.m */,
+				B390E3D41E1C9FFE00A52F69 /* AddressViewController.h */,
+				B390E3D51E1C9FFE00A52F69 /* AddressViewController.m */,
 			);
 			path = address;
 			sourceTree = "<group>";
@@ -634,6 +639,8 @@
 			children = (
 				B3982DAB1E07CB3300EE1435 /* SettingViewController.h */,
 				B3982DAC1E07CB3300EE1435 /* SettingViewController.m */,
+				B390E3C81E1C8C0000A52F69 /* SettingFooterView.h */,
+				B390E3C91E1C8C0000A52F69 /* SettingFooterView.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -701,8 +708,6 @@
 		B3B4C2F31DDEAE9C002D43CF /* LCFDeerShop */ = {
 			isa = PBXGroup;
 			children = (
-				B390E3C21E1B8A0500A52F69 /* chalet_d.gif */,
-				B390E3C41E1B8E3F00A52F69 /* type-warp-animation.gif */,
 				B3B4C32A1DDECB72002D43CF /* AppDelegate */,
 				B3B4C3381DDECD4D002D43CF /* Main */,
 				B3E1B56D1DDECEE200E55F5A /* Home */,
@@ -1156,6 +1161,9 @@
 		B3E1B5B61DDEECB200E55F5A /* InfoPlist */ = {
 			isa = PBXGroup;
 			children = (
+				B390E3D71E1CA05400A52F69 /* 01-black-cat_800x600_v1.gif */,
+				B390E3D81E1CA05400A52F69 /* chalet_d.gif */,
+				B390E3D91E1CA05400A52F69 /* type-warp-animation.gif */,
 				B3189F8B1E13AD9A00A6098C /* stock.plist */,
 				B3A2492E1E1248A700DFCD32 /* product.json */,
 				B3982DB11E07E2DE00EE1435 /* FocusURL.plist */,
@@ -1287,21 +1295,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FC56A31E092DBB00AD8BD6 /* menuButton@2x.png in Resources */,
-				B390E3C51E1B8E3F00A52F69 /* type-warp-animation.gif in Resources */,
 				B34AABF11DE563A30053244E /* LICENSE in Resources */,
+				B390E3DA1E1CA05400A52F69 /* 01-black-cat_800x600_v1.gif in Resources */,
 				B3A2492F1E1248A700DFCD32 /* product.json in Resources */,
+				B390E3DB1E1CA05400A52F69 /* chalet_d.gif in Resources */,
 				B3982DB21E07E2DE00EE1435 /* FocusURL.plist in Resources */,
 				B3FC56991E091ED000AD8BD6 /* TableViewCell.xib in Resources */,
 				B3E1B5B81DDEECC500E55F5A /* Resources.plist in Resources */,
 				B3FC56A91E0930B500AD8BD6 /* content_1@3x.png in Resources */,
 				B39409F71E10AFD200208FF5 /* LICENSE in Resources */,
 				B3FC56A11E092D8E00AD8BD6 /* patternNav.png in Resources */,
+				B390E3DC1E1CA05400A52F69 /* type-warp-animation.gif in Resources */,
 				B3B4C3371DDECC55002D43CF /* Main.storyboard in Resources */,
 				B3B4C3361DDECC55002D43CF /* LaunchScreen.storyboard in Resources */,
 				B3B4C3041DDEAE9C002D43CF /* Assets.xcassets in Resources */,
 				B3FC56AA1E0930B500AD8BD6 /* content_2@3x.png in Resources */,
 				B3189F8C1E13AD9A00A6098C /* stock.plist in Resources */,
-				B390E3C31E1B8A0500A52F69 /* chalet_d.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1419,6 +1428,7 @@
 				B373FBE81DF79A400028C24A /* JSCartBar.m in Sources */,
 				B39409FB1E10AFD200208FF5 /* ActionSheetDistancePicker.m in Sources */,
 				B39409F91E10AFD200208FF5 /* ActionSheetCustomPicker.m in Sources */,
+				B390E3D61E1C9FFE00A52F69 /* AddressViewController.m in Sources */,
 				B3A248551E1200A800DFCD32 /* CategoryModel.m in Sources */,
 				B3982DBA1E08E52000EE1435 /* TopViewCell.m in Sources */,
 				B3E1B5C31DDEF97400E55F5A /* LCFBannerView.m in Sources */,
@@ -1442,6 +1452,7 @@
 				B346DD5A1DE322BD00ACA6A8 /* YMUtils.m in Sources */,
 				B39409FE1E10AFD200208FF5 /* ActionSheetStringPicker.m in Sources */,
 				B3A249381E124CC400DFCD32 /* ChoseView.m in Sources */,
+				B390E3CA1E1C8C0000A52F69 /* SettingFooterView.m in Sources */,
 				B39409FA1E10AFD200208FF5 /* ActionSheetDatePicker.m in Sources */,
 				B3F294391E03E243000626BC /* MYSearchBar.m in Sources */,
 				B39409B91E0CE05200208FF5 /* AbstractActionSheetPicker+Interface.m in Sources */,
@@ -1462,7 +1473,6 @@
 				B346DD4B1DE313E100ACA6A8 /* SearchViewController.m in Sources */,
 				B3F294361E03CBDF000626BC /* SecendCollectionViewCell.m in Sources */,
 				B390E3801E1B4F8F00A52F69 /* UIView+PS.m in Sources */,
-				B390E3871E1B55D200A52F69 /* AddressViewController.m in Sources */,
 				B34AABF71DE563A30053244E /* MASViewConstraint.m in Sources */,
 				B3C713AF1DE8339700747345 /* ShopDetailsViewController.m in Sources */,
 				368303DC1E0CF5E100AC1C9A /* LXDScanCodeController.m in Sources */,
@@ -1610,6 +1620,7 @@
 					"$(PROJECT_DIR)/LCFDeerShop/Vender",
 					"$(PROJECT_DIR)/LCFDeerShop",
 				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = LCFDeerShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1631,6 +1642,7 @@
 					"$(PROJECT_DIR)/LCFDeerShop/Vender",
 					"$(PROJECT_DIR)/LCFDeerShop",
 				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = LCFDeerShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

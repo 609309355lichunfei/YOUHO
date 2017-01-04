@@ -13,8 +13,19 @@
 #import <AddressBookUI/AddressBookUI.h>
 #import "AJImageheadData.h"
 #import "AddressViewController.h"
+
+@protocol PersonnaViewControllerDelegate <NSObject>
+
+@optional
+- (void)heardWithSharMagerImage:(UIImageView *)image;
+
+
+@end
+
 @interface PersonnaViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate,ABPeoplePickerNavigationControllerDelegate>
 @property   (nonatomic ,retain) UITableView     * tableview;
+
+
 @end
 
 @implementation PersonnaViewController
@@ -49,7 +60,7 @@
         _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 5, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT - 44) style:UITableViewStyleGrouped];
         _tableview.delegate = self;
         _tableview.dataSource = self;
-        _tableview.rowHeight = 44;
+//        _tableview.rowHeight = 44;
     }
     
     return _tableview;
@@ -60,6 +71,8 @@
     
 }
 
+
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     if (section == 0) {
@@ -69,6 +82,16 @@
     }
     return 2;
     
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+
+    
+    if (indexPath.section == 0) {
+        return 64;
+    }
+    return 44;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -84,7 +107,9 @@
     //    self.selectionStyle = UITableviewCellSelectionStyleNoe
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            cell.textLabel.text = @"我的头像";
+            cell.detailTextLabel.text = @"我的头像";
+            cell.imageView.image = [UIImage imageNamed:@"011e07585a579ea801219c77d12349.jpg@900w_1l_2o_100sh"];
+            
             
         }
         
@@ -135,8 +160,16 @@
     if (indexPath.section == 0) {
         //头像
         if (indexPath.row == 0) {
+            WEAKSELF(weakSelf)
             [[AJImageheadData  shareInstance] showActionSheetInView:self.view fromController:self completion:^(UIImage *image, NSData *iamgeData) {
-//                cell.headimage.image  = image;
+                cell.imageView.image  = image;
+                if ([weakSelf.delegate respondsToSelector:@selector(heardWithSharMagerImage:)]) {
+                    
+                    [weakSelf.delegate performSelector:@selector(heardWithSharMagerImage:) withObject:cell.imageView];
+                    
+                }
+                
+                
                 
             } cancelBlock:^{
                 
@@ -151,7 +184,6 @@
                 if (isAuthorized) {
                     ABPeoplePickerNavigationController * abpeoplePick = [[ABPeoplePickerNavigationController alloc]init];
                     abpeoplePick.peoplePickerDelegate = weakSelf;
-                    
                     //    [self.navigationController presentModalViewController:abpeoplePick animated:YES];
                     [weakSelf.navigationController presentViewController:abpeoplePick animated:YES completion:^{
                         
