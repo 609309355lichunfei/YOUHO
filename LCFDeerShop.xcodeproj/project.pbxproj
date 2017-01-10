@@ -25,6 +25,8 @@
 		B326068A1E247B0500FE1FBE /* AddNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = B32606891E247B0500FE1FBE /* AddNumberView.m */; };
 		B326068E1E247D1800FE1FBE /* add_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B326068C1E247D1800FE1FBE /* add_icon@2x.png */; };
 		B326068F1E247D1800FE1FBE /* numbe_bg_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B326068D1E247D1800FE1FBE /* numbe_bg_icon@2x.png */; };
+		B32606921E24819800FE1FBE /* LineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B32606911E24819800FE1FBE /* LineLabel.m */; };
+		B32606951E24821D00FE1FBE /* ShoppingCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B32606941E24821D00FE1FBE /* ShoppingCarCell.m */; };
 		B334335C1E02883900E48B66 /* MyCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B334335B1E02883900E48B66 /* MyCollectionCell.m */; };
 		B3375B911DF92E5D000050F4 /* YMHttpsEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = B3375B901DF92E5D000050F4 /* YMHttpsEngine.m */; };
 		B33856A21DED177600C2860E /* MyTopHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = B33856A11DED177600C2860E /* MyTopHeadView.m */; };
@@ -189,6 +191,10 @@
 		B32606891E247B0500FE1FBE /* AddNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNumberView.m; sourceTree = "<group>"; };
 		B326068C1E247D1800FE1FBE /* add_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_icon@2x.png"; sourceTree = "<group>"; };
 		B326068D1E247D1800FE1FBE /* numbe_bg_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "numbe_bg_icon@2x.png"; sourceTree = "<group>"; };
+		B32606901E24819800FE1FBE /* LineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineLabel.h; sourceTree = "<group>"; };
+		B32606911E24819800FE1FBE /* LineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineLabel.m; sourceTree = "<group>"; };
+		B32606931E24821D00FE1FBE /* ShoppingCarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCarCell.h; sourceTree = "<group>"; };
+		B32606941E24821D00FE1FBE /* ShoppingCarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarCell.m; sourceTree = "<group>"; };
 		B334335A1E02883900E48B66 /* MyCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionCell.h; sourceTree = "<group>"; };
 		B334335B1E02883900E48B66 /* MyCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionCell.m; sourceTree = "<group>"; };
 		B3375B8F1DF92E5D000050F4 /* YMHttpsEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHttpsEngine.h; sourceTree = "<group>"; };
@@ -1094,6 +1100,10 @@
 			children = (
 				B32606881E247B0500FE1FBE /* AddNumberView.h */,
 				B32606891E247B0500FE1FBE /* AddNumberView.m */,
+				B32606901E24819800FE1FBE /* LineLabel.h */,
+				B32606911E24819800FE1FBE /* LineLabel.m */,
+				B32606931E24821D00FE1FBE /* ShoppingCarCell.h */,
+				B32606941E24821D00FE1FBE /* ShoppingCarCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1438,6 +1448,7 @@
 				B345077D1DF543B5008E3630 /* JSDropDownMenu.m in Sources */,
 				B3FC56A61E092E7200AD8BD6 /* GirlViewController.m in Sources */,
 				B3375B911DF92E5D000050F4 /* YMHttpsEngine.m in Sources */,
+				B32606921E24819800FE1FBE /* LineLabel.m in Sources */,
 				B3011CF21E0A11DA008C8139 /* WebViewController.m in Sources */,
 				B315345C1DFFD36500A3FD07 /* UIView+CCExtension.m in Sources */,
 				B3FC568D1E08FFCF00AD8BD6 /* toptableview.m in Sources */,
@@ -1476,6 +1487,7 @@
 				B3C1E73E1E11558500EB9D36 /* CategoryMenuViewController.m in Sources */,
 				B3982DB01E07DBBC00EE1435 /* ShopCollectionViewCell.m in Sources */,
 				B3E1B5931DDED21300E55F5A /* LCFMyViewController.m in Sources */,
+				B32606951E24821D00FE1FBE /* ShoppingCarCell.m in Sources */,
 				B346DD601DE324EF00ACA6A8 /* CWDataModel.m in Sources */,
 				B346DD631DE3258F00ACA6A8 /* LCFResponse.m in Sources */,
 				B34AABF51DE563A30053244E /* MASLayoutConstraint.m in Sources */,
