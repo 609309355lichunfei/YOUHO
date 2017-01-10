@@ -8,9 +8,7 @@
 
 #import "LCFShoppingViewController.h"
 #import "ShopDetailsViewController.h"
-#import "JSCartUIService.h"
-#import "JSCartViewModel.h"
-#import "JSCartBar.h"
+
 @interface LCFShoppingViewController ()
 @property   (retain,nonatomic)  UIButton        *   shopCart ; //购物车入口按钮(这里暂时放一个按钮)
 
