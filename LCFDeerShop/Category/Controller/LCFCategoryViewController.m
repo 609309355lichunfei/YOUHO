@@ -64,7 +64,6 @@
     }];
     
 }
-
 - (void)setWithCategoryRequest:(NSArray *)categoryArr {
     
     [NSMutableArray clearAllWithMutableArray:item];
@@ -193,10 +192,7 @@
         default:
             break;
     }
-    
-    
-    
-    
+
     cell.collection_label.text = model.name;
     [cell.title_image sd_setImageWithURL:[NSURL URLWithString:model.icon_url]];
     

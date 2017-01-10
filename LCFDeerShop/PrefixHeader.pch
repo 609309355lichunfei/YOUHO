@@ -44,4 +44,12 @@
 //__weake
 #define WEAKSELF(weakSelf)          __weak __typeof(&*self)weakSelf = self;
 
+
+//加载图片
+#define PNGIMAGE(NAME)         [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:(NAME) ofType:@"png"]]
+#define JPGIMAGE(NAME)         [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:(NAME) ofType:@"jpg"]]
+#define IMAGE(NAME,EXT)        [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:(NAME) ofType:(EXT)]]
+#define IMAGENAMED(NAME)       [UIImage imageNamed:NAME]
+
+
 #endif /* PrefixHeader_h */
