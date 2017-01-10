@@ -33,6 +33,10 @@
             
             self.ID = [responseData objectForKey:@"id"];
         }
+        if (![[responseData objectForKey:@"subcategories"] isEqual:[NSNull null]]) {
+            
+            self.subcategories = [responseData objectForKey:@"subcategories"];
+        }
        
     }
     

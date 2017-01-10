@@ -18,6 +18,7 @@
     NSArray * dataArr;
     NSArray * myData;
     NSMutableArray * item;
+    
 }
 
 @property (nonatomic, strong) UICollectionView *rightCollectionView;
@@ -25,10 +26,19 @@
 @property (nonatomic ,assign) NSInteger selectedIndex;
 
 @property (nonatomic ,retain) UITableView      *tableview;
+@property (nonatomic,strong) NSMutableArray *collectionViewItem;
+
 
 @end
 
 @implementation LCFCategoryViewController
+-(NSMutableArray *)collectionViewItem
+{
+    if (_collectionViewItem == nil) {
+        _collectionViewItem = [NSMutableArray array];
+    }
+    return _collectionViewItem;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,9 +62,14 @@
     __weak typeof (self) weakSelf = self;
     [YYDeerShopRequest GetWithShareManagerCategoryTitleImage:^(BOOL success, NSError *error, id result) {
         if (success) {
-            NSLog(@"%@",result);
+//            NSLog(@"%@",result[@"data"][@"categories"]);
                 /* 解析JSON数据 */
             [weakSelf setWithCategoryRequest:result[@"data"][@"categories"]];
+            NSArray *subcategories = [result[@"data"][@"categories"][0] valueForKey:@"subcategories"];
+            for (NSDictionary * dic in subcategories) {
+                CategoryModel * model = [[CategoryModel alloc] initWithData:dic];
+                [self.collectionViewItem addObject:model];
+            }
         }else{
             
         }
@@ -70,7 +85,7 @@
     [NSMutableArray clearAllWithMutableArray:item];
     
     for (NSDictionary * dic in categoryArr) {
-        CategoryModel * model = [CategoryModel mj_objectWithKeyValues:dic];
+        CategoryModel * model = [[CategoryModel alloc] initWithData:dic];
         [item addObject:model];
     }
 }
@@ -97,8 +112,7 @@
     
     [self.view addSubview:_rightCollectionView];
     
-    
-    UITableView * tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 100, LCF_SCREEN_HEIGHT) style:UITableViewStylePlain];
+    UITableView * tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 100, CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.tabBarController.tabBar.frame) - CGRectGetHeight(self.navigationController.navigationBar.frame)) style:UITableViewStylePlain];
     [self.tableview sizeThatFits:CGSizeMake(CGRectGetWidth(self.tableview.bounds), CGFLOAT_MAX)];
     tableview.delegate = self;
     tableview.dataSource = self;
@@ -155,7 +169,12 @@
     
     
     _selectedIndex = indexPath.row;
-    
+    [self.collectionViewItem removeAllObjects];
+    NSArray *subcategories = [item[indexPath.row] valueForKey:@"subcategories"];
+    for (NSDictionary * dic in subcategories) {
+        CategoryModel * model = [[CategoryModel alloc] initWithData:dic];
+        [self.collectionViewItem addObject:model];
+    }
     [_rightCollectionView reloadData];
     
 }
@@ -165,13 +184,13 @@
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     
-    return item.count;
+    return _collectionViewItem.count;
     
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    CategoryModel * model = item[indexPath.row];
+    CategoryModel * model = _collectionViewItem[indexPath.row];
     
     
     CategoryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RightCollectionViewCell" forIndexPath:indexPath];

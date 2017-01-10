@@ -15,5 +15,7 @@
 @property   (nonatomic ,retain)     NSString * name;
 
 @property   (nonatomic ,retain)     NSString * ID;
+@property (nonatomic,retain) NSString *subcategories;
 
+-(id)initWithData:(id)responseData;
 @end

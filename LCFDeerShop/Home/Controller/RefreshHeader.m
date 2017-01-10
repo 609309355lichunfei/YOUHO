@@ -56,14 +56,28 @@
 //    self.animatedView.centerY = self.centerY;
     [self.backgroundImageView2 addSubview:self.animatedView];
     self.animatedView.image = [UIImage imageNamed:@"sun@2x的副本"];
-    CABasicAnimation* rotationAnimation = nil;
-    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
-    rotationAnimation.duration = 1.5;
-    rotationAnimation.cumulative = YES;
-    rotationAnimation.repeatCount = 99999999999999999;
-//    NSLog(@"%f  %f",self.frame.size.width,self.frame.size.height);
-    [self.animatedView.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+//    CABasicAnimation* rotationAnimation = nil;
+//    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+//    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
+//    rotationAnimation.duration = 1.5;
+//    rotationAnimation.cumulative = YES;
+//    rotationAnimation.repeatCount = 99999999999999999;
+////    NSLog(@"%f  %f",self.frame.size.width,self.frame.size.height);
+//    [self.animatedView.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    NSMutableArray *animateArray = [NSMutableArray arrayWithCapacity:10];
+    
+    for (int i=1; i<5; i++) {
+    
+        [animateArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"sun@2x的副本"]]];
 
+}
+
+    self.animatedView.animationDuration = 1.5f;
+    
+    self.animatedView.animationImages = animateArray;
+    
+    self.animatedView.animationRepeatCount = 0;
+    
+    [self.animatedView startAnimating];
 }
 @end
