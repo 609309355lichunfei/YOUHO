@@ -42,7 +42,7 @@
     
     self.shopImageView = [[UIImageView alloc]initWithFrame:CGRectMake(self.checkImg.right+10,15, 60, 60)];
     
-    self.shopImageView.image = IMAGENAMED(@"img");
+    self.shopImageView.image = IMAGENAMED(@"detais_image.png");
     
     [self addSubview:self.shopImageView];
     
@@ -106,7 +106,7 @@
     }
     else{
         
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"没选中你减什么,哼。。。" delegate:self cancelButtonTitle:@"好吧" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"请选中你想要的商品。" delegate:self cancelButtonTitle:@"好吧" otherButtonTitles:nil, nil];
         [alert show];
     }
     
@@ -129,7 +129,7 @@
     }
     else{
         
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"没选中你加什么,哼。。。" delegate:self cancelButtonTitle:@"好吧" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"请选中你想要的商品" delegate:self cancelButtonTitle:@"好吧" otherButtonTitles:nil, nil];
         [alert show];
     }
     
