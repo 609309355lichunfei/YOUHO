@@ -64,6 +64,7 @@
     
     self.numberLab.text = numberString;
 }
+
 - (void)awakeFromNib {
     
     
@@ -71,14 +72,26 @@
     
 }
 
+
+/* 购物车减号方法 */
 - (void)deleteBtnAction:(UIButton *)sender {
     
-    NSLog(@"减方法");
+    
     if(self.delegate && [self.delegate respondsToSelector:@selector(deleteBtnAction:addNumberView:)]){
         
         [self.delegate deleteBtnAction:sender addNumberView:self];
     }
     
+    
+}
+/* 购物车加号方法 */
+- (void)addBtnAction:(UIButton *)sender {
+    
+   
+    if(self.delegate && [self.delegate respondsToSelector:@selector(addBtnAction:addNumberView:)]){
+        
+        [self.delegate addBtnAction:sender addNumberView:self];
+    }
     
 }
 

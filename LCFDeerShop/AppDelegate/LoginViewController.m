@@ -187,6 +187,28 @@
         [login_bt addTarget:self action:@selector(actionClicedLogin:) forControlEvents:UIControlEventTouchUpInside];
         login_bt.frame = CGRectMake( LCF_SCREEN_WIDTH / 4.5 +  i * 60 ,LCF_SCREEN_HEIGHT - 315, 40,40 );
 
+
+//    NSArray * image_icon = @[@"login_0",@"login_1",@"login_2",@"login_3"];
+//
+//    for (int i = 0; i < 4; i++) {
+//       UIButton * login_bt = [UIButton buttonWithType:UIButtonTypeCustom];
+////        login_bt.backgroundColor = [UIColor whiteColor];
+//        [login_bt setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@", image_icon[i]]] forState:UIControlStateNormal];
+//        login_bt.tag = 100 +i;
+//        [login_bt addTarget:self action:@selector(actionClicedLogin:) forControlEvents:UIControlEventTouchUpInside];
+//        login_bt.frame = CGRectMake( LCF_SCREEN_WIDTH / 4.5 +  i * 60 ,LCF_SCREEN_HEIGHT - 315, 40,40 );
+
+//     NSArray * image_icon = @[@"login_0",@"login_1",@"login_2",@"login_3"];
+//    
+//    for (int i = 0; i < 4; i++) {
+//       UIButton * login_bt = [UIButton buttonWithType:UIButtonTypeCustom];
+//
+//        [login_bt setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@", image_icon[i]]] forState:UIControlStateNormal];
+//        login_bt.tag = 100 +i;
+//        [login_bt addTarget:self action:@selector(actionClicedLogin:) forControlEvents:UIControlEventTouchUpInside];
+//        login_bt.frame = CGRectMake( LCF_SCREEN_WIDTH / 4.5 +  i * 60 ,LCF_SCREEN_WIDTH - 15, 40,40 );
+//
+//>>>>>>> 278e528c380113738cebbcbb081410c27308d986
         [self.view addSubview:login_bt];
         self.login_bt = login_bt;
     }

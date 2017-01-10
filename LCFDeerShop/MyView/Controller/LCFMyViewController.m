@@ -68,27 +68,27 @@
     [self.view addSubview:self.collectionview];
     
     
-    /* 判断登陆时机*/
-//    if (![YMUtils loginParam]) {
-//        if (self.loginTag) {
-//            LCFTaBarViewController * tabbarC = (LCFTaBarViewController *)self.tabBarController;
-//            self.tabBarController.selectedIndex = tabbarC.lastSelecteIndex;
-//            self.tabBarController.tabBar.hidden = NO;
-//            self.loginTag = NO;
-//        }
-//    }
-//    if (![YMUtils loginParam]) {
-//        if (!self.loginTag) {
-//            LoginViewController * login = [[LoginViewController alloc]init];
-//            login.title = @"Login ";
-//            self.tabBarController.tabBar.hidden = YES;
-//            login.hidesBottomBarWhenPushed= YES;
-//            [self.navigationController pushViewController:login animated:NO];
-//            self.hidesBottomBarWhenPushed = NO;
-//            self.loginTag = YES;
-//        }
-//    }
-//    
+    // 判断登陆时机
+    if (![YMUtils loginParam]) {
+        if (self.loginTag) {
+            LCFTaBarViewController * tabbarC = (LCFTaBarViewController *)self.tabBarController;
+            self.tabBarController.selectedIndex = tabbarC.lastSelecteIndex;
+            self.tabBarController.tabBar.hidden = NO;
+            self.loginTag = NO;
+        }
+    }
+    if (![YMUtils loginParam]) {
+        if (!self.loginTag) {
+            LoginViewController * login = [[LoginViewController alloc]init];
+            login.title = @"Login ";
+            self.tabBarController.tabBar.hidden = YES;
+            login.hidesBottomBarWhenPushed= YES;
+            [self.navigationController pushViewController:login animated:NO];
+            self.hidesBottomBarWhenPushed = NO;
+            self.loginTag = YES;
+        }
+    }
+   
     
     UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"information_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(ClickleftBarButtonItem:)];
     leftBarButtonItem.tintColor = [UIColor blackColor];
