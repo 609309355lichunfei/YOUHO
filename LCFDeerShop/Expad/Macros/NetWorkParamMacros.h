@@ -27,7 +27,7 @@
 
 #pragma  mark ------------  URL 域名  
 
-/** 商店的热门推荐*/
+/** 搜索*/
 #define kSERVER_SUBURL_getHotRecommendDetails @"yun.item.count.groupbycat.get"
 
 #endif /* NetWorkParamMacros_h */

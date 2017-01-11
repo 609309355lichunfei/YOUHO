@@ -90,7 +90,7 @@
 //    NSDictionary *productDic = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"product" ofType:@"json"]];
 //    NSMutableArray<ShoppingModel *> *goodsModel = @[].mutableCopy;
     NSArray *productArr = [jsonObject valueForKey:@"wareInfo"];
-    NSLog(@"%@",productArr);
+   
 
     for (NSDictionary *goodsModelDic in productArr) {
         ShoppingModel *goodModel = [[ShoppingModel alloc] initWithShopDict:goodsModelDic];
@@ -260,6 +260,8 @@
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self CalculationPrice];
 }
+
+
 #pragma mark -- 实现加减按钮点击代理事件
 /**
  * 实现加减按钮点击代理事件
@@ -317,7 +319,7 @@
     [str addAttribute:NSFontAttributeName value:XNFont(17) range:NSMakeRange(4,str.length-4)];
     [str addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(4,str.length-4)];
     self.totalMoneyLab.attributedText = str;
-    NSLog(@"%f",self.allPrice);
+
     self.allPrice = 0.0;
 }
 

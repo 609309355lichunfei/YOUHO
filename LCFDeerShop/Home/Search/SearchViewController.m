@@ -80,6 +80,9 @@
         [self layoySearchView];
         self.isSearchView = YES;
     }
+    
+    
+   
 
     
 }

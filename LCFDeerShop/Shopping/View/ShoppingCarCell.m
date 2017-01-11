@@ -40,10 +40,9 @@
     self.checkImg.image =IMAGENAMED(@"check_p");
     [self addSubview:self.checkImg];
     
-    self.shopImageView = [[UIImageView alloc]initWithFrame:CGRectMake(self.checkImg.right+10,15, 60, 60)];
+    self.shopImageView = [[UIImageView alloc]initWithFrame:CGRectMake(self.checkImg.right+10,15, 60, 70)];
     
     self.shopImageView.image = IMAGENAMED(@"detais_image.png");
-  
     [self addSubview:self.shopImageView];
     
     self.priceLab = [[UILabel alloc]initWithFrame:CGRectMake(LCF_SCREEN_WIDTH-90, (110-20)/2.0-20, 80, 20)];
@@ -63,10 +62,12 @@
     [self addSubview:self.oldPriceLab];
     
     
-    self.shopNameLab = [[UILabel alloc]initWithFrame:CGRectMake(self.shopImageView.right+10,self.shopImageView.top-5,LCF_SCREEN_WIDTH-self.shopImageView.right-20-self.priceLab.width, 20)];
+    self.shopNameLab = [[UILabel alloc]initWithFrame:CGRectMake(self.shopImageView.right+10,self.shopImageView.top-5,LCF_SCREEN_WIDTH-self.shopImageView.right-20-self.priceLab.width, 40)];
     self.shopNameLab.text = @"合生元金装3段1-3岁";
     self.shopNameLab.numberOfLines = 0;
-    self.shopNameLab.font = XNFont(16);
+    self.shopNameLab.lineBreakMode = NSLineBreakByTruncatingTail;
+    self.shopNameLab.adjustsFontSizeToFitWidth = YES;
+    self.shopNameLab.font = XNFont(13);
     [self addSubview:self.shopNameLab];
     
     self.shopTypeLab = [[UILabel alloc]initWithFrame:CGRectMake(self.shopNameLab.left,self.shopNameLab.bottom,self.shopNameLab.width, 20)];

@@ -20,7 +20,7 @@
 
 @property (nonatomic,strong) UIImageView *shopImageView;
 
-@property (nonatomic,strong) UILabel *shopNameLab;
+@property (nonatomic,strong) UILabel *shopNameLab; //商品标题
 
 @property (nonatomic,strong) UILabel *priceLab;
 
@@ -48,6 +48,6 @@
 
 -(void)btnClick:(UITableViewCell *)cell andFlag:(int)flag;
 
-- (void)tapImageWithSharManager;
+- (void)tapImageWithSharManager:(UIButton *)sender;
 
 @end

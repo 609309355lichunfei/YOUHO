@@ -25,6 +25,7 @@
 #import "FMDBDataBase.h"
 #import "NSMutableArray+ZZExtension.h"
 #import "NSString+STRegex.h"
+#import "YYDeerShopRequest.h"
 
 
 #import "YMUtils.h"

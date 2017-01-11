@@ -16,8 +16,8 @@
     self.goodsTitle = dict[@"wname"];
     self.goodsPrice = dict[@"jdPrice"];
     self.goodsNum = [dict[@"totalCount"]intValue];
-    self.goodsType = dict[@"goodsType"];
-    self.oldPrice = dict[@"cid1"];
+    self.goodsType = dict[@"diffMobilePrice"];
+    self.oldPrice = dict[@"catid"];
     
     self.selectState = [dict[@"selectState"]boolValue];
 //    self.jdPrice = dict[@"jdPrice"];
