@@ -16,6 +16,9 @@
 @property(copy,nonatomic) NSString *goodsPrice;//商品单价
 @property(assign,nonatomic) BOOL selectState;//是否选中状态
 @property(assign,nonatomic) int goodsNum;//商品个数
+@property(nonatomic,copy) NSString *oldPrice;
+//@property(nonatomic,copy) NSString *jdPrice;
+//@property(nonatomic,copy) NSString *wname;//商品名称
 
 /* model 序列化方法 */
 -(instancetype)initWithShopDict:(NSDictionary *)dict;

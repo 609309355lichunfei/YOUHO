@@ -66,20 +66,39 @@
 
 -(void)initData{
     
-    for (int i = 0; i<10; i++)
-    {
-        NSMutableDictionary *infoDict = [[NSMutableDictionary alloc]init];
-        [infoDict setValue:@"detais_image.png" forKey:@"imageName"];
-        [infoDict setValue:@"钻石耳机" forKey:@"goodsTitle"];
-        [infoDict setValue:@"男士耳机" forKey:@"goodsType"];
-        [infoDict setValue:@"500.00" forKey:@"goodsPrice"];
-        [infoDict setValue:[NSNumber numberWithBool:NO] forKey:@"selectState"];
-        [infoDict setValue:[NSNumber numberWithInt:1] forKey:@"goodsNum"];
-        
-        ShoppingModel *goodsModel = [[ShoppingModel alloc]initWithShopDict:infoDict];
-        
-        [self.dataArray addObject:goodsModel];
+//    for (int i = 0; i<10; i++)
+//    {
+//        NSMutableDictionary *infoDict = [[NSMutableDictionary alloc]init];
+//        [infoDict setValue:@"detais_image.png" forKey:@"imageName"];
+//        [infoDict setValue:@"钻石耳机" forKey:@"goodsTitle"];
+//        [infoDict setValue:@"男士耳机" forKey:@"goodsType"];
+//        [infoDict setValue:@"500.00" forKey:@"goodsPrice"];
+//        [infoDict setValue:[NSNumber numberWithBool:NO] forKey:@"selectState"];
+//        [infoDict setValue:[NSNumber numberWithInt:1] forKey:@"goodsNum"];
+//        
+//        ShoppingModel *goodsModel = [[ShoppingModel alloc]initWithShopDict:infoDict];
+//        
+//        [self.dataArray addObject:goodsModel];
+//    }
+    
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"product" ofType:@"json"];
+    NSData *data=[NSData dataWithContentsOfFile:jsonPath];
+    NSError *error;
+    id jsonObject=[NSJSONSerialization JSONObjectWithData:data
+                                                  options:NSJSONReadingAllowFragments
+                                                    error:&error];
+//    NSDictionary *productDic = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"product" ofType:@"json"]];
+//    NSMutableArray<ShoppingModel *> *goodsModel = @[].mutableCopy;
+    NSArray *productArr = [jsonObject valueForKey:@"wareInfo"];
+    NSLog(@"%@",productArr);
+
+    for (NSDictionary *goodsModelDic in productArr) {
+        ShoppingModel *goodModel = [[ShoppingModel alloc] initWithShopDict:goodsModelDic];
+        [self.dataArray addObject:goodModel];
     }
+//    self.flights = flights.mutableCopy;
+    
+
 
     
 }
@@ -214,7 +233,7 @@
     [self.dataArray removeObjectAtIndex:indexPath.row];
     
 //    ShoppingCarCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
+    [self CalculationPrice];
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
     
     
@@ -290,7 +309,7 @@
         ShoppingModel *model = self.dataArray[i];
         if (model.selectState)
         {
-            self.allPrice = self.allPrice + model.goodsNum *[model.goodsPrice intValue];
+            self.allPrice = self.allPrice + model.goodsNum *[model.goodsPrice floatValue];
         }
     }
     //给总价赋值
@@ -298,9 +317,7 @@
     [str addAttribute:NSFontAttributeName value:XNFont(17) range:NSMakeRange(4,str.length-4)];
     [str addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(4,str.length-4)];
     self.totalMoneyLab.attributedText = str;
-    
     NSLog(@"%f",self.allPrice);
-    
     self.allPrice = 0.0;
 }
 

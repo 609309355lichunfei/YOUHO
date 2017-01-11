@@ -154,7 +154,9 @@
     self.shopTypeLab.text  = shoppingModel.goodsType;
     
     self.priceLab.text = shoppingModel.goodsPrice;
-    self.shopImageView.image = IMAGENAMED(shoppingModel.imageName);
+    self.oldPriceLab.text = shoppingModel.oldPrice;
+    [self.shopImageView sd_setImageWithURL:[NSURL URLWithString:shoppingModel.imageName]];
+//    IMAGENAMED(shoppingModel.imageName);
     // self.numberLab.text = [NSString stringWithFormat:@"%d",shoppingModel.goodsNum];
     self.addNumberView.numberString = [NSString stringWithFormat:@"%d",shoppingModel.goodsNum];
     
