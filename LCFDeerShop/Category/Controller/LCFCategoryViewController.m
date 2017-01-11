@@ -43,7 +43,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   
     [self RequestSetDataClassification];
     
      [self CreatRightCollectionView];
@@ -54,8 +53,6 @@
 //    
     
     item = [NSMutableArray arrayWithCapacity:0];
-    
-    
 }
 - (void)RequestSetDataClassification {
     
