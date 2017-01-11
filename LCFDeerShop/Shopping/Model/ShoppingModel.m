@@ -12,14 +12,17 @@
 
 -(instancetype)initWithShopDict:(NSDictionary *)dict{
     
-    self.imageName = dict[@"imageName"];
-    self.goodsTitle = dict[@"goodsTitle"];
-    self.goodsPrice = dict[@"goodsPrice"];
+    self.imageName = dict[@"imageurl"];
+    self.goodsTitle = dict[@"wname"];
+    self.goodsPrice = dict[@"jdPrice"];
     self.goodsNum = [dict[@"goodsNum"]intValue];
     self.goodsType = dict[@"goodsType"];
+    self.oldPrice = dict[@"cid1"];
     
     self.selectState = [dict[@"selectState"]boolValue];
-    
+//    self.jdPrice = dict[@"jdPrice"];
+//    self.imageurl = dict[@"imageurl"];
+//    self.wname = dict[@"wname"];
     return self;
 }
 
