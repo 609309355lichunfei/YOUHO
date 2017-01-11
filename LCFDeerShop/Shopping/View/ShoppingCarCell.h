@@ -48,4 +48,6 @@
 
 -(void)btnClick:(UITableViewCell *)cell andFlag:(int)flag;
 
+- (void)tapImageWithSharManager;
+
 @end

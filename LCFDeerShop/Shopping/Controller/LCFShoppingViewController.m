@@ -12,7 +12,6 @@
 #import "ShoppingModel.h"
 @interface LCFShoppingViewController ()<UITableViewDataSource,UITableViewDelegate,ShoppingCarCellDelegate>
 
-@property   (retain,nonatomic)  UIButton        *   shopCart ; //购物车入口按钮(这里暂时放一个按钮)
 @property (nonatomic,strong) UITableView *tableView;
 
 @property (nonatomic,strong) NSMutableArray *dataArray;// 数据源
@@ -20,12 +19,28 @@
 @property (nonatomic,strong) UIButton *selectAllBtn;//全选按钮
 
 @property (nonatomic,strong) UIButton *jieSuanBtn;//结算按钮
+
 @property (nonatomic,strong) UILabel *totalMoneyLab;//总金额
 
 @property(nonatomic,assign) float allPrice;
+
 @end
 
 @implementation LCFShoppingViewController
+
+
+/* 这里要判断有没有加入的购物车货物  如果有 显示出货物  如果没有显示 去逛一逛的界面  */
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    /* 判断数据是否为空 如果是空那么就显示逛一逛界面 如果不是就显示当前界面 */
+    
+    
+    
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,8 +49,6 @@
     self.title = @"购物车";
     
     self.dataArray = [[NSMutableArray alloc]init];
-    
-    
     
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setTitleTextAttributes:
@@ -53,14 +66,13 @@
 
 -(void)initData{
     
-    
     for (int i = 0; i<10; i++)
     {
         NSMutableDictionary *infoDict = [[NSMutableDictionary alloc]init];
         [infoDict setValue:@"detais_image.png" forKey:@"imageName"];
         [infoDict setValue:@"钻石耳机" forKey:@"goodsTitle"];
         [infoDict setValue:@"男士耳机" forKey:@"goodsType"];
-        [infoDict setValue:@"50.00" forKey:@"goodsPrice"];
+        [infoDict setValue:@"500.00" forKey:@"goodsPrice"];
         [infoDict setValue:[NSNumber numberWithBool:NO] forKey:@"selectState"];
         [infoDict setValue:[NSNumber numberWithInt:1] forKey:@"goodsNum"];
         
@@ -68,7 +80,7 @@
         
         [self.dataArray addObject:goodsModel];
     }
-    
+
     
 }
 
@@ -174,9 +186,7 @@
         
         
     }
-    
-    
-    
+   
     cell.delegate = self;
     cell.shoppingModel = self.dataArray[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -189,6 +199,26 @@
     
 
     return 110;
+}
+
+//按钮显示的内容
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    return @"删除";
+    
+}
+//这里就是点击删除执行的方法
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self.dataArray removeObjectAtIndex:indexPath.row];
+    
+//    ShoppingCarCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+    
+    
+    
 }
 
 //单元格选中事件
@@ -273,6 +303,7 @@
     
     self.allPrice = 0.0;
 }
+
 
 
 - (void)didReceiveMemoryWarning {

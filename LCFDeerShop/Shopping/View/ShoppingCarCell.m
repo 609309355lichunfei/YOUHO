@@ -43,7 +43,7 @@
     self.shopImageView = [[UIImageView alloc]initWithFrame:CGRectMake(self.checkImg.right+10,15, 60, 60)];
     
     self.shopImageView.image = IMAGENAMED(@"detais_image.png");
-    
+  
     [self addSubview:self.shopImageView];
     
     self.priceLab = [[UILabel alloc]initWithFrame:CGRectMake(LCF_SCREEN_WIDTH-90, (110-20)/2.0-20, 80, 20)];
@@ -159,6 +159,7 @@
     self.addNumberView.numberString = [NSString stringWithFormat:@"%d",shoppingModel.goodsNum];
     
 }
+
 
 
 @end
