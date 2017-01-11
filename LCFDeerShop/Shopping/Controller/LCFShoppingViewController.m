@@ -309,7 +309,7 @@
         ShoppingModel *model = self.dataArray[i];
         if (model.selectState)
         {
-            self.allPrice = self.allPrice + model.goodsNum *[model.goodsPrice intValue];
+            self.allPrice = self.allPrice + model.goodsNum *[model.goodsPrice floatValue];
         }
     }
     //给总价赋值
@@ -317,7 +317,7 @@
     [str addAttribute:NSFontAttributeName value:XNFont(17) range:NSMakeRange(4,str.length-4)];
     [str addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(4,str.length-4)];
     self.totalMoneyLab.attributedText = str;
-        
+    NSLog(@"%f",self.allPrice);
     self.allPrice = 0.0;
 }
 

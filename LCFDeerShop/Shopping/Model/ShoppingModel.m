@@ -15,7 +15,7 @@
     self.imageName = dict[@"imageurl"];
     self.goodsTitle = dict[@"wname"];
     self.goodsPrice = dict[@"jdPrice"];
-    self.goodsNum = [dict[@"goodsNum"]intValue];
+    self.goodsNum = [dict[@"totalCount"]intValue];
     self.goodsType = dict[@"goodsType"];
     self.oldPrice = dict[@"cid1"];
     
