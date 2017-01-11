@@ -32,6 +32,7 @@
 @end
 
 @implementation LCFCategoryViewController
+
 -(NSMutableArray *)collectionViewItem
 {
     if (_collectionViewItem == nil) {
@@ -62,6 +63,7 @@
 //            NSLog(@"%@",result[@"data"][@"categories"]);
                 /* 解析JSON数据 */
             [weakSelf setWithCategoryRequest:result[@"data"][@"categories"]];
+            /* 解析collectioin数据 */
             NSArray *subcategories = [result[@"data"][@"categories"][0] valueForKey:@"subcategories"];
             for (NSDictionary * dic in subcategories) {
                 CategoryModel * model = [[CategoryModel alloc] initWithData:dic];
@@ -109,7 +111,8 @@
     [self.view addSubview:_rightCollectionView];
     
     UITableView * tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 100, CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.tabBarController.tabBar.frame) - CGRectGetHeight(self.navigationController.navigationBar.frame)) style:UITableViewStylePlain];
-    [self.tableview sizeThatFits:CGSizeMake(CGRectGetWidth(self.tableview.bounds), CGFLOAT_MAX)];
+    tableview.showsVerticalScrollIndicator =NO;
+    [tableview sizeThatFits:CGSizeMake(CGRectGetWidth(tableview.bounds), CGFLOAT_MAX)];
     tableview.delegate = self;
     tableview.dataSource = self;
     [self.view addSubview:tableview];
