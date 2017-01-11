@@ -31,6 +31,10 @@
 		B326069A1E248D2B00FE1FBE /* check_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B32606971E248D2B00FE1FBE /* check_p@2x.png */; };
 		B326069B1E248D2B00FE1FBE /* delete_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B32606981E248D2B00FE1FBE /* delete_icon@2x.png */; };
 		B326069D1E248ED100FE1FBE /* jian_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B326069C1E248ED100FE1FBE /* jian_icon@2x.png */; };
+		B32606A01E26068500FE1FBE /* QRNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = B326069F1E26068500FE1FBE /* QRNetworkEngine.m */; };
+		B32606A31E26079D00FE1FBE /* QRNetworkEngine+QROAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = B32606A21E26079D00FE1FBE /* QRNetworkEngine+QROAuth.m */; };
+		B32606A61E26088700FE1FBE /* UIScreen+SGAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B32606A51E26088700FE1FBE /* UIScreen+SGAdditions.m */; };
+		B32606A91E2608D700FE1FBE /* NSString+SGAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B32606A81E2608D700FE1FBE /* NSString+SGAdditions.m */; };
 		B334335C1E02883900E48B66 /* MyCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B334335B1E02883900E48B66 /* MyCollectionCell.m */; };
 		B3375B911DF92E5D000050F4 /* YMHttpsEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = B3375B901DF92E5D000050F4 /* YMHttpsEngine.m */; };
 		B33856A21DED177600C2860E /* MyTopHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = B33856A11DED177600C2860E /* MyTopHeadView.m */; };
@@ -203,6 +207,14 @@
 		B32606971E248D2B00FE1FBE /* check_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_p@2x.png"; sourceTree = "<group>"; };
 		B32606981E248D2B00FE1FBE /* delete_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_icon@2x.png"; sourceTree = "<group>"; };
 		B326069C1E248ED100FE1FBE /* jian_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jian_icon@2x.png"; sourceTree = "<group>"; };
+		B326069E1E26068500FE1FBE /* QRNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRNetworkEngine.h; sourceTree = "<group>"; };
+		B326069F1E26068500FE1FBE /* QRNetworkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRNetworkEngine.m; sourceTree = "<group>"; };
+		B32606A11E26079D00FE1FBE /* QRNetworkEngine+QROAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QRNetworkEngine+QROAuth.h"; sourceTree = "<group>"; };
+		B32606A21E26079D00FE1FBE /* QRNetworkEngine+QROAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QRNetworkEngine+QROAuth.m"; sourceTree = "<group>"; };
+		B32606A41E26088700FE1FBE /* UIScreen+SGAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SGAdditions.h"; sourceTree = "<group>"; };
+		B32606A51E26088700FE1FBE /* UIScreen+SGAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+SGAdditions.m"; sourceTree = "<group>"; };
+		B32606A71E2608D700FE1FBE /* NSString+SGAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SGAdditions.h"; sourceTree = "<group>"; };
+		B32606A81E2608D700FE1FBE /* NSString+SGAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SGAdditions.m"; sourceTree = "<group>"; };
 		B334335A1E02883900E48B66 /* MyCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionCell.h; sourceTree = "<group>"; };
 		B334335B1E02883900E48B66 /* MyCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionCell.m; sourceTree = "<group>"; };
 		B3375B8F1DF92E5D000050F4 /* YMHttpsEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHttpsEngine.h; sourceTree = "<group>"; };
@@ -870,6 +882,10 @@
 				B390E37F1E1B4F8F00A52F69 /* UIView+PS.m */,
 				B390E3811E1B542C00A52F69 /* AJImageheadData.h */,
 				B390E3821E1B542C00A52F69 /* AJImageheadData.m */,
+				B32606A41E26088700FE1FBE /* UIScreen+SGAdditions.h */,
+				B32606A51E26088700FE1FBE /* UIScreen+SGAdditions.m */,
+				B32606A71E2608D700FE1FBE /* NSString+SGAdditions.h */,
+				B32606A81E2608D700FE1FBE /* NSString+SGAdditions.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1186,8 +1202,12 @@
 		B3E1B5841DDED14400E55F5A /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B32606A11E26079D00FE1FBE /* QRNetworkEngine+QROAuth.h */,
+				B32606A21E26079D00FE1FBE /* QRNetworkEngine+QROAuth.m */,
 				B315344F1DFF93D000A3FD07 /* RequestLoginParam.h */,
 				B31534501DFF93D000A3FD07 /* RequestLoginParam.m */,
+				B326069E1E26068500FE1FBE /* QRNetworkEngine.h */,
+				B326069F1E26068500FE1FBE /* QRNetworkEngine.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1457,6 +1477,7 @@
 				B3E1B58A1DDED1C800E55F5A /* LCFHomeViewController.m in Sources */,
 				B39409B41E0CD24B00208FF5 /* PersonnaViewController.m in Sources */,
 				B39409FC1E10AFD200208FF5 /* ActionSheetLocalePicker.m in Sources */,
+				B32606A31E26079D00FE1FBE /* QRNetworkEngine+QROAuth.m in Sources */,
 				B3C1E7411E1155E800EB9D36 /* LCFCategoryViewController.m in Sources */,
 				B3E1B5901DDED1FA00E55F5A /* LCFShoppingViewController.m in Sources */,
 				B3A2492D1E12487100DFCD32 /* NSObject+Property.m in Sources */,
@@ -1464,10 +1485,12 @@
 				B345077D1DF543B5008E3630 /* JSDropDownMenu.m in Sources */,
 				B3FC56A61E092E7200AD8BD6 /* GirlViewController.m in Sources */,
 				B3375B911DF92E5D000050F4 /* YMHttpsEngine.m in Sources */,
+				B32606A91E2608D700FE1FBE /* NSString+SGAdditions.m in Sources */,
 				B32606921E24819800FE1FBE /* LineLabel.m in Sources */,
 				B3011CF21E0A11DA008C8139 /* WebViewController.m in Sources */,
 				B315345C1DFFD36500A3FD07 /* UIView+CCExtension.m in Sources */,
 				B3FC568D1E08FFCF00AD8BD6 /* toptableview.m in Sources */,
+				B32606A61E26088700FE1FBE /* UIScreen+SGAdditions.m in Sources */,
 				B31534561DFFA8E900A3FD07 /* RegisterViewController.m in Sources */,
 				B3E1B59A1DDED6B300E55F5A /* LCFTaBarViewController.m in Sources */,
 				B3940A001E10AFD200208FF5 /* SWActionSheet.m in Sources */,
@@ -1519,6 +1542,7 @@
 				B3F294391E03E243000626BC /* MYSearchBar.m in Sources */,
 				B39409B91E0CE05200208FF5 /* AbstractActionSheetPicker+Interface.m in Sources */,
 				B3982DAA1E07C3FC00EE1435 /* IniformViewController.m in Sources */,
+				B32606A01E26068500FE1FBE /* QRNetworkEngine.m in Sources */,
 				B3FC56981E091ED000AD8BD6 /* TableViewCell.m in Sources */,
 				B31534511DFF93D000A3FD07 /* RequestLoginParam.m in Sources */,
 				B3F294331E03C198000626BC /* StrollCollectionViewCell.m in Sources */,

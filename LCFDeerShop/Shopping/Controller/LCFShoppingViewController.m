@@ -56,7 +56,7 @@
     self.allPrice = 0.00;
     
     [self createSubViews];
-      [self initData];
+    [self initData];
     
 }
 
