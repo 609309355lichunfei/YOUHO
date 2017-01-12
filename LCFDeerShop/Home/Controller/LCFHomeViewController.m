@@ -176,7 +176,7 @@
 {
     NSURL * url = [NSURL URLWithString: codeInfo];
     if ([[UIApplication sharedApplication] canOpenURL: url]) {
-//        [[UIApplication sharedApplication] openURL: url];
+        [[UIApplication sharedApplication] openURL: url];
         
     } else {
      UIAlertView * alertView = [[UIAlertView alloc] initWithTitle: @"警告" message: [NSString stringWithFormat: @"%@:%@", @"无法解析的二维码", codeInfo] delegate: nil cancelButtonTitle: @"确定" otherButtonTitles: nil];
