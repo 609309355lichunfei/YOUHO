@@ -208,6 +208,11 @@
    
     cell.delegate = self;
     cell.shoppingModel = self.dataArray[indexPath.row];
+    __weak LCFShoppingViewController *weakSelf = self;
+    cell.selectHandle = ^(){
+        [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationNone)];
+        [weakSelf CalculationPrice];
+    };
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
     

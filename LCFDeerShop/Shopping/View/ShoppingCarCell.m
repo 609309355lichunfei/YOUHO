@@ -38,7 +38,11 @@
     self.checkImg = [[UIImageView alloc]initWithFrame:CGRectMake(10, (110-20)/2.0, 20, 20)];
     
     self.checkImg.image =IMAGENAMED(@"check_p");
+    self.checkImg.userInteractionEnabled = YES;
     [self addSubview:self.checkImg];
+    
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImageAction:)];
+    [self.checkImg addGestureRecognizer:tapRecognizer];
     
     self.shopImageView = [[UIImageView alloc]initWithFrame:CGRectMake(self.checkImg.right+10,15, 60, 70)];
     
@@ -161,6 +165,14 @@
     // self.numberLab.text = [NSString stringWithFormat:@"%d",shoppingModel.goodsNum];
     self.addNumberView.numberString = [NSString stringWithFormat:@"%d",shoppingModel.goodsNum];
     
+}
+
+- (void)tapImageAction:(UITapGestureRecognizer *)recognize{
+    _shoppingModel.selectState = !_shoppingModel.selectState;
+    self.checkImg.image = [UIImage imageNamed:_shoppingModel.selectState?@"check_n":@"check_p"];
+    if (_selectHandle) {
+        _selectHandle();
+    }
 }
 
 

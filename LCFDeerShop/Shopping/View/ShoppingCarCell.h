@@ -11,8 +11,15 @@
 #import "AddNumberView.h"
 #import "LineLabel.h"
 
+@protocol ShoppingCarCellDelegate
 
-@protocol ShoppingCarCellDelegate;
+-(void)btnClick:(UITableViewCell *)cell andFlag:(int)flag;
+
+- (void)tapImageWithSharManager:(UITableViewCell *)sender;
+
+@end
+
+typedef void(^TapImageBLOCK)();
 
 @interface ShoppingCarCell : UITableViewCell<AddNumberViewDelegate>
 
@@ -41,13 +48,9 @@
 
 @property (nonatomic,assign) id<ShoppingCarCellDelegate>delegate;
 
+@property (copy, nonatomic) TapImageBLOCK selectHandle;
+
 @property (nonatomic,strong) AddNumberView *addNumberView;
 @end
 
-@protocol ShoppingCarCellDelegate
 
--(void)btnClick:(UITableViewCell *)cell andFlag:(int)flag;
-
-- (void)tapImageWithSharManager:(UIButton *)sender;
-
-@end
