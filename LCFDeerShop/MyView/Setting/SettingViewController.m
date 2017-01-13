@@ -26,13 +26,7 @@
     self.navigationController.navigationBar.hidden = NO;
 
     [self.view addSubview:self.tableview];
-      
-        UIButton * lefItemBt = [UIButton buttonWithType:UIButtonTypeCustom];
-        lefItemBt.frame = CGRectMake(0, 0, 20, 20);
-        [lefItemBt addTarget:self action:@selector(actionlefItemBt) forControlEvents:UIControlEventTouchUpInside];
-        [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateNormal];
-        [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateHighlighted];
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:lefItemBt];
+
 
 
     

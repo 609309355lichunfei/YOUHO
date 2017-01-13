@@ -11,4 +11,5 @@
 @interface LCFViewController : UIViewController
 @property (nonatomic, retain) UIView    *   bottomBtnBGView;
 @property (nonatomic, retain) UIButton  *bottomButton;
+@property (nonatomic ,retain)  UINavigationBar * navBar;
 @end

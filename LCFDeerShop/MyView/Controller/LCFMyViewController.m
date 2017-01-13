@@ -47,47 +47,48 @@
 
 @implementation LCFMyViewController
 
-//- (void)viewWillAppear:(BOOL)animated {
-//    [self.navigationController setNavigationBarHidden:YES animated:animated];
-//    [super viewWillAppear:animated];
-//}
-//
-//- (void)viewWillDisappear:(BOOL)animated {
-//    [self.navigationController setNavigationBarHidden:NO animated:animated];
-//    [super viewWillDisappear:animated];
-//}
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillDisappear:animated];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     
     //设置nagation  颜色
-    self.navigationController.navigationBar.barTintColor = YM_RGBA(34., 31., 35.,1.);
+    
+    self.navigationController.navigationBar.barTintColor = YM_RGBA(100, 31., 35.,1.);
     self.navigationItem.title = @"My";
     self.view.backgroundColor = YM_RGBA(240.,242.,245,1.) ;
     [self.view addSubview:self.collectionview];
     
     
     // 判断登陆时机
-    if (![YMUtils loginParam]) {
-        if (self.loginTag) {
-            LCFTaBarViewController * tabbarC = (LCFTaBarViewController *)self.tabBarController;
-            self.tabBarController.selectedIndex = tabbarC.lastSelecteIndex;
-            self.tabBarController.tabBar.hidden = NO;
-            self.loginTag = NO;
-        }
-    }
-    if (![YMUtils loginParam]) {
-        if (!self.loginTag) {
-            LoginViewController * login = [[LoginViewController alloc]init];
-            login.title = @"Login ";
-            self.tabBarController.tabBar.hidden = YES;
-            login.hidesBottomBarWhenPushed= YES;
-            [self.navigationController pushViewController:login animated:NO];
-            self.hidesBottomBarWhenPushed = NO;
-            self.loginTag = YES;
-        }
-    }
+//    if (![YMUtils loginParam]) {
+//        if (self.loginTag) {
+//            LCFTaBarViewController * tabbarC = (LCFTaBarViewController *)self.tabBarController;
+//            self.tabBarController.selectedIndex = tabbarC.lastSelecteIndex;
+//            self.tabBarController.tabBar.hidden = NO;
+//            self.loginTag = NO;
+//        }
+//    }
+//    if (![YMUtils loginParam]) {
+//        if (!self.loginTag) {
+//            LoginViewController * login = [[LoginViewController alloc]init];
+//            login.title = @"Login ";
+//            self.tabBarController.tabBar.hidden = YES;
+//            login.hidesBottomBarWhenPushed= YES;
+//            [self.navigationController pushViewController:login animated:NO];
+//            self.hidesBottomBarWhenPushed = NO;
+//            self.loginTag = YES;
+//        }
+//    }
    
     
     UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"information_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(ClickleftBarButtonItem:)];
@@ -186,22 +187,8 @@
     
 }
 
-#pragma mark ---------------- Navigationitem
 
-//nagigation 左边按钮
-- (void)ClickleftBarButtonItem:(UIButton *)sender{
-    
-    IniformViewController * iniforVC = [[IniformViewController alloc] init];
-    iniforVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:iniforVC animated:YES];
-}
-//导航右边按钮
-- (void)ClickrightButtonItem:(UIButton *)sender {
-    
-    SettingViewController * setting = [[SettingViewController alloc] init];
-    setting.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:setting animated:YES];
-}
+
 
 #pragma mark       ----------------- 头部头像设置  
 -(MyTopHeadView *)tophead{
@@ -212,6 +199,22 @@
         _tophead.userInteractionEnabled = YES;
         _tophead.frame = CGRectMake(0, 0, LCF_SCREEN_WIDTH, 220);
     }
+    
+    //通知
+    __weak LCFMyViewController *weakSelf = self;
+    _tophead.inform = ^(){
+       
+        IniformViewController * iniforVC = [[IniformViewController alloc] init];
+        iniforVC.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:iniforVC animated:YES];
+        
+    };
+    //设置
+    _tophead.setting = ^ () {
+        SettingViewController * setting = [[SettingViewController alloc] init];
+        setting.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:setting animated:YES];
+    };
     
     return _tophead;
 }

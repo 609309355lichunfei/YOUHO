@@ -12,6 +12,7 @@
 #import "ShoppingModel.h"
 #import "ShopCenterController.h"
 #import "ProductDetailsWebViewController.h"
+#import "SettlementController.h"
 @interface LCFShoppingViewController ()<UITableViewDataSource,UITableViewDelegate,ShoppingCarCellDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
@@ -158,7 +159,9 @@
 //结算
 -(void)jieSuanAction{
     
-    NSLog(@"结算");
+    SettlementController * settlement = [[SettlementController alloc] init];
+    [self.navigationController pushViewController:settlement animated:YES];
+    
     
 }
 //全选

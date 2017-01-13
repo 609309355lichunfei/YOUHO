@@ -27,6 +27,7 @@
 		B301079F1E2872DB00E3477A /* nav_shoppingCart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B301079E1E2872DB00E3477A /* nav_shoppingCart@2x.png */; };
 		B30107A21E28737800E3477A /* nav_goBack_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B30107A01E28737800E3477A /* nav_goBack_white@2x.png */; };
 		B30107A31E28737800E3477A /* nav_shoppingCart_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B30107A11E28737800E3477A /* nav_shoppingCart_white@2x.png */; };
+		B30107AF1E289F8A00E3477A /* SettlementController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30107AE1E289F8A00E3477A /* SettlementController.m */; };
 		B3011CF21E0A11DA008C8139 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3011CF11E0A11DA008C8139 /* WebViewController.m */; };
 		B3011CF61E0A1D53008C8139 /* MBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3011CF51E0A1D53008C8139 /* MBManager.m */; };
 		B315344E1DFF91B500A3FD07 /* ZZNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B315344D1DFF91B500A3FD07 /* ZZNetwork.framework */; };
@@ -210,6 +211,8 @@
 		B301079E1E2872DB00E3477A /* nav_shoppingCart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_shoppingCart@2x.png"; sourceTree = "<group>"; };
 		B30107A01E28737800E3477A /* nav_goBack_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_goBack_white@2x.png"; sourceTree = "<group>"; };
 		B30107A11E28737800E3477A /* nav_shoppingCart_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_shoppingCart_white@2x.png"; sourceTree = "<group>"; };
+		B30107AD1E289F8A00E3477A /* SettlementController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettlementController.h; sourceTree = "<group>"; };
+		B30107AE1E289F8A00E3477A /* SettlementController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettlementController.m; sourceTree = "<group>"; };
 		B3011CF01E0A11DA008C8139 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		B3011CF11E0A11DA008C8139 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		B3011CF41E0A1D53008C8139 /* MBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBManager.h; sourceTree = "<group>"; };
@@ -525,6 +528,15 @@
 				8231C46E226DD73C2DB26F1B /* libPods-LCFDeerShop.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B30107AC1E289F7000E3477A /* Settlement */ = {
+			isa = PBXGroup;
+			children = (
+				B30107AD1E289F8A00E3477A /* SettlementController.h */,
+				B30107AE1E289F8A00E3477A /* SettlementController.m */,
+			);
+			path = Settlement;
 			sourceTree = "<group>";
 		};
 		B3011CEF1E0A11B3008C8139 /* WebViewController */ = {
@@ -1003,6 +1015,7 @@
 		B3E1B56F1DDECEFC00E55F5A /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				B30107AC1E289F7000E3477A /* Settlement */,
 				B326068B1E247BE900FE1FBE /* Category */,
 				B3A249301E124C9800DFCD32 /* shoppingCart */,
 				B3C713AC1DE8337B00747345 /* ShopDetails */,
@@ -1630,6 +1643,7 @@
 				B3C1E73A1E11555800EB9D36 /* CategoryCollectionViewCell.m in Sources */,
 				B34AABFB1DE563A30053244E /* ViewController+MASAdditions.m in Sources */,
 				B390E37D1E1B471300A52F69 /* NSString+STRegex.m in Sources */,
+				B30107AF1E289F8A00E3477A /* SettlementController.m in Sources */,
 				B3940A011E10AFD200208FF5 /* README.md in Sources */,
 				B3A2484F1E11FBF800DFCD32 /* NSMutableArray+ZZExtension.m in Sources */,
 				B3B4C3321DDECB72002D43CF /* ViewController.m in Sources */,

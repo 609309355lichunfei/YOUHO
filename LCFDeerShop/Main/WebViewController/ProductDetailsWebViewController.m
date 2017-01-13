@@ -121,6 +121,7 @@
 - (void)setup {
     
     self.requestUrl = self.requestUrl?self.requestUrl:[NSURL URLWithString:htmlAPI];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:self.requestUrl]];
 }
 
 
@@ -156,7 +157,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     
     [MBManager hideAlert];
-    //    [self.navigationController popViewControllerAnimated:YES];
+   
     
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{

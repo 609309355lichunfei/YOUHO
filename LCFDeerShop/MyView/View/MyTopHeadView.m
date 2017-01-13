@@ -63,8 +63,8 @@
     }];
     
     [self.heard_icon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self);
-        make.width.height.equalTo(@(100));
+        make.centerY.equalTo(self).offset(+60);
+        make.width.height.equalTo(@(50));
         make.centerX.equalTo(self);
     }];
     
@@ -91,13 +91,15 @@
     return _topHead_image;
 }
 
-- (UILabel *)collect_shop {
+- (UIButton *)collect_shop {
     
     if (!_collect_shop) {
-        _collect_shop = [[UILabel alloc] init];
-        _collect_shop.text = @"收藏的商品";
-        _collect_shop.textColor = [UIColor whiteColor];
-        _collect_shop.font = [UIFont AvenirWithFontSize:9];
+        _collect_shop = [UIButton buttonWithType:UIButtonTypeCustom];
+//        _collect_shop.text = @"通知";
+        [_collect_shop setTitle:@"通知" forState:UIControlStateNormal];
+        [_collect_shop addTarget:self action:@selector(Clickinform) forControlEvents:UIControlEventTouchUpInside];
+        [_collect_shop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _collect_shop.titleLabel.font = [UIFont AvenirWithFontSize:9];
     }
     return _collect_shop;
 }
@@ -106,19 +108,20 @@
     
     if (!_collect_Brand) {
         _collect_Brand = [[UILabel alloc] init];
-        _collect_Brand.text = @"收藏品牌";
+        _collect_Brand.text = @"";
         _collect_Brand.textColor = [UIColor whiteColor];
         _collect_Brand.font = [UIFont AvenirWithFontSize:9];
     }
     return _collect_Brand;
 }
-- (UILabel *)collect_Records {
+- (UIButton *)collect_Records {
     
     if (!_collect_Records) {
-        _collect_Records = [[UILabel alloc] init];
-        _collect_Records.text = @"浏览记录";
-        _collect_Records.textColor = [UIColor whiteColor];
-        _collect_Records.font = [UIFont AvenirWithFontSize:9];
+        _collect_Records = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_collect_Records setTitle:@"设置" forState:UIControlStateNormal];
+        [_collect_Records addTarget:self action:@selector(Clicksetting) forControlEvents:UIControlEventTouchUpInside];
+        [_collect_Records setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _collect_Records.titleLabel.font = [UIFont AvenirWithFontSize:9];
     }
     return _collect_Records;
 }
@@ -127,10 +130,10 @@
     
     if (!_heard_icon) {
         _heard_icon = [UIButton buttonWithType:UIButtonTypeCustom];
-        _heard_icon.layer.cornerRadius = 50;
+        _heard_icon.layer.cornerRadius = 25;
         _heard_icon.clipsToBounds = TRUE;
         [_heard_icon addTarget:self action:@selector(Clickheard_icon:) forControlEvents:UIControlEventTouchUpInside];
-        [_heard_icon setImage:[UIImage imageNamed:@"heard"] forState:UIControlStateNormal];
+        [_heard_icon setImage:[UIImage imageNamed:@"detais_image"] forState:UIControlStateNormal];
     }
      return  _heard_icon;
     
@@ -140,6 +143,20 @@
     
     if ([self.delegation  performSelector:@selector(setHeardShareManagerWithPush:) withObject:sender]) {
         [self.delegation  respondsToSelector:@selector(setHeardShareManagerWithPush:)];
+    }
+}
+
+- (void)Clickinform {
+    
+    if (_inform) {
+        _inform();
+    }
+}
+
+- (void)Clicksetting {
+    
+    if (_setting) {
+        _setting();
     }
 }
 

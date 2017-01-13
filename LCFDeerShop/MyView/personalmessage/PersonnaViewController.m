@@ -38,13 +38,7 @@
     [self.view addSubview:self.tableview];
     self.navigationController.navigationBarHidden = NO;
     self.navigationItem.title = @"个人信息设置";
- 
-    UIButton * lefItemBt = [UIButton buttonWithType:UIButtonTypeCustom];
-    lefItemBt.frame = CGRectMake(0, 0, 20, 20);
-    [lefItemBt addTarget:self action:@selector(actionlefItemBt1) forControlEvents:UIControlEventTouchUpInside];
-    [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateNormal];
-    [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateHighlighted];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:lefItemBt];
+
 
   
 }

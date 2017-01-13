@@ -15,6 +15,11 @@
 - (void)setHeardShareManagerWithPush:(UIButton *)sender;
 
 @end
+
+typedef void(^informBlock)();
+
+typedef void(^SettingBlock)();
+
 @interface MyTopHeadView : UIView
 @property       (retain,nonatomic)      UIImageView *   topHead_image;
 
@@ -22,11 +27,15 @@
 
 @property       (retain,nonatomic)      UIView      *   headGuidance;
 
-@property       (retain,nonatomic)      UILabel     *   collect_shop;
+@property       (retain,nonatomic)      UIButton     *   collect_shop;
 
 @property       (retain,nonatomic)      UILabel     *   collect_Brand;
 
-@property       (retain,nonatomic)      UILabel     *   collect_Records;
+@property       (retain,nonatomic)      UIButton     *   collect_Records;
+
+@property       (copy,nonatomic)        informBlock   inform;
+
+@property       (copy,nonatomic)        SettingBlock  setting;
 
 @property       (nonatomic ,weak)       id <MyTopHeadViewDelegation>delegation;
 

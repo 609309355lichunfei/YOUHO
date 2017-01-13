@@ -43,7 +43,7 @@ static LCFTaBarViewController * Tabar;
     if (tabIndex != self.selectedIndex) {
         //设置最近一次变更
         _lastSelecteIndex = self.selectedIndex;
-//       NSLog(@"2 OLD:%zi , NEW:%zi",self.lastSelecteIndex,tabIndex);
+       NSLog(@"2 OLD:%zi , NEW:%zi",self.lastSelecteIndex,tabIndex);
     }
 }
 

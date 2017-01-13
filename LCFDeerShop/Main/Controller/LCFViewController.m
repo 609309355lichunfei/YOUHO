@@ -19,26 +19,27 @@
     
  
     self.view.backgroundColor = [UIColor whiteColor];
-    UINavigationBar* navBar = self.navigationController.navigationBar;
+    
+  
+    self.navBar = self.navigationController.navigationBar;
 //    [navBar setTranslucent:YES];
-    navBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor blackColor]};
-    [navBar setBackgroundImage:[UIImage imageNamed:@"patternNav"] forBarMetrics:UIBarMetricsDefault];
-    [navBar setShadowImage:[[UIImage alloc] init]];
+    self.navBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor blackColor]};
+    [self.navBar setBackgroundImage:[UIImage imageNamed:@"patternNav"] forBarMetrics:UIBarMetricsDefault];
+    [self.navBar setShadowImage:[[UIImage alloc] init]];
     [self setupBottomButton];
+    
+    //判断如果控制器大于1就自动添加上返回按钮
+    if ([self.navigationController.viewControllers count] >1 ) {
+          UIButton * lefItemBt = [UIButton buttonWithType:UIButtonTypeCustom];
+                lefItemBt.frame = CGRectMake(0, 0, 20, 20);
+                [lefItemBt addTarget:self action:@selector(actionlefItemBt) forControlEvents:UIControlEventTouchUpInside];
+                [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateNormal];
+                [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateHighlighted];
+                self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:lefItemBt];
+    }
  
 
 }
-
-//- (void)setLefitenmBt {
-//    
-//    
-//        UIButton * lefItemBt = [UIButton buttonWithType:UIButtonTypeCustom];
-//        lefItemBt.frame = CGRectMake(0, 0, 20, 20);
-//        [lefItemBt addTarget:self action:@selector(actionlefItemBt) forControlEvents:UIControlEventTouchUpInside];
-//        [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateNormal];
-//        [lefItemBt setImage:[UIImage imageNamed:@"1481634799_left"] forState:UIControlStateHighlighted];
-//        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:lefItemBt];
-//}
 
 -(void)actionlefItemBt {
     
