@@ -56,7 +56,7 @@
     self.priceLab.font = XNFont(16);
     [self addSubview:self.priceLab];
     
-    
+    /* LineLabel 自己封装带画线的lable */
     self.oldPriceLab = [[LineLabel alloc]initWithFrame:CGRectMake(LCF_SCREEN_WIDTH-70,self.priceLab.bottom+5, 58, 14)];
     self.oldPriceLab.textColor = [UIColor grayColor];
     self.oldPriceLab.text = @"￥200.00";
@@ -76,7 +76,7 @@
     
     self.shopTypeLab = [[UILabel alloc]initWithFrame:CGRectMake(self.shopNameLab.left,self.shopNameLab.bottom,self.shopNameLab.width, 20)];
     self.shopTypeLab.text = @"通用型号";
-    self.shopTypeLab.textColor = [UIColor darkGrayColor];
+    self.shopTypeLab.textColor = [UIColor redColor];
     self.shopTypeLab.font = XNFont(12);
     [self addSubview:self.shopTypeLab];
     
@@ -86,7 +86,7 @@
     numberTitleLab.font = XNFont(12);
     [self addSubview:numberTitleLab];
     
-    
+    /* 加减背景view*/
     self.addNumberView = [[AddNumberView alloc]initWithFrame:CGRectMake(numberTitleLab.right+5, numberTitleLab.top-2, 93, 22)];
     self.addNumberView.delegate = self;
     self.addNumberView.backgroundColor = [UIColor clearColor];

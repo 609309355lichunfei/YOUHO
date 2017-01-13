@@ -30,24 +30,24 @@
     _backgroundImage.frame = CGRectMake(0, 0, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT);
     return _backgroundImage;
 }
--(UIView *)BG_view{
-    
-    if (!_BG_view) {
-        _BG_view = [[UIView alloc] init];
-        _BG_view.alpha = .35;
-        _BG_view.backgroundColor = [UIColor blackColor];
-    }
-    _BG_view.frame = CGRectMake(0, 0, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT);
-    return  _BG_view;
-    
-}
+//-(UIView *)BG_view{
+//    
+//    if (!_BG_view) {
+//        _BG_view = [[UIView alloc] init];
+//        _BG_view.alpha = .35;
+//        _BG_view.backgroundColor = [UIColor blackColor];
+//    }
+//    _BG_view.frame = CGRectMake(0, 0, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT);
+//    return  _BG_view;
+//    
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
    
     self.navigationItem.title = @"注册";
 //    [self.view addSubview:self.backgroundImage];
     /*创建GIF动画背景图片*/
-    OLImageView * animationImage = [[OLImageView alloc] initWithImage:[OLImage imageNamed:@"chalet_d.gif"]];
+    OLImageView * animationImage = [[OLImageView alloc] initWithImage:[OLImage imageNamed:@"kick_push_dribbble.gif"]];
     [animationImage setFrame:CGRectMake(0, 0, LCF_SCREEN_WIDTH, LCF_SCREEN_HEIGHT)];
     [self.view addSubview:animationImage];
     [animationImage addSubview:self.BG_view];
@@ -60,19 +60,16 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:lefItemBt];
     
     UILabel * accountTextield = [[UILabel alloc] init];
-    accountTextield.text = @"账号";
+    accountTextield.text = @"账号:";
+    accountTextield.frame = CGRectMake(accountTextield.left+ 50, accountTextield.top + 100, 40, 20);
+    accountTextield.font = [UIFont systemFontOfSize:13];
     [self.view addSubview:accountTextield];
-    [accountTextield mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-    }];
     
     UITextField * AccountTextield = [[UITextField alloc]init];
+    
+    AccountTextield.frame = CGRectMake(accountTextield.right+ 20, AccountTextield.top + 100, 200, 30);
     [self.view addSubview:AccountTextield];
-    [AccountTextield mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view);
-        make.centerY.equalTo(self.view);
-        
-    }];
+   
     self.AccountTextield = AccountTextield;
 
 }

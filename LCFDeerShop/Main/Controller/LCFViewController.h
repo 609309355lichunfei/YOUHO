@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LCFViewController : UIViewController
-
+@property (nonatomic, retain) UIView    *   bottomBtnBGView;
+@property (nonatomic, retain) UIButton  *bottomButton;
 @end

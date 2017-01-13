@@ -10,6 +10,8 @@
 #import "ShopDetailsViewController.h"
 #import "ShoppingCarCell.h"
 #import "ShoppingModel.h"
+#import "ShopCenterController.h"
+#import "ProductDetailsWebViewController.h"
 @interface LCFShoppingViewController ()<UITableViewDataSource,UITableViewDelegate,ShoppingCarCellDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
@@ -248,22 +250,23 @@
 //单元格选中事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /**
-     * 判断当期是否为选中状态，如果选中状态点击则更改成未选中，如果未选中点击则更改成选中状态
-     */
-    ShoppingModel *model = self.dataArray[indexPath.row];
-    if (model.selectState)
-    {
-        model.selectState = NO;
-    }
-    else
-    {
-        model.selectState = YES;
-    }
+  
     
-    //刷新当前行
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self CalculationPrice];
+    
+    /* 原本打算自己写这个SKU界面但是一般公司这个界面会做H5交互 所以换成H5交互界面 */
+    
+//    ShopCenterController * shopCenter = [[ShopCenterController alloc]init];
+//    /* 这句隐藏TabBar底部 */
+//    shopCenter.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:shopCenter animated:YES];
+    
+    
+    ProductDetailsWebViewController *webVC = [[ProductDetailsWebViewController alloc]init];
+    webVC.title = @"商品详情";
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:webVC animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
+    
 }
 
 

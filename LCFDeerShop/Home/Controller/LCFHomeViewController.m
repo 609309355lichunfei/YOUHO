@@ -24,8 +24,10 @@
 #import "RefreshHeader.h"
 #import "LXDScanCodeController.h"
 #import <AVFoundation/AVFoundation.h>
-@interface LCFHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,LCFBannerViewDelegate,TGLGuillotineMenuDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,LXDScanCodeControllerDelegate,UISearchBarDelegate>{
- NSMutableArray  *   dataSoureArray;
+@interface LCFHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,LCFBannerViewDelegate,TGLGuillotineMenuDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,LXDScanCodeControllerDelegate,UISearchBarDelegate>
+
+{
+        NSMutableArray  *   dataSoureArray;
 }
 @property   (nonatomic,retain)  UIScrollView    *   scrollView;//背景滑动
 
@@ -43,7 +45,7 @@
 
 @implementation LCFHomeViewController
 
-    static NSString  * const  homecell = @"ID";
+static NSString  * const  homecell = @"ID";
 
 #pragma mark -  数据源
 
